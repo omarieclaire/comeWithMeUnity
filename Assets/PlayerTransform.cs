@@ -5,7 +5,15 @@ using UnityEngine;
 public class PlayerTransform : MonoBehaviour
 {
 	public GameObject head;
-	public GameObject leftHand;
-	public GameObject rightHand;
+	
+	public GameObject rightWrist;
+	public GameObject rightElbow;
+	public GameObject rightAnkle;
+	public GameObject rightKnee;
+
+	public GameObject leftWrist;
+	public GameObject leftElbow;
+	public GameObject leftAnkle;
+	public GameObject leftKnee;
 	//work
 }

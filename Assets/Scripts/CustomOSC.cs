@@ -20,17 +20,20 @@ public class CustomOSC : MonoBehaviour
 	[SerializeField]
 	private GameObject sadSquare;
     
-	[SerializeField]
-	//private GameObject nose;
-	private List<GameObject> nose = new List<GameObject>();
+	//[SerializeField]
+	//private List<GameObject> nose = new List<GameObject>();
 
-	[SerializeField]
-	//private GameObject rightWrist;
-	private List<GameObject> rightWrist = new List<GameObject>();
+	//[SerializeField]
+	//private List<GameObject> rightWrist = new List<GameObject>();
 
-	[SerializeField]
-	//private GameObject leftWrist;
-	private List <GameObject> leftWrist = new List<GameObject>();
+	//[SerializeField]
+	//private List <GameObject> leftWrist = new List<GameObject>();
+	
+	//[SerializeField]
+	//private List <GameObject> leftFoot = new List<GameObject>();
+	
+	//[SerializeField]
+	//private List <GameObject> rightFoot = new List<GameObject>();
     
 	public class PlayerRig{
 		public GameObject dummy;
@@ -39,13 +42,20 @@ public class CustomOSC : MonoBehaviour
 		public GameObject nose;
 		public GameObject leftWrist;
 		public GameObject rightWrist;
+		public GameObject leftElbow;
+		public GameObject rightElbow;
+		public GameObject leftAnkle;
+		public GameObject rightAnkle;
+		public GameObject leftKnee;
+		public GameObject rightKnee;
 		public Dictionary<string, GameObject> addressBodyPartMap;
 		public float lastUpdated;
 		public long lastOSCTimeStamp;
 		public int playerNumber;
+		public float playerDepth;		
 	}
 	// hold all the players
-	private List<PlayerRig> players = new List<PlayerRig>();
+	public List<PlayerRig> players = new List<PlayerRig>();
 	
 	OscJack.OscServer server;
 	
@@ -60,6 +70,7 @@ public class CustomOSC : MonoBehaviour
 	//ConcurrentDictionary<int, long> playerLastUpdated = new ConcurrentDictionary<int, long>();
 	
 	public float speed = 0.15f;
+	public float playerZValue = 0;
 
     void Start() {
         server = OscMaster.GetSharedServer(12000);
@@ -67,13 +78,10 @@ public class CustomOSC : MonoBehaviour
     }
 	
 	int GetPlayerNumber(string address) {
-		string[] splitString = address.Split('/');
-		Debug.Log(address);
-		
+		string[] splitString = address.Split('/');		
 		//Debug.Log(splitString[4]);
 		return int.Parse(splitString[4]);
 	}
-	
 	
 	////////////////////////////////
 	// DECTIVATE MISSING PLAYERS //
@@ -101,6 +109,8 @@ public class CustomOSC : MonoBehaviour
 		}		
 	}
 	
+	
+	
 	PlayerRig MakeNewPlayerOrUpdatePlayer(string address, long oscTime){
 		// get the player number by extracting it from the string
 		int playerNumber = GetPlayerNumber(address);
@@ -112,6 +122,8 @@ public class CustomOSC : MonoBehaviour
 			// create a new player and pass in the player number and oscTime
 			playerRig = AddPlayer(playerNumber, oscTime);
 			// add the player to the array of players
+			// note: this may add the wrong player in the wrong position of the list
+			// in future I might fill the array with holes (nulls) until my index
 			players.Add(playerRig);
 		// if it's not a new player 
 		} else
@@ -133,10 +145,10 @@ public class CustomOSC : MonoBehaviour
 		
     void Update()
 	{
-		// Deactivate any missing players
+		// First, deactivate any missing players
 		CheckForMissingPlayers();
     	    
-		// Loop through the "safe" map (osc address string: vector3 coordinates, time) and process each key value pair
+		// Next, loop through the "safe" map (osc address string: vector3 coordinates, time) and process each key value pair
         foreach (KeyValuePair<string, (Vector3, long)> addressCoordinateTimeStampKVPair in addressCoordinateAndTimeStampMap)
         {
 	        // Extract the osc address string, the osc vector 3 coordinate, and the osc timestamp
@@ -202,7 +214,9 @@ public class CustomOSC : MonoBehaviour
 		        GameObject bodyPart = playerRig.addressBodyPartMap[address];
 	        
 		        // get the "target" position for the body part using the map function (osc xyz to unity xyz)
-		        Vector3 target = new Vector3(MapToRange(coords[0], 0, 640, -8, 8), MapToRange(coords[1], 0, 480, 10, -3), 0); //Vector3 target = new Vector3(MapToRange(coords[0], 0, 640, -4, 4), MapToRange(coords[1], 0, 480, 8, -4), 0);
+		        //Debug.Log(coords[0], coords[1], coords[2]);
+		        //MapToRange(coords[3], 0, 4, -4, 4)
+		        Vector3 target = new Vector3(MapToRange(coords[0], 0, 640, -4, 4), MapToRange(coords[1], 0, 480, 6, 0), MapToRange(playerRig.playerDepth, 0, 4, -4, 4)); 
 		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
 		        bodyPart.transform.position = Vector3.Lerp(bodyPart.transform.position, target, speed);  
 		        //bodyPart.transform.position = target;
@@ -230,15 +244,22 @@ public class CustomOSC : MonoBehaviour
 		PlayerTransform playerTransform = player.GetComponent<PlayerTransform>();
 		//Connect OSC to the player transform 
 		playerRig.nose = playerTransform.head;
-		playerRig.leftWrist = playerTransform.leftHand;
-		playerRig.rightWrist = playerTransform.rightHand;
+		playerRig.leftWrist = playerTransform.leftWrist;
+		playerRig.rightWrist = playerTransform.rightWrist;
+		playerRig.leftAnkle = playerTransform.leftAnkle;
+		playerRig.rightAnkle = playerTransform.rightAnkle;		
+		playerRig.rightElbow = playerTransform.rightElbow;
+		playerRig.leftElbow = playerTransform.leftElbow;
+		playerRig.rightKnee = playerTransform.rightKnee;
+		playerRig.leftKnee = playerTransform.leftKnee;
+
 		// Record dummy and playertransform gameobjects
 		playerRig.dummy = dummy;
 		playerRig.playerTransform = player;
 		// Connect the player transform to the dummy
 		vrik.solver.spine.headTarget = playerTransform.head.transform;
-		vrik.solver.leftArm.target = playerTransform.leftHand.transform;
-		vrik.solver.rightArm.target = playerTransform.rightHand.transform;
+		vrik.solver.leftArm.target = playerTransform.leftWrist.transform;
+		vrik.solver.rightArm.target = playerTransform.rightWrist.transform;
 		// Is active because it was just set up
 		playerRig.active = true;
 		playerRig.lastUpdated = Time.time;
@@ -263,10 +284,46 @@ public class CustomOSC : MonoBehaviour
 			//Debug.Log($"lastOSCTimeStamp {rig.lastOSCTimeStamp}");
 			go = rig.nose;
 			rig.lastUpdated = Time.time;
+		//} else if (address.Contains("RIGHT_WRIST")) { 
+		//	go = rig.leftWrist;
+		//}  else if (address.Contains("LEFT_WRIST")) { 
+		//	go = rig.rightWrist;
+		
+		//} else if (address.Contains("RIGHT_KNEE")) { 
+		//	go = rig.leftKnee;
+		//}  else if (address.Contains("LEFT_KNEE")) { 
+		//	go = rig.rightKnee;
+				
+		//} else if (address.Contains("RIGHT_ELBOW")) { 
+		//	go = rig.leftElbow;
+		//}  else if (address.Contains("LEFT_ELBOW")) { 
+		//	go = rig.rightElbow;
+			
+		//} else if (address.Contains("RIGHT_ANKLE")) { 
+		//	go = rig.leftAnkle;
+		//}  else if (address.Contains("LEFT_ANKLE")) { 
+		//	go = rig.rightAnkle;
+			
 		} else if (address.Contains("RIGHT_WRIST")) { 
-	        go = rig.leftWrist;
+			go = rig.rightWrist;
 		}  else if (address.Contains("LEFT_WRIST")) { 
-	        go = rig.rightWrist;
+			go = rig.leftWrist;
+		
+		} else if (address.Contains("RIGHT_KNEE")) { 
+			go = rig.rightKnee;
+		}  else if (address.Contains("LEFT_KNEE")) { 
+			go = rig.leftKnee;
+				
+		} else if (address.Contains("RIGHT_ELBOW")) { 
+			go = rig.rightElbow;
+		}  else if (address.Contains("LEFT_ELBOW")) { 
+			go = rig.leftElbow;
+			
+		} else if (address.Contains("RIGHT_ANKLE")) { 
+			go = rig.rightAnkle;
+		}  else if (address.Contains("LEFT_ANKLE")) { 
+			go = rig.leftAnkle;
+			
 		} else {
 	        go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 			go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
@@ -279,23 +336,27 @@ public class CustomOSC : MonoBehaviour
 	// MAP THE OSC VALUES (X,Y,Z) TO THE UNITY VALUES (X,Y,Z) ///
 	////////////////////////////////////////////////////////////
 	
-    public float MapToRange(float numberInRange1, float start1, float end1, float start2, float end2) {
-	    //calcuate the "distance" of the number
-	    float distance = numberInRange1 - start1;
-	    //how much of range1 does this distance cover
-        float distanceRatio = distance / (end1 - start1);
-	    //take this ratio and apply it to the length of the other range
-	    float amountInRange2 = distanceRatio * (end2 - start2);
-	    //now I know how far into range2 the number should be so I add that to the beginning of range2
-        float finalValue = start2 + amountInRange2;
-        return finalValue;
-    }
+    //public float MapToRange(float numberInRange1, float start1, float end1, float start2, float end2) {
+	//    //calcuate the "distance" of the number
+	//    float distance = numberInRange1 - start1;
+	//    //how much of range1 does this distance cover
+    //    float distanceRatio = distance / (end1 - start1);
+	//    //take this ratio and apply it to the length of the other range
+	//    float amountInRange2 = distanceRatio * (end2 - start2);
+	//    //now I know how far into range2 the number should be so I add that to the beginning of range2
+    //    float finalValue = start2 + amountInRange2;
+    //    return finalValue;
+    //}
     
+	public float MapToRange(float n, float start1, float stop1, float start2, float stop2){
+		return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
+	}
+   
     
-	//public ObjectGenerator(){
-		//https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
-		//Instantiate (delightBall, new Vector3(Random.Range(1,10), Random.Range(1,10), Random.Range(1,10)), Quaternion.identity);
-	//}
+	public void ObjectGenerator(){
+		//https:docs.unity3d.com/Manual/InstantiatingPrefabs.html
+		Instantiate (delightBall, new Vector3(Random.Range(1,10), Random.Range(1,10), Random.Range(1,10)), Quaternion.identity);
+	}
  
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// RECEIVE OSC MESSAGES PORT 12000 & SEND EACH MESSAGE (osc string, v3, and osctime) TO MY THREADSAFE MAP  ///
@@ -305,20 +366,79 @@ public class CustomOSC : MonoBehaviour
 		// receive OSC message and update the values (coordinates) for the keys (addresses)
 		// it would be much easier if I could just update the sphere coordinates HERE in the osc receiver
 		// but I can't create a gameobject outside of the update function 
-        Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
-		long currentTime = System.DateTime.Now.Ticks;
-	    
-		//Update a special threadsafe map I made that matches the time of the update to a specific player
-		//playerLastUpdated.AddOrUpdate(GetPlayerNumber(address), currentTime, (k,v) => v = (currentTime));
+		
+		if (address.Contains("livepose/position") && data.GetElementAsFloat(2) != 0.000000)
+		{
+			// get the player id from the address
+			int playerId = GetPlayerNumber(address);
+		
+			// get the Z for each position message
+			float z = data.GetElementAsFloat(2);
+
+			// get the player
+			PlayerRig currPlayer = players[playerId];
+
+			// update playerDepth of that player with the Z
+			currPlayer.playerDepth = z;
+		}
+			//e638ea50.7306705c /livepose/position/0/0 fff -0.247142 0.827771 3.305451
+			
+		long currentTime = System.DateTime.Now.Ticks;	
+		Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
+	
 		
 		//If it's a relevant message, update the threadsafe map of all the OSC Messages (getting a string, and a vector3-time tupple
 		if (address.Contains("livepose/skeletons/0"))
 		{
+			//Update a special threadsafe map I made that matches the time of the update to a specific player
+			//playerLastUpdated.AddOrUpdate(GetPlayerNumber(address), currentTime, (k,v) => v = (currentTime));
 			addressCoordinateAndTimeStampMap.AddOrUpdate(address, (vec, currentTime), (k,v) => v = (vec, currentTime));
 		}
+		
+		///livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
+		///livepose/position/0/1 fff -0.212375 0.803258 2.666000
+		/// 
     }
 }
 
+
+
+//     NOSE = 0
+//     NECK = 1
+//     RIGHT_SHOULDER = 2
+//     RIGHT_ELBOW = 3
+//     RIGHT_WRIST = 4
+//     LEFT_SHOULDER = 5
+//     LEFT_ELBOW = 6
+//     LEFT_WRIST = 7
+//     MID_HIP = 8
+//     RIGHT_HIP = 9
+//     RIGHT_KNEE = 10
+//     RIGHT_ANKLE = 11
+//     LEFT_HIP = 12
+//     LEFT_KNEE = 13
+//     LEFT_ANKLE = 14
+//     RIGHT_EYE = 15
+//     LEFT_EYE = 16
+//     RIGHT_EAR = 17
+//     LEFT_EAR = 18
+//     LEFT_BIG_TOE = 19
+//     LEFT_SMALL_TOE = 20
+//     LEFT_HEEL = 21
+//     RIGHT_BIG_TOE = 22
+//     RIGHT_SMALL_TOE = 23
+//     RIGHT_HEEL = 24
+
+//Forearm Elbow
+//UpperArm Shoulder
+//Spine3 Chest
+//Spine1 Bellybutton
+//Pelvis Pelvis
+//Hand Wrist
+//Head upper neck
+//Thigh - leg connector
+//R Calf - knee
+//Foot ankle connector
 
 
 
