@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 6300436808696301151}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.36, y: 2.8588448, z: 0.92899776}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1179242733368809225}
@@ -274,10 +274,14 @@ MonoBehaviour:
   rightWrist: {fileID: 1179242733307437762}
   rightElbow: {fileID: 327014360194435269}
   rightAnkle: {fileID: 6472625786116849503}
+  rightToe: {fileID: 0}
   rightKnee: {fileID: 3501591434692360555}
+  pelvis: {fileID: 0}
+  chest: {fileID: 0}
   leftWrist: {fileID: 1179242734688035515}
   leftElbow: {fileID: 9174101362010252347}
   leftAnkle: {fileID: 3747085682269219927}
+  leftToe: {fileID: 0}
   leftKnee: {fileID: 1108746862996746028}
 --- !u!1 &6472625786116849503
 GameObject:

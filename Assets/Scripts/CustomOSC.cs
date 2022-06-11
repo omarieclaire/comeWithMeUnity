@@ -1,13 +1,53 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Generic; // need this for lists
 using System.Collections.Concurrent;
 using UnityEngine;
 using OscJack;
 using RootMotion.FinalIK;
 
+	////////////////////////////////////////////////////////
+	// WHAT IS HAPPENING IN THIS MONSTER FILE ANYWAY??!! //
+	////////////////////////////////////////////////////////
+
+	// 1. First: I receive each OSC Message using OSC Jack (it's just a string, one example: livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268)
+	// 2. Then I extract the address (string), coords (x,y,z values). z is a bit special!
+	// 3. Then I constantly add these address (key) and coord (value) pairs to a special threadsafe dictionary (I bundle in the time "System.DateTime.Now.Ticks")
+	// 4. Then, in the update function (every frame) I:
+	//		- Deactivate any missing players (players who have left the screen)
+	//		- Loop through my threadsafe dictionary. For each item in the dictionary I:
+	//			- grab the address, coords, and time
+	//			- add new players when needed (I create a new player and/or grab a player's number)
+	//			- add the body part to the player's "addressBodyPartMap" if it's a new body part (or make spheres)
+	//			- reactivate any players when needed (if they were gone and have reappeared)
+	//			- check and update all my weird clocks/timestamps (related to deactivating and reactivating players)
+	//			- if the player is active, I update body part positions by translating the LivePose coordinates to the Unity coordinates
+	
+	// Also useful to know?
+
+	// - I have a playerRig class that I use to create players
+	// - I have a LIST of players that stores each playerRig
+	// - 
+	// - 
+	// - 
+	
+	
+	// OPEN QUESTIONS
+	// - There's a lot of "connecting" in the AddPlayer function that I don't understand
+	// - I feel like there must be a better way to deal with time and activating/deactivating players
+	// - I'm curious to move some of the stuff out of the update function and into their own functions, but I have to do it from the metalab
+	// - 
+	// - 
+	// - 
+	// - 
+	// - 
+	
+		
+
 public class CustomOSC : MonoBehaviour
 {
     
+	public float speed = 0.15f;
+
 	[SerializeField]
 	private GameObject dummyPrefab;
 	
@@ -22,22 +62,14 @@ public class CustomOSC : MonoBehaviour
     
 	//[SerializeField]
 	//private List<GameObject> nose = new List<GameObject>();
-
-	//[SerializeField]
-	//private List<GameObject> rightWrist = new List<GameObject>();
-
-	//[SerializeField]
-	//private List <GameObject> leftWrist = new List<GameObject>();
 	
-	//[SerializeField]
-	//private List <GameObject> leftFoot = new List<GameObject>();
-	
-	//[SerializeField]
-	//private List <GameObject> rightFoot = new List<GameObject>();
+	///////////////////////////
+	// PLAYER RIG CLASS!!!! //
+	//////////////////////////
     
 	public class PlayerRig{
 		public GameObject dummy;
-		public GameObject playerTransform;
+		public GameObject playerTransform; //transform is the main way to scale, rotate and position a gameobject
 		public bool active;
 		public GameObject nose;
 		public GameObject leftWrist;
@@ -54,32 +86,50 @@ public class CustomOSC : MonoBehaviour
 		public int playerNumber;
 		public float playerDepth;		
 	}
-	// hold all the players
+
+		
+	////////////////////////////
+	// MY LIST OF PLAYERS!!!! //
+	////////////////////////////
+	
+	// hold all the players in a list, which is basically a dynamically sized array
+	// - can access items in a list in the same way as an array 
+	// - can find the length: players.length
+	// - can add to it: .add(new PlayerRig("Whatever", 50));
+	// - remove an element at an index and move everything down a place - list.RemoveAt(0)
 	public List<PlayerRig> players = new List<PlayerRig>();
 	
+	
+	//////////////////
+	// OSC SERVER! //
+	/////////////////
+	
 	OscJack.OscServer server;
+
+	////////////////////////////
+	// MY SPECIAL DICTIONARY! //
+	////////////////////////////
 	
-	//  holds a map from address to sphere (or body part) because I can't touch the 
-	// addressBodyPartMap outside of the update function
-	Dictionary<string, GameObject> addressBodyPartMap = new Dictionary<string, GameObject>();
-	
-	// a special "threadsafe" map - mapping address to coordinates and a timestamp"
+	// my special "threadsafe" dictionary - mapping address to coordinates (and a timestamp)
 	ConcurrentDictionary<string, (Vector3, long)> addressCoordinateAndTimeStampMap = new ConcurrentDictionary<string,(Vector3, long)>();
+			
 	
-	// a special "threadsafe" map -mapping players to the last timestamp
-	//ConcurrentDictionary<int, long> playerLastUpdated = new ConcurrentDictionary<int, long>();
-	
-	public float speed = 0.15f;
-	public float playerZValue = 0;
+	////////////////////////////
+	// START! LET'S GO OSC!!! //
+	////////////////////////////
 
     void Start() {
         server = OscMaster.GetSharedServer(12000);
         server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
     }
+    
+    
+	////////////////////////////////////
+	// GET PLAYER NUMBER FROM STRING //
+	//////////////////////////////////
 	
 	int GetPlayerNumber(string address) {
 		string[] splitString = address.Split('/');		
-		//Debug.Log(splitString[4]);
 		return int.Parse(splitString[4]);
 	}
 	
@@ -89,8 +139,7 @@ public class CustomOSC : MonoBehaviour
 	
 	void CheckForMissingPlayers(){
 		// loop through all the players
-		for (int i = 0; i < players.Count; i++) {	
-			// for each player IF they are active
+		for (int i = 0; i < players.Count; i++) { // for each player IF they are active
 			PlayerRig rig = players[i];	
 			if (rig.active)
 			{
@@ -99,8 +148,7 @@ public class CustomOSC : MonoBehaviour
 				
 				if (elapsed > 0.5f)
 				{
-					Debug.Log($"deactivating {i} elapsed: {elapsed}");
-		
+					//Debug.Log($"deactivating {i} elapsed: {elapsed}");
 					rig.active = false;
 					rig.dummy.SetActive(false);
 					rig.playerTransform.SetActive(false);
@@ -110,13 +158,12 @@ public class CustomOSC : MonoBehaviour
 	}
 	
 	
-	
 	PlayerRig MakeNewPlayerOrUpdatePlayer(string address, long oscTime){
 		// get the player number by extracting it from the string
 		int playerNumber = GetPlayerNumber(address);
 		// make a new playerRig?
 		PlayerRig playerRig;
-		// IF it's a new player
+		// IF it's a new player (index starts at 0)
 		if (playerNumber + 1 > players.Count)
 		{
 			// create a new player and pass in the player number and oscTime
@@ -135,20 +182,12 @@ public class CustomOSC : MonoBehaviour
 	}
 		
 
-	// 1. I receive each OSC Message (a string).
-	// 2. I extract an OSC String ("address") and x, y, z ("coordinate") from each OSC Message. Additionally, I get the current time.
-	// 3. Update function: For each address-coordinate pair, I grab the sphere (or body part) that belongs to that address
-	//    update that sphere (or body part) with the coordinate.
-	// 4. Independent of this update function, the OSC receiver is updating the address-coordinate pairs
-	//    every frame, I get the new coordinate and update the sphere. 
-	//    long currentTicks = System.DateTime.Now.Ticks;
-		
     void Update()
 	{
 		// First, deactivate any missing players
 		CheckForMissingPlayers();
     	    
-		// Next, loop through the "safe" map (osc address string: vector3 coordinates, time) and process each key value pair
+		// Next, loop through the "safe" dictionary (osc address string: vector3 coordinates, time) and process each key value pair
         foreach (KeyValuePair<string, (Vector3, long)> addressCoordinateTimeStampKVPair in addressCoordinateAndTimeStampMap)
         {
 	        // Extract the osc address string, the osc vector 3 coordinate, and the osc timestamp
@@ -165,17 +204,17 @@ public class CustomOSC : MonoBehaviour
 	        PlayerRig playerRig = MakeNewPlayerOrUpdatePlayer(address, oscTime);
 	        
 	        /////////////////////////////////////////////////////
-	        // ADD NEW BODY PARTS TO MY ADDRESS BODY PART MAP //
+	        // ADD NEW BODY PARTS TO THE ADDRESS BODY PART MAP //
 	        ////////////////////////////////////////////////////
 
-	        // if my playerRig map **hasn't** seen this body part before, that means it's a new body part
+	        // if it's a NEW body part - if I haven't seen this this body part for this player before
 	        if(!playerRig.addressBodyPartMap.ContainsKey(address)){
-	        	// get and update the relevant body part (transform) and/or circle
-	        	GameObject g = OSCBodyPartAssigner(address, playerRig);
-	        	// set the body part name to the OSC string so I can identify it
-	        	g.name = address;
+		        // grab the relevant body-part-object from the player rig (or a sphere if there is no relevant body part)
+	        	GameObject rigBodyPartObject = OSCBodyPartAssigner(address, playerRig);
+	        	// set the body part name to the OSC string so I can identify it in the scene
+	        	rigBodyPartObject.name = address;
 	        	// add the body part to my map
-	        	playerRig.addressBodyPartMap.Add(address, g);
+	        	playerRig.addressBodyPartMap.Add(address,rigBodyPartObject);
 	        } 
 	        
 
@@ -183,40 +222,45 @@ public class CustomOSC : MonoBehaviour
 	        // REACTIVATE PLAYER//
 	        /////////////////////
 	                
+	        // if the player rig is currently NOT active and I got the nose and ??the time is different than now??
 	        if(!playerRig.active && address.Contains("NOSE") && playerRig.lastOSCTimeStamp != oscTime){
 	        	//reactivate player
-		        Debug.Log($"reactivating {playerRig.playerNumber}");
+		        //Debug.Log($"reactivating {playerRig.playerNumber}");
 		        playerRig.active = true;
 		        playerRig.dummy.SetActive(true);
 		        playerRig.playerTransform.SetActive(true);	
 	        }
 	        
-	        ////////////////////////////////////////////////////////////////
-	        // UPDATE BODY PART POSITIONS SO THE PLAYER-DUMMY WILL MOVE //
-	        //////////////////////////////////////////////////////////////
+	        ////////////////////////////////////////////////////////////
+	        // TIME STUFF - KNOW WHEN TO ACTIVATE/DEACTIVATE PLAYERS //
+	        ///////////////////////////////////////////////////////////
 	        
 	        if (playerRig.active)
 	        {
+	        	//WHAT IS UP WITH THIS NOSE STUFF? I think I was trying to deal with missing body parts
 	        	if(address.Contains("NOSE")){
 		        	//Debug.Log($"player number {playerRig.playerNumber}");
 		        	//Debug.Log($"last osc: {playerRig.lastOSCTimeStamp} | current: {oscTime}");
 		        	//Debug.Log($"last updated: {playerRig.lastUpdated } | time: {Time.time}");		
 		        	//Debug.Log($"player postion {coords}");
+
 		        	if (playerRig.lastOSCTimeStamp != oscTime)
 		        	{
 			        	playerRig.lastOSCTimeStamp = oscTime;
 			        	playerRig.lastUpdated = Time.time;
 		        	}
-
-
 	        	}
-	        	// get a vector3 for a given part by looking up the osc string in the unsafe addressBodyPartMap
+	        	
+	        	////////////////////////////////////////////////////////////////
+		        // UPDATE BODY PART POSITIONS SO THE PLAYER-DUMMY WILL MOVE //
+		        //////////////////////////////////////////////////////////////
+	        	
+	        	// get the old vector3 for a given body part (by looking up the osc string in the addressBodyPartMap)
 		        GameObject bodyPart = playerRig.addressBodyPartMap[address];
 	        
-		        // get the "target" position for the body part using the map function (osc xyz to unity xyz)
-		        //Debug.Log(coords[0], coords[1], coords[2]);
-		        //MapToRange(coords[3], 0, 4, -4, 4)
-		        Vector3 target = new Vector3(MapToRange(coords[0], 0, 640, -4, 4), MapToRange(coords[1], 0, 480, 6, 0), MapToRange(playerRig.playerDepth, 0, 4, -4, 4)); 
+		        // get the "target" position for a given body part using the map function (osc xyz to unity xyz)
+		        Vector3 target = new Vector3(MapToRange(coords[0], 0, 640, -4, 4), MapToRange(coords[1], 0, 480, 6, 0), MapToRange(playerRig.playerDepth, 0, 4, 10, -10)); 
+		       
 		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
 		        bodyPart.transform.position = Vector3.Lerp(bodyPart.transform.position, target, speed);  
 		        //bodyPart.transform.position = target;
@@ -232,17 +276,18 @@ public class CustomOSC : MonoBehaviour
 	/////////////////////////////////////////////////////
 	
 	public PlayerRig AddPlayer(int playernum, long oscTime) {
-		PlayerRig playerRig = new PlayerRig();
-		playerRig.addressBodyPartMap = new Dictionary<string, GameObject>();
-		//Instantiate a dummy, set its name to the player num
-		GameObject dummy = Instantiate(dummyPrefab);
-		dummy.name = $"Dummy {playernum}";
-		VRIK vrik = dummy.GetComponent<VRIK>();
-		//Instantiate a player transform 
-		GameObject player = Instantiate(playerPrefab);
-		player.name = $"Player {playernum}";
-		PlayerTransform playerTransform = player.GetComponent<PlayerTransform>();
-		//Connect OSC to the player transform 
+		PlayerRig playerRig = new PlayerRig(); // make a new playerRig using my playerRig class
+		playerRig.addressBodyPartMap = new Dictionary<string, GameObject>(); //make a new addressBodyPartMap
+		GameObject dummy = Instantiate(dummyPrefab); //Instantiate a dummy
+		dummy.name = $"Dummy {playernum}"; //set the dummy prefab's name name to the player num
+		VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
+		GameObject player = Instantiate(playerPrefab); //instantiate a player transform
+		player.name = $"Player {playernum}"; //set the player prefab's name to the player num
+		PlayerTransform playerTransform = player.GetComponent<PlayerTransform>(); //get the player's transform (position, scale, depth)
+		
+		// Connect the playerRig's game objects to the actual body part of the player that is in the scene. why?? 
+		// example: The nose of the playerRig is whereever that players head is in the scene?
+		// I think this only happens once on setup?
 		playerRig.nose = playerTransform.head;
 		playerRig.leftWrist = playerTransform.leftWrist;
 		playerRig.rightWrist = playerTransform.rightWrist;
@@ -252,23 +297,27 @@ public class CustomOSC : MonoBehaviour
 		playerRig.leftElbow = playerTransform.leftElbow;
 		playerRig.rightKnee = playerTransform.rightKnee;
 		playerRig.leftKnee = playerTransform.leftKnee;
+		//playerRig.pelvis = playerTransform.leftKnee;
 
-		// Record dummy and playertransform gameobjects
+		// connect the "dummy" in a playerRig to the actual dummy in the scene???
 		playerRig.dummy = dummy;
+		// connect the "playerTransfor" in a playerRig to the actual player in the scene???
 		playerRig.playerTransform = player;
-		// Connect the player transform to the dummy
+
+		// Connect the VRIK solver to the playerTransforms?????
 		vrik.solver.spine.headTarget = playerTransform.head.transform;
 		vrik.solver.leftArm.target = playerTransform.leftWrist.transform;
 		vrik.solver.rightArm.target = playerTransform.rightWrist.transform;
-		// Is active because it was just set up
-		playerRig.active = true;
-		playerRig.lastUpdated = Time.time;
-		//record time 
-		playerRig.lastOSCTimeStamp = oscTime; 
-		//Debug.Log(oscTime);
-		// add player number
-		playerRig.playerNumber = playernum; 
-
+		
+		//vrik.solver.pelvis.target = playerTransform.pelvis.transform;
+		//vrik.solver.chest.target = playerTransform.chest.transform;
+		//vrik.solver.leftToe.target = playerTransform.leftToe.transform;
+		//vrik.solver.rightToe.target = playerTransform.rightToe.transform;
+		
+		playerRig.active = true; // player rig is set to active because it was just set up
+		playerRig.lastUpdated = Time.time; // the lastupdated time should be set to now
+		playerRig.lastOSCTimeStamp = oscTime; // the OSC time is set to the ticks time we passed in when receiving the message
+		playerRig.playerNumber = playernum; // add player number
 		return playerRig;
 	} 
     
@@ -278,85 +327,63 @@ public class CustomOSC : MonoBehaviour
 	////////////////////////////////////////////////////////////////
 	
 	public GameObject OSCBodyPartAssigner(string address, PlayerRig rig) {
-		GameObject go;
-		if (address.Contains("NOSE")) {
-			//Debug.Log($"lastUpdated {rig.lastUpdated}");			
-			//Debug.Log($"lastOSCTimeStamp {rig.lastOSCTimeStamp}");
-			go = rig.nose;
-			rig.lastUpdated = Time.time;
-		//} else if (address.Contains("RIGHT_WRIST")) { 
-		//	go = rig.leftWrist;
-		//}  else if (address.Contains("LEFT_WRIST")) { 
-		//	go = rig.rightWrist;
 		
-		//} else if (address.Contains("RIGHT_KNEE")) { 
-		//	go = rig.leftKnee;
-		//}  else if (address.Contains("LEFT_KNEE")) { 
-		//	go = rig.rightKnee;
-				
-		//} else if (address.Contains("RIGHT_ELBOW")) { 
-		//	go = rig.leftElbow;
-		//}  else if (address.Contains("LEFT_ELBOW")) { 
-		//	go = rig.rightElbow;
+		GameObject thisObject;
+		
+		if (address.Contains("NOSE")) {
+			thisObject = rig.nose;
+			// update the time the player was last updated - should I be doing this for all body parts?!!!			
+			// Debug.Log($"lastUpdated {rig.lastUpdated}");			
+			// Debug.Log($"lastOSCTimeStamp {rig.lastOSCTimeStamp}");
+			rig.lastUpdated = Time.time;
 			
-		//} else if (address.Contains("RIGHT_ANKLE")) { 
-		//	go = rig.leftAnkle;
-		//}  else if (address.Contains("LEFT_ANKLE")) { 
-		//	go = rig.rightAnkle;
 			
 		} else if (address.Contains("RIGHT_WRIST")) { 
-			go = rig.rightWrist;
+			thisObject = rig.rightWrist;
 		}  else if (address.Contains("LEFT_WRIST")) { 
-			go = rig.leftWrist;
+			thisObject = rig.leftWrist;
 		
 		} else if (address.Contains("RIGHT_KNEE")) { 
-			go = rig.rightKnee;
+			thisObject = rig.rightKnee;
 		}  else if (address.Contains("LEFT_KNEE")) { 
-			go = rig.leftKnee;
+			thisObject = rig.leftKnee;
 				
 		} else if (address.Contains("RIGHT_ELBOW")) { 
-			go = rig.rightElbow;
+			thisObject = rig.rightElbow;
 		}  else if (address.Contains("LEFT_ELBOW")) { 
-			go = rig.leftElbow;
+			thisObject = rig.leftElbow;
 			
 		} else if (address.Contains("RIGHT_ANKLE")) { 
-			go = rig.rightAnkle;
+			thisObject = rig.rightAnkle;
 		}  else if (address.Contains("LEFT_ANKLE")) { 
-			go = rig.leftAnkle;
+			thisObject = rig.leftAnkle;
+				
+			//MID_HIP
 			
 		} else {
-	        go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-			go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-			go.transform.parent = rig.playerTransform.transform;
+			// if I can't find a relevant body part, just make a sphere
+	        thisObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+			thisObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+			// I can't remember why I do this parenting step
+			thisObject.transform.parent = rig.playerTransform.transform;
         }
-		return go;
+		return thisObject;
     }
 
 	//////////////////////////////////////////////////////////////
 	// MAP THE OSC VALUES (X,Y,Z) TO THE UNITY VALUES (X,Y,Z) ///
 	////////////////////////////////////////////////////////////
 	
-    //public float MapToRange(float numberInRange1, float start1, float end1, float start2, float end2) {
-	//    //calcuate the "distance" of the number
-	//    float distance = numberInRange1 - start1;
-	//    //how much of range1 does this distance cover
-    //    float distanceRatio = distance / (end1 - start1);
-	//    //take this ratio and apply it to the length of the other range
-	//    float amountInRange2 = distanceRatio * (end2 - start2);
-	//    //now I know how far into range2 the number should be so I add that to the beginning of range2
-    //    float finalValue = start2 + amountInRange2;
-    //    return finalValue;
-    //}
     
 	public float MapToRange(float n, float start1, float stop1, float start2, float stop2){
 		return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
 	}
    
     
-	public void ObjectGenerator(){
+	//public void ObjectGenerator(){
 		//https:docs.unity3d.com/Manual/InstantiatingPrefabs.html
-		Instantiate (delightBall, new Vector3(Random.Range(1,10), Random.Range(1,10), Random.Range(1,10)), Quaternion.identity);
-	}
+		//Instantiate (delightBall, new Vector3(Random.Range(1,10), Random.Range(1,10), Random.Range(1,10)), Quaternion.identity);
+	//}
  
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// RECEIVE OSC MESSAGES PORT 12000 & SEND EACH MESSAGE (osc string, v3, and osctime) TO MY THREADSAFE MAP  ///
@@ -364,40 +391,38 @@ public class CustomOSC : MonoBehaviour
 	
 	void OscReceiver1 (string address, OscDataHandle data){
 		// receive OSC message and update the values (coordinates) for the keys (addresses)
-		// it would be much easier if I could just update the sphere coordinates HERE in the osc receiver
+		// it would be much easier if I could just update the coordinates HERE in the osc receiver
 		// but I can't create a gameobject outside of the update function 
 		
-		if (address.Contains("livepose/position") && data.GetElementAsFloat(2) != 0.000000)
-		{
-			// get the player id from the address
-			int playerId = GetPlayerNumber(address);
 		
-			// get the Z for each position message
-			float z = data.GetElementAsFloat(2);
+		if (address.Contains("livepose/pyrealsense_head_follower/0") && data.GetElementAsFloat(2) != 0.000000)
+		{
+			int playerId = GetPlayerNumber(address); // extract the player number from the OSC string
+			float z = data.GetElementAsFloat(2); // extract the depth from the OSC data - which looks like this   livepose/position/0/1 fff -0.212375 0.803258 2.666000
 
-			// get the player
-			PlayerRig currPlayer = players[playerId];
 
-			// update playerDepth of that player with the Z
-			currPlayer.playerDepth = z;
+		
+			if (players.Count > 0) // make sure I don't try to set a depth value before I actually have any players
+			{
+						
+				PlayerRig currPlayer = players[playerId]; //grab the current player
+
+				// update playerDepth of that player with the Z -- does this even work?
+				currPlayer.playerDepth = z;
+			}
+			
 		}
-			//e638ea50.7306705c /livepose/position/0/0 fff -0.247142 0.827771 3.305451
 			
 		long currentTime = System.DateTime.Now.Ticks;	
 		Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
 	
-		
-		//If it's a relevant message, update the threadsafe map of all the OSC Messages (getting a string, and a vector3-time tupple
+
+		//If it's a skeleton-position message, which looks like this livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
 		if (address.Contains("livepose/skeletons/0"))
 		{
-			//Update a special threadsafe map I made that matches the time of the update to a specific player
-			//playerLastUpdated.AddOrUpdate(GetPlayerNumber(address), currentTime, (k,v) => v = (currentTime));
+			//Update a special threadsafe map of all the OSC Messages (a string, and a vector3-time tupple 
 			addressCoordinateAndTimeStampMap.AddOrUpdate(address, (vec, currentTime), (k,v) => v = (vec, currentTime));
 		}
-		
-		///livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
-		///livepose/position/0/1 fff -0.212375 0.803258 2.666000
-		/// 
     }
 }
 
