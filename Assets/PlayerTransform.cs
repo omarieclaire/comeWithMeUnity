@@ -15,8 +15,10 @@ public class PlayerTransform : MonoBehaviour
 	
 	public GameObject pelvis;
 	public GameObject chest;
-
-
+	
+	
+	public GameObject leftHip;
+	public GameObject rightHip;
 
 	public GameObject leftWrist;
 	public GameObject leftElbow;
