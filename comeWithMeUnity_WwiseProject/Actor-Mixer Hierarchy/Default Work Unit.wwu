@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="shock1" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" ShortID="179902357">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<RTPCList>
+								<RTPC Name="" ID="{4FDA32CC-5F8F-4480-B13B-7EACA0B7C89D}" ShortID="718251448">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="rtpctest" ID="{667D25C8-0F4E-46FA-961B-69A166F4F890}" WorkUnitID="{F76D1A6C-C233-456D-AEF2-0F95ED7518E5}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{CE416EDB-6E4B-430F-99B9-D0F95C671B61}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-1020</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>1020</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="shock1" ID="{8C351FED-993E-4A91-B3AA-558F68F0437B}">
+							<Language>SFX</Language>
+							<AudioFile>shock1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="588449863"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="shock1" ID="{8C351FED-993E-4A91-B3AA-558F68F0437B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
