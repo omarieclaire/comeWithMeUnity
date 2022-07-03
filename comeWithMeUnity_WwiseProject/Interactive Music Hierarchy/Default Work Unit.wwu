@@ -265,6 +265,85 @@
 								</ObjectList>
 							</ObjectLists>
 						</MusicSegment>
+						<MusicSegment Name="A Harmonic minor" ID="{69AD5916-A6B0-487B-AFEB-99320EF01887}" ShortID="393576208">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="A Harmonic minor" ID="{CFA560B5-A0CE-4B1C-9798-849AFE98B571}" ShortID="599162010">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MidiFileSource Name="A Harmonic minor" ID="{C7F7F617-221F-4909-99F6-C1A2E69CCC27}" ShortID="706083182">
+											<Language>SFX</Language>
+											<MidiFile>A Harmonic minor.mid</MidiFile>
+											<MediaIDList>
+												<MediaID ID="706083182"/>
+											</MediaIDList>
+										</MidiFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{7A7DF3C5-57F7-4A2D-9A21-F5D7F785783C}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6E6258D8-4681-42DB-B7A7-4EBCF965EB89}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClipMidi Name="A Harmonic minor" ID="{44D7AFF9-8075-42D2-9CF1-416CD953EB38}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="2000"/>
+																			</PropertyList>
+																			<MidiSourceRef Name="A Harmonic minor" ID="{C7F7F617-221F-4909-99F6-C1A2E69CCC27}"/>
+																		</MusicClipMidi>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{42F5F24B-2EDB-4B74-A7A7-C428CF17BD54}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{AF025280-A819-4CB6-B63D-07F74C3EDFEF}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="2000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{ECE79EDE-7464-47D7-88EE-1826C2AA0F44}">
