@@ -36,23 +36,37 @@ using RootMotion.FinalIK;
 	// OPEN QUESTIONS //
 	////////////////////
 	
-	// ADD PLAYER FUNCTION?
-	// There's a LOT of "connecting" in the AddPlayer function that I don't understand
-	
-	
-	// TIME 
-	// I feel like there must be a better way to deal with time and activating/deactivating players
-
-	
 	// CAMERA WEIRDNESS
 	// Why do I need to rotate the camera Y 180?
-	
-	
 	
 	
 	///////////////
 	// TODO!!!! //
 	//////////////
+	
+	// dummy is the wrong size.
+	// player is the right size
+	// dummy should be bigger when they are closer to the camera
+	// but when I make them bigger it messes with their placement on the screen
+	
+	
+	// - player is jumping forward in space. 
+	// Am I not getting depth data quickly enough, and the player is reverting to zero? 
+	// Or am I getting 0s?
+	// I could track the depth only for a bit on the log?
+	// why does the z suddenly shoot forward from a -4 to a 2 and a -4 to a 6?
+	// can I log the depth only?
+	// How much is the jump
+	// I could smooth the depth?
+	
+	
+	// why do the feet suddently shoot over the head?
+	// why does the foot y suddently shoot from a 0.something to a 2 when I get too close to the camera?
+	// the  livepose vizualizer foot DOES not jump
+	// the dummy foot does jump
+	// the player foot does jump
+	
+	
  
 	// - make connections between players when they reach.
 	//		- make connections pretty
@@ -62,6 +76,13 @@ using RootMotion.FinalIK;
 	//		- animate
 	
 	// make the world look like a world
+	
+	// consider adjusting the map function based on the player depth
+	// - the x and y map should shrink based on the z.
+	
+	
+	
+	// continue tweaking the FinalIK - https://www.youtube.com/watch?v=tgRMsTphjJo
 
 	
 	// - make generated flying objects
@@ -95,11 +116,20 @@ public class CustomOSC : MonoBehaviour
 	public FullBodyBipedIK myIK;
 	
 	public Material debugSphereMaterial;
+	
+	[SerializeField]
+	public GameObject depthSphere;
 
 	    
 	public float speed = 0.15f;
 	public float timeToWaitForMissingPlayers = 0.5f;
 	
+	[SerializeField]
+	public float depthFactorial = 0.3f;
+	
+	[SerializeField]
+	public float maxAllowedDepthJumping = 2f; // because of a bug with livepose that makes it jump around
+
 	
 	[SerializeField]
 	public float oscDepthMin = 0f;
@@ -190,6 +220,7 @@ public class CustomOSC : MonoBehaviour
 		public float lastUpdated;
 		public long lastOSCTimeStamp;
 		public int playerNumber;
+		public float lastPlayerDepth = 999; //an impossible number
 		public float playerDepth;		
 	}
 
@@ -225,7 +256,7 @@ public class CustomOSC : MonoBehaviour
 	// START! LET'S GO OSC!!! //
 	////////////////////////////
 
-    void Start() {
+	void Start() {
         server = OscMaster.GetSharedServer(12000);
         server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
     }
@@ -385,7 +416,39 @@ public class CustomOSC : MonoBehaviour
 		        //playerRig.dummy.transform.transform.rotation = Quaternion.identity;
 	        
 		        // get the "target" position for a given body part using the map function (osc xyz to unity xyz)
-		        Vector3 target = MapOSCCoordToUnityCoord(coords[0], coords[1], playerRig.playerDepth); 		        
+		    
+		        Vector3 target = MapOSCCoordToUnityCoord(coords[0], coords[1], playerRig.playerDepth);
+		        
+		        //if(address.Contains("TOE")){
+		        //	Debug.Log(target.y);
+		        //}
+		        
+		        // account for depth dimensions in the OSC to unity mapping - it's a 3d world!
+		        if(playerRig.playerDepth > 0)
+		        {
+			        //target = new Vector3(target[0] * depthFactor, target[1] * depthFactor, target[2]);
+
+			        float depthFactor = depthFactorial * playerRig.playerDepth;
+			        target = new Vector3(target[0] * depthFactor, target[1], target[2]);
+		        }	
+			    
+		        //so the feet don't go above the head - annoying bug
+		        if(address.Contains("TOE") && target[1] > 1) 
+		        {
+		            target[1] = 0;
+		        }
+		        
+		        //Debug.Log(playerRig.playerDepth);
+		        
+		        
+		        //depthSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		        //depthSphere.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+		        //depthSphere.GetComponent<Renderer>().material = debugSphereMaterial;
+				
+		        //Vector3 p = transform.position;
+		        //p.y = playerRig.playerDepth;
+
+		        depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
 		        
 		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
 		        bodyPart.transform.position = Vector3.Lerp(bodyPart.transform.position, target, speed);  
@@ -403,7 +466,7 @@ public class CustomOSC : MonoBehaviour
 	// Use Map function to map OSC coords to Unity coords //
 	////////////////////////////////////////////////////////
 	Vector3 MapOSCCoordToUnityCoord(float x, float y, float z)
-	{
+	{		
 		float unityX = MapToRange(x, oscXMin, oscXMax, unityXMin, unityXMax);
 		float unityY = MapToRange(y, oscYMin, oscYMax, unityYMin, unityYMax);
 		float unityZ = MapToRange(z, oscDepthMin, oscDepthMax, unityDepthMin, unityDepthMax);
@@ -447,22 +510,22 @@ public class CustomOSC : MonoBehaviour
 		VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
 		//myIK = dummy.GetComponent<FullBodyBipedIK>(); //grab the IK component
 
-		
 		GameObject player = Instantiate(playerPrefab); //instantiate a player transform
 		player.name = $"Player {playernum}"; //set the player prefab's name to the player num
 		
 		string playerTag = $"Player{playernum}";
 		AddTagRecursively (player.transform, playerTag);
-
 		
 		PlayerTransform playerTransform = player.GetComponent<PlayerTransform>(); //get the player's transform (position, scale, depth)
 		
 		// Connect the playerRig's game objects to the actual body part of the player that is in the scene. why?? 
 		// example: The nose of the playerRig is whereever that players head is in the scene?
 		// I think this only happens once on setup?
+		
+		//attaching the "nose" key to the empty "head" game objects that live inside the "player" (ghost/puppeteer)
 		playerRig.nose = playerTransform.head;
-		playerRig.pelvis = playerTransform.pelvis;
-		playerRig.leftHip = playerTransform.leftHip;
+		playerRig.pelvis = playerTransform.pelvis; //special
+		playerRig.leftHip = playerTransform.leftHip; 
 		playerRig.rightHip = playerTransform.rightHip;
 
 		playerRig.chest = playerTransform.chest;
@@ -483,7 +546,7 @@ public class CustomOSC : MonoBehaviour
 		//dummy.transform.transform.rotation = Quaternion.identity;
 
 		
-		// connect the "playerTransfor" in a playerRig to the actual player in the scene???
+		// assign the "playerTransform" key to the "player" value (ghost/puppeteer)
 		playerRig.playerTransform = player;
 
 		// Connect the VRIK solver to the playerTransforms?????
@@ -493,7 +556,7 @@ public class CustomOSC : MonoBehaviour
 		
 		vrik.solver.spine.pelvisTarget = playerTransform.pelvis.transform;
 		//vrik.solver.spine.chestGoal = playerTransform.chest.transform;
-		
+				
 		vrik.solver.leftLeg.target = playerTransform.leftToe.transform;
 		vrik.solver.rightLeg.target = playerTransform.rightToe.transform;
 		
@@ -564,10 +627,11 @@ public class CustomOSC : MonoBehaviour
 		}  else if (address.Contains("LEFT_BIG_TOE")) { 
 			thisObject = rig.leftToe;
 			
-		} else if (address.Contains("RIGHT_ANKLE")) { 
-			thisObject = rig.rightAnkle;
-		}  else if (address.Contains("LEFT_ANKLE")) { 
-			thisObject = rig.leftAnkle;
+						
+		//} else if (address.Contains("RIGHT_ANKLE")) { 
+		//	thisObject = rig.rightAnkle;
+		//}  else if (address.Contains("LEFT_ANKLE")) { 
+		//	thisObject = rig.leftAnkle;
 		
 		//} else if (address.Contains("RIGHT_MIDDLE_FINGER3")) { 
 		//	thisObject = rig.leftWrist;
@@ -606,7 +670,6 @@ public class CustomOSC : MonoBehaviour
 			//thisObject.renderer. = debugSphereMaterial;
 			thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
 
-			//thisObject.
 			// I can't remember why I do this parenting step
 			thisObject.transform.parent = rig.playerTransform.transform;
         }
@@ -632,11 +695,11 @@ public class CustomOSC : MonoBehaviour
 	// RECEIVE OSC MESSAGES PORT 12000 & SEND EACH MESSAGE (osc string, v3, and osctime) TO MY THREADSAFE MAP  ///
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	
 	void OscReceiver1 (string address, OscDataHandle data){
 		// receive OSC message and update the values (coordinates) for the keys (addresses)
 		// it would be much easier if I could just update the coordinates HERE in the osc receiver
 		// but I can't create a gameobject outside of the update function 
-		
 		
 		if (address.Contains("livepose/pyrealsense_head_follower/0") && data.GetElementAsFloat(2) != 0.000000)
 		{
@@ -645,11 +708,29 @@ public class CustomOSC : MonoBehaviour
 		
 			if( players.ContainsKey(playerId) )
 			{ 
+								
 				// make sure I don't try to set a depth value before I've seen this player
 				PlayerRig currPlayer = players[playerId]; //grab the current player
-				// update playerDepth of that player with the Z -- does this even work?
-				currPlayer.playerDepth = z;
-			}
+				
+				if (currPlayer.lastPlayerDepth == 999)
+				{
+					currPlayer.lastPlayerDepth = z; // the first time is tricky
+				} else
+				{
+					currPlayer.lastPlayerDepth = currPlayer.playerDepth; // go store current depth in "last depth so its there when we look for it"				
+				}
+				
+				if (Mathf.Abs(currPlayer.lastPlayerDepth - z) > maxAllowedDepthJumping) // if we are jumping too much
+				{
+					// do nothing
+				} else
+				{
+					currPlayer.playerDepth = z;	
+				}
+			} 
+			//else {
+				//Debug.Log("Cannot find playerId = " + playerId.ToString());
+			//}
 			
 		}
 		// need to know when we receive a message
