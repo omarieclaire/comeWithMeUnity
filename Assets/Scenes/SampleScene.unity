@@ -1108,6 +1108,7 @@ MonoBehaviour:
   speed: 1
   timeToWaitForMissingPlayers: 0.5
   depthFactorial: 0.3
+  maxAllowedDepthJumping: 2
   oscDepthMin: 0
   oscDepthMax: 7
   unityDepthMin: 8
@@ -1599,12 +1600,12 @@ GameObject:
   - component: {fileID: 2041394721}
   - component: {fileID: 2041394720}
   m_Layer: 0
-  m_Name: depthSphere
+  m_Name: debugDepthSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2041394720
 SphereCollider:
   m_ObjectHideFlags: 0
