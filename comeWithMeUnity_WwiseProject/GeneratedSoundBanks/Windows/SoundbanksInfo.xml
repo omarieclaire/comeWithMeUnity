@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="739529253" Language="SFX" Hash="4051198613">
+			<ObjectPath>\SoundBanks\Default Work Unit\ComeWithMe_SoundBank</ObjectPath>
+			<ShortName>ComeWithMe_SoundBank</ShortName>
+			<Path>ComeWithMe_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4195921398" Name="musictest" ObjectPath="\Events\Default Work Unit\musictest" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="29545806" Language="SFX">
+							<ShortName>261244-Lands_End_Ocean_Waves_Close_Perspective.wav</ShortName>
+							<Path>SFX/261244-Lands_End_Ocean_Waves_Close_Perspective_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

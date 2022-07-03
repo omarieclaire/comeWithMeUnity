@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4195921398	musictest			\Default Work Unit\musictest	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	29545806	261244-Lands_End_Ocean_Waves_Close_Perspective	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\261244-Lands_End_Ocean_Waves_Close_Perspective_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\test\261244-Lands_End_Ocean_Waves_Close_Perspective\261244-Lands_End_Ocean_Waves_Close_Perspective		60263488
+
