@@ -11,19 +11,20 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="739529253" Language="SFX" Hash="4051198613">
-			<ObjectPath>\SoundBanks\Default Work Unit\ComeWithMe_SoundBank</ObjectPath>
-			<ShortName>ComeWithMe_SoundBank</ShortName>
-			<Path>ComeWithMe_SoundBank.bnk</Path>
+		<SoundBank Id="854170543" Language="SFX" Hash="3308230392">
+			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBanktest</ObjectPath>
+			<ShortName>New_SoundBanktest</ShortName>
+			<Path>New_SoundBanktest.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4195921398" Name="musictest" ObjectPath="\Events\Default Work Unit\musictest" DurationType="Infinite">
+				<Event Id="3398593705" Name="newtest" ObjectPath="\Events\Default Work Unit\newtest" DurationType="OneShot" DurationMin="64." DurationMax="64.">
 					<IncludedMemoryFiles>
-						<File Id="29545806" Language="SFX">
-							<ShortName>261244-Lands_End_Ocean_Waves_Close_Perspective.wav</ShortName>
-							<Path>SFX/261244-Lands_End_Ocean_Waves_Close_Perspective_D79FB2B7.wem</Path>
+						<File Id="1003383027" Language="SFX">
+							<ShortName>CK_Gentilhomme_PolyPads.wav</ShortName>
+							<Path>SFX/CK_Gentilhomme_PolyPads_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2374045241" Name="newtest2" ObjectPath="\Events\Default Work Unit\newtest2" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
