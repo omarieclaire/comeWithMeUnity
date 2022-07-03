@@ -1,6 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{7265E86E-18C6-446C-8635-18C38EA6008F}" SchemaVersion="103">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{7265E86E-18C6-446C-8635-18C38EA6008F}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{7265E86E-18C6-446C-8635-18C38EA6008F}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="New Music Playlist Container" ID="{EF104A5A-0125-44D2-ABD5-6D6090BDBDAD}" ShortID="882240439">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="CK_Gentilhomme_PolyPads" ID="{34A7A93A-FDBC-4638-B4AA-593BED05B7AB}" ShortID="487262391">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="79934.693877551"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="CK_Gentilhomme_PolyPads" ID="{8982B8E3-414F-4842-BB24-70E21B69C18C}" ShortID="488554529">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CK_Gentilhomme_PolyPads" ID="{6F86A562-C969-4958-BDE7-B094145C620E}">
+											<Language>SFX</Language>
+											<AudioFile>CK_Gentilhomme_PolyPads.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1003383027"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{849EA48A-3CEC-4306-A8E1-824E01801AF2}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{2B4650E0-89CB-4682-A585-05C6B9596E0D}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="CK_Gentilhomme_PolyPads" ID="{8FCF1BBC-3A09-4204-9795-9A73E21E2F72}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="64000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="1436.73469387756"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="CK_Gentilhomme_PolyPads" ID="{6F86A562-C969-4958-BDE7-B094145C620E}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{B222CBBB-13BA-4ED6-B94F-31FDEF5C2D38}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{E5EE2D0B-E8CA-477D-A3B6-99050DC15B0D}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="64000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{ECE79EDE-7464-47D7-88EE-1826C2AA0F44}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{221D6552-745E-4E45-9E5D-160A19CEFBD7}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ObjectLists/>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{E9435352-0B6F-4288-BCC4-742A0A030488}" ShortID="869031823">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{039C9388-4BFF-4286-8723-DFB207034447}" ShortID="1027174710">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="CK_Gentilhomme_PolyPads" ID="{34A7A93A-FDBC-4638-B4AA-593BED05B7AB}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>
