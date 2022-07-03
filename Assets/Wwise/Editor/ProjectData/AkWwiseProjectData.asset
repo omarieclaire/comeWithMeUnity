@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics/Default Work Unit
     guid: 334919ab6e7ea8469eed51b3b6ac67f4
     GuidInternal: 
-    m_lastTime: -8585447248099997560
+    m_lastTime: -8585447208480996908
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: d2c877b48364374c94fc5d0aa95607e9
     GuidInternal: 
-    m_lastTime: -8585447248100079272
+    m_lastTime: -8585447208484049265
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: b9e4693691a9144f8b7f312e7018abb5
     GuidInternal: 
-    m_lastTime: -8585447248100022326
-    List: []
+    m_lastTime: -8585447181021576448
+    List:
+    - name: New_SoundBanktest
+      guid: 6a3832bec51ea54ca49f91523d3e6e6c
+      id: 854170543
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b9e4693691a9144f8b7f312e7018abb5
+      - ElementName: New_SoundBanktest
+        ObjectType: 7
+        guid: 6a3832bec51ea54ca49f91523d3e6e6c
+      Path: SoundBanks/Default Work Unit/New_SoundBanktest
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 36cd61d05128d64595a3a1a8fb00fabb
     GuidInternal: 
-    m_lastTime: -8585447248100094405
-    List: []
+    m_lastTime: -8585447181021684215
+    List:
+    - name: newtest
+      guid: 8dd4e8aaddf65b4d8e735025d71e2bb8
+      id: 3398593705
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 36cd61d05128d64595a3a1a8fb00fabb
+      - ElementName: newtest
+        ObjectType: 3
+        guid: 8dd4e8aaddf65b4d8e735025d71e2bb8
+      Path: Events/Default Work Unit/newtest
+      maxAttenuation: 0
+      maxDuration: 64
+      minDuration: 64
+    - name: newtest2
+      guid: 3bf3fa02f83a00419c5194be0018e8d6
+      id: 2374045241
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 36cd61d05128d64595a3a1a8fb00fabb
+      - ElementName: newtest2
+        ObjectType: 3
+        guid: 3bf3fa02f83a00419c5194be0018e8d6
+      Path: Events/Default Work Unit/newtest2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -94,7 +142,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 6c1a6df733c26d45aef20f95ed7518e5
     GuidInternal: 
-    m_lastTime: -8585447248100088399
+    m_lastTime: -8585447208493032591
     List: []
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
@@ -108,7 +156,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: 019b6e7b2073da42a0bb5c107bc8c34c
     GuidInternal: 
-    m_lastTime: -8585447248100011450
+    m_lastTime: -8585447208481001665
     List: []
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
@@ -122,7 +170,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: a3ba48be6b75b64c9a57b4770c8bcd02
     GuidInternal: 
-    m_lastTime: -8585447248100006633
+    m_lastTime: -8585447208480999954
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
@@ -136,10 +184,10 @@ MonoBehaviour:
     ParentPath: Triggers/Default Work Unit
     guid: 32000e749676ad41bafcfee69d1df382
     GuidInternal: 
-    m_lastTime: -8585447248100002124
+    m_lastTime: -8585447208480998433
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 06000000070000000b0000000c000000
+  ExpandedWaapiItemIds: 06000000070000000b0000000c0000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

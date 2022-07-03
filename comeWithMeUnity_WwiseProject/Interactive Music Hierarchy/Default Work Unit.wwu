@@ -97,6 +97,90 @@
 								</ObjectList>
 							</ObjectLists>
 						</MusicSegment>
+						<MusicSegment Name="newblue" ID="{BDCA49CF-7DD6-483F-9035-67F449AF98C0}" ShortID="965376214">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="29046.5079365079"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="newblue" ID="{503153EC-5936-4189-AC28-A0407ED1579A}" ShortID="262589297">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="newblue" ID="{C12FA499-794D-4B16-B3C0-8ECA933B17D8}">
+											<Language>SFX</Language>
+											<AudioFile>newblue.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="937057727"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{DB63955B-C63F-41A1-B641-49C3F6D9A488}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{FA296722-41A3-4113-BBB5-C992570B28D8}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="newblue" ID="{410845AF-6677-4955-9F25-73CD4BEC8791}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="29046.5079365079"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="newblue" ID="{C12FA499-794D-4B16-B3C0-8ECA933B17D8}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{2D0BE394-DF9A-4E8C-A5FA-7D9F5C38EF79}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{D397EB6D-6150-4AE7-A820-D0023D69DA16}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="29046.5079365079"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{ECE79EDE-7464-47D7-88EE-1826C2AA0F44}">
