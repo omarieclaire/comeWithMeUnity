@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="shock1" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" ShortID="179902357">
+				<Sound Name="ConnectionGrowShrink" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" ShortID="179902357">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Pitch" Type="int32">
@@ -55,6 +55,75 @@
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="shock1" ID="{8C351FED-993E-4A91-B3AA-558F68F0437B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ConnectionMade" ID="{881FB1E0-D3FB-49AB-A097-99D01120CDBB}" ShortID="403779134">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ClampMid R-001" ID="{A0F078A8-005F-4430-9302-6CB32CC433F7}">
+							<Language>SFX</Language>
+							<AudioFile>ClampMid R-001.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="847782685"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="ClampMid R-001" ID="{A0F078A8-005F-4430-9302-6CB32CC433F7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="DelightHit" ID="{C424C9AD-34B5-4359-8BC7-6D64F00056CB}" ShortID="302161434">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="808Mid L-002" ID="{1CE9A672-72AA-474F-BEF1-EBFF4C511987}">
+							<Language>SFX</Language>
+							<AudioFile>808Mid L-002.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="150322898"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="808Mid L-002" ID="{1CE9A672-72AA-474F-BEF1-EBFF4C511987}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SadHit" ID="{B36EB4D9-2BDE-4EB8-B4F4-D674F0284496}" ShortID="675382321">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="808Mid R-002" ID="{6EFD164C-3D2E-4098-BEA6-0662EAB0520F}">
+							<Language>SFX</Language>
+							<AudioFile>808Mid R-002.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="586812907"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="808Mid R-002" ID="{6EFD164C-3D2E-4098-BEA6-0662EAB0520F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

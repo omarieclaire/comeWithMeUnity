@@ -15,6 +15,46 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="newtest2" ID="{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}"/>
+				<Event Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}">
+					<ChildrenList>
+						<Action Name="" ID="{515D8265-1288-4729-A7BE-09BCAB6F1985}" ShortID="128916566">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ConnectionGrowShrink" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{58E9851F-834B-4970-A208-C427D204C592}" ShortID="63055479">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ConnectionMade" ID="{881FB1E0-D3FB-49AB-A097-99D01120CDBB}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="delightHit" ID="{104C590C-A23B-487C-B3D6-ED93090CDCF3}">
+					<ChildrenList>
+						<Action Name="" ID="{585FA4B5-C53D-482C-B8B6-E5078817A270}" ShortID="112420699">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DelightHit" ID="{C424C9AD-34B5-4359-8BC7-6D64F00056CB}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sadHit" ID="{F2645DC8-4103-4D29-A8AD-D5125A62618A}">
+					<ChildrenList>
+						<Action Name="" ID="{26A15D92-0378-4FF0-B469-B485DB8DA2EE}" ShortID="506819836">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SadHit" ID="{B36EB4D9-2BDE-4EB8-B4F4-D674F0284496}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

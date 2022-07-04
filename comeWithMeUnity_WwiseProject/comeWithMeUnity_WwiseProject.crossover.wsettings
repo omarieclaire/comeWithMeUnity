@@ -3,9 +3,13 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{9AAE4FA1-3D85-4493-A31D-15403C92357D}">
 			<PropertyList>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\ElectronicSounds\electronic\"/>
 				<Property Name="Event Action List\{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{104C590C-A23B-487C-B3D6-ED93090CDCF3}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{44E6276A-EE97-4544-8A47-154FE9BD9BF7}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{AAE8D48D-F6DD-4D5B-8E73-5025D71E2BB8}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F2645DC8-4103-4D29-A8AD-D5125A62618A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
