@@ -40,6 +40,12 @@ using RootMotion.FinalIK;
 	// Why do I need to rotate the camera Y 180?
 	
 	
+	/// <summary>
+	///  do I want to use mm pose and get the face and hands and have a buggy stream?
+	///  or trt and not get the face and hands and have a smoohter stream
+	/// </summary>
+	
+	
 	///////////////
 	// TODO!!!! //
 	//////////////
@@ -65,6 +71,12 @@ using RootMotion.FinalIK;
 	// the  livepose vizualizer foot DOES not jump
 	// the dummy foot does jump
 	// the player foot does jump
+	
+	
+	
+	// how to solve the depth problem?
+	// how to solve the "player twisting" problem"?
+	// how to solve the jump scare problem?
 	
 	
  
@@ -189,6 +201,9 @@ public class CustomOSC : MonoBehaviour
 	
 	[SerializeField]
 	private GameObject sadSquare;
+
+	[SerializeField]
+	private bool enableSmoothing = true;
     
 	//[SerializeField]
 	//private List<GameObject> nose = new List<GameObject>();
@@ -196,6 +211,13 @@ public class CustomOSC : MonoBehaviour
 	///////////////////////////
 	// PLAYER RIG CLASS!!!! //
 	//////////////////////////
+	
+	public class BodyPart{
+		public GameObject gameObject;
+		public ConcurrentQueue<Vector3> positionHistory;
+		public float averageX = 0f;
+		public float averageY = 0f;
+	}
     
 	public class PlayerRig{
 		public GameObject dummy;
@@ -216,7 +238,11 @@ public class CustomOSC : MonoBehaviour
 		public GameObject rightAnkle;
 		public GameObject leftKnee;
 		public GameObject rightKnee;
-		public Dictionary<string, GameObject> addressBodyPartMap;
+		//public List<Vector3> positionHistory = new List<Vector3>(new Vector3[10]);
+		
+		//public Dictionary<string, GameObject> addressBodyPartMap;
+
+		public ConcurrentDictionary<string, BodyPart> addressBodyPartMap;
 		public float lastUpdated;
 		public long lastOSCTimeStamp;
 		public int playerNumber;
@@ -267,8 +293,14 @@ public class CustomOSC : MonoBehaviour
 	//////////////////////////////////
 	
 	int GetPlayerNumber(string address) {
-		string[] splitString = address.Split('/');		
-		return int.Parse(splitString[4]);
+		string[] splitString = address.Split('/');
+		if(splitString.Length > 3)
+		{
+			 return int.Parse(splitString[4]);
+		} else
+		{
+			return -1;
+		}		
 	}
 	
 	//////////////////////////
@@ -368,8 +400,13 @@ public class CustomOSC : MonoBehaviour
 	        	GameObject rigBodyPartObject = OSCBodyPartAssigner(address, playerRig);
 	        	// set the body part name to the OSC string so I can identify it in the scene
 	        	rigBodyPartObject.name = address;
+	        	// create a body part using the body part class
+	        	// we're passing it the game object and an empty queue (this queue will hold the history of vectors)
+	        	BodyPart bodyPart = new BodyPart();
+	        	bodyPart.gameObject = rigBodyPartObject;
+	        	bodyPart.positionHistory = new ConcurrentQueue<Vector3>();
 	        	// add the body part to my map
-	        	playerRig.addressBodyPartMap.Add(address,rigBodyPartObject);
+	        	playerRig.addressBodyPartMap.AddOrUpdate(address, bodyPart, (k,v) => v = bodyPart);
 	        } 
 	        
 
@@ -411,17 +448,21 @@ public class CustomOSC : MonoBehaviour
 		        //////////////////////////////////////////////////////////////
 	        	
 	        	// get the old vector3 for a given body part (by looking up the osc string in the addressBodyPartMap)
-		        GameObject bodyPart = playerRig.addressBodyPartMap[address];
+	        	BodyPart bodyPart = playerRig.addressBodyPartMap[address];
+	        	GameObject bodyPartGameObject = bodyPart.gameObject;
 	        
 		        //playerRig.dummy.transform.transform.rotation = Quaternion.identity;
 	        
 		        // get the "target" position for a given body part using the map function (osc xyz to unity xyz)
-		    
-		        Vector3 target = MapOSCCoordToUnityCoord(coords[0], coords[1], playerRig.playerDepth);
-		        
-		        //if(address.Contains("TOE")){
-		        //	Debug.Log(target.y);
-		        //}
+
+				Vector3 target;
+				if(enableSmoothing)
+				{
+					target = MapOSCCoordToUnityCoord(bodyPart.averageX, bodyPart.averageY, playerRig.playerDepth);
+				} else
+				{
+					target = MapOSCCoordToUnityCoord(coords[0], coords[1], playerRig.playerDepth);
+				}
 		        
 		        // account for depth dimensions in the OSC to unity mapping - it's a 3d world!
 		        if(playerRig.playerDepth > 0)
@@ -447,11 +488,12 @@ public class CustomOSC : MonoBehaviour
 				
 		        //Vector3 p = transform.position;
 		        //p.y = playerRig.playerDepth;
+		        
 
 		        depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
 		        
 		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
-		        bodyPart.transform.position = Vector3.Lerp(bodyPart.transform.position, target, speed);  
+		        bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, speed);  
 		        //bodyPart.transform.position = target;
 	        }
      
@@ -498,7 +540,7 @@ public class CustomOSC : MonoBehaviour
 	
 	public PlayerRig AddPlayer(int playernum, long oscTime) {
 		PlayerRig playerRig = new PlayerRig(); // make a new playerRig using my playerRig class
-		playerRig.addressBodyPartMap = new Dictionary<string, GameObject>(); //make a new addressBodyPartMap - no v3s, just the links
+		playerRig.addressBodyPartMap = new ConcurrentDictionary<string, BodyPart>(); //make a new addressBodyPartMap - no v3s, just the links
 		GameObject dummy = Instantiate(dummyPrefab); //Instantiate a dummy
 		dummy.name = $"Dummy {playernum}"; //set the dummy prefab's name name to the player num
 		
@@ -701,46 +743,60 @@ public class CustomOSC : MonoBehaviour
 		// it would be much easier if I could just update the coordinates HERE in the osc receiver
 		// but I can't create a gameobject outside of the update function 
 		
-		if (address.Contains("livepose/pyrealsense_head_follower/0") && data.GetElementAsFloat(2) != 0.000000)
-		{
-			int playerId = GetPlayerNumber(address); // extract the player number from the OSC string
-			float z = data.GetElementAsFloat(2); // extract the depth from the OSC data - which looks like this   livepose/position/0/1 fff -0.212375 0.803258 2.666000
-		
-			if( players.ContainsKey(playerId) )
-			{ 
-								
-				// make sure I don't try to set a depth value before I've seen this player
-				PlayerRig currPlayer = players[playerId]; //grab the current player
-				
-				if (currPlayer.lastPlayerDepth == 999)
-				{
-					currPlayer.lastPlayerDepth = z; // the first time is tricky
-				} else
-				{
-					currPlayer.lastPlayerDepth = currPlayer.playerDepth; // go store current depth in "last depth so its there when we look for it"				
-				}
-				
-				if (Mathf.Abs(currPlayer.lastPlayerDepth - z) > maxAllowedDepthJumping) // if we are jumping too much
-				{
-					// do nothing
-				} else
-				{
-					currPlayer.playerDepth = z;	
-				}
-			} 
-			//else {
-				//Debug.Log("Cannot find playerId = " + playerId.ToString());
-			//}
-			
-		}
-		// need to know when we receive a message
 		long currentTime = System.DateTime.Now.Ticks;	
 		Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
-	
+
+		int playerId = GetPlayerNumber(address); // extract the player number from the OSC string
+		//Debug.Log(playerId);
+
+		// make sure I don't try to set a depth value before I've seen this player
+		if(players.ContainsKey(playerId))
+		{
+				PlayerRig currPlayer = players[playerId]; //grab the current player
+
+				// head follower depth nonsense
+				if (address.Contains("livepose/pyrealsense_head_follower/0") && data.GetElementAsFloat(2) != 0.000000)
+				{
+					float z = data.GetElementAsFloat(2); // extract the depth from the OSC data - which looks like this   livepose/position/0/1 fff -0.212375 0.803258 2.666000
+							
+					
+					if (currPlayer.lastPlayerDepth == 999){
+						currPlayer.lastPlayerDepth = z; // the first time is tricky
+					} else {
+						currPlayer.lastPlayerDepth = currPlayer.playerDepth; // go store current depth in "last depth so its there when we look for it"				
+					} if (Mathf.Abs(currPlayer.lastPlayerDepth - z) > maxAllowedDepthJumping) // if we are jumping too much
+					{
+						// do nothing
+					} else {
+						currPlayer.playerDepth = z;	
+					}
+				}				
+			// low pass filter to average out the values and jumpiness
+			// right now this is per player, I need it to be per body part
+			// so I either need to make a map for this or I need to make a Tupple and store it in the existing address-bodypart map
+			if (currPlayer.addressBodyPartMap.ContainsKey(address)){
+				BodyPart bodyPart = currPlayer.addressBodyPartMap[address];
+				bodyPart.positionHistory.Enqueue(vec);
+				if(bodyPart.positionHistory.Count > 10) {
+					Vector3 tmp;
+					bodyPart.positionHistory.TryDequeue(out tmp);
+				}
+				// now calculate the average
+				Vector3 average = new Vector3();
+				foreach(var v in bodyPart.positionHistory) {
+					average.x = average.x + v.x;
+					average.y = average.y + v.y;
+				}
+				bodyPart.averageX = average.x / bodyPart.positionHistory.Count;
+				bodyPart.averageY = average.y / bodyPart.positionHistory.Count;
+			}
+		} 
 
 		//If it's a skeleton-position message, which looks like this livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
 		if (address.Contains("livepose/skeletons/0"))
-		{
+		 //&& data.GetElementAsFloat(2) > 0.5f
+		{		
+			//Debug.Log(data.GetElementAsFloat(2));
 			//Update a special threadsafe map of all the OSC Messages (a string, and a vector3-time tupple 
 			addressCoordinateAndTimeStampMap.AddOrUpdate(address, (vec, currentTime), (k,v) => v = (vec, currentTime));
 		}
