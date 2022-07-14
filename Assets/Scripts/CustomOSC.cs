@@ -44,6 +44,9 @@ using RootMotion.FinalIK;
 	///  do I want to use mm pose and get the face and hands and have a buggy stream?
 	///  or trt and not get the face and hands and have a smoohter stream
 	/// </summary>
+	/// 
+	// I NEED TO FIX MY FILTER, I'M BYPASSING MY FILTER WHEN I PASS POSITIONS TO THE MAP
+	// ALSO, IF I GET A HAND ONCE, DO I GET IT FOREVER?
 	
 	
 	///////////////
@@ -132,10 +135,15 @@ public class CustomOSC : MonoBehaviour
 	[SerializeField]
 	public GameObject depthSphere;
 
+	[SerializeField]
+	public GameObject debugSphere;
 	    
 	public float speed = 0.15f;
 	public float timeToWaitForMissingPlayers = 0.5f;
-	
+
+	[SerializeField]
+	public float minConfidenceAllowed = 0f;
+
 	[SerializeField]
 	public float depthFactorial = 0.3f;
 	
@@ -467,16 +475,16 @@ public class CustomOSC : MonoBehaviour
 		        // account for depth dimensions in the OSC to unity mapping - it's a 3d world!
 		        if(playerRig.playerDepth > 0)
 		        {
-			        //target = new Vector3(target[0] * depthFactor, target[1] * depthFactor, target[2]);
-
 			        float depthFactor = depthFactorial * playerRig.playerDepth;
 			        target = new Vector3(target[0] * depthFactor, target[1], target[2]);
 		        }	
 			    
 		        //so the feet don't go above the head - annoying bug
-		        if(address.Contains("TOE") && target[1] > 1) 
+		        
+		        if(address.Contains("TOE")) 
 		        {
-		            target[1] = 0;
+			        Debug.Log("got a toe");
+			        target[1] = 0;
 		        }
 		        
 		        //Debug.Log(playerRig.playerDepth);
@@ -486,11 +494,11 @@ public class CustomOSC : MonoBehaviour
 		        //depthSphere.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 		        //depthSphere.GetComponent<Renderer>().material = debugSphereMaterial;
 				
-		        //Vector3 p = transform.position;
-		        //p.y = playerRig.playerDepth;
+		        Vector3 p = transform.position;
+		        p.y = playerRig.playerDepth;
 		        
 
-		        depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
+		        //depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
 		        
 		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
 		        bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, speed);  
@@ -707,7 +715,7 @@ public class CustomOSC : MonoBehaviour
 						
 		} else {
 			// if I can't find a relevant body part, just make a sphere
-	        thisObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+			thisObject = Instantiate(debugSphere);
 			thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 			//thisObject.renderer. = debugSphereMaterial;
 			thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
@@ -745,9 +753,14 @@ public class CustomOSC : MonoBehaviour
 		
 		long currentTime = System.DateTime.Now.Ticks;	
 		Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
+		
+		int playerId = 0;
+		if (address.Contains("livepose/pyrealsense_head_follower/0") || address.Contains("livepose/skeletons/0"))
+		{
+			playerId = GetPlayerNumber(address); // extract the player number from the OSC string
 
-		int playerId = GetPlayerNumber(address); // extract the player number from the OSC string
-		//Debug.Log(playerId);
+		}
+		
 
 		// make sure I don't try to set a depth value before I've seen this player
 		if(players.ContainsKey(playerId))
@@ -772,7 +785,6 @@ public class CustomOSC : MonoBehaviour
 					}
 				}				
 			// low pass filter to average out the values and jumpiness
-			// right now this is per player, I need it to be per body part
 			// so I either need to make a map for this or I need to make a Tupple and store it in the existing address-bodypart map
 			if (currPlayer.addressBodyPartMap.ContainsKey(address)){
 				BodyPart bodyPart = currPlayer.addressBodyPartMap[address];
@@ -791,9 +803,10 @@ public class CustomOSC : MonoBehaviour
 				bodyPart.averageY = average.y / bodyPart.positionHistory.Count;
 			}
 		} 
-
+		
+	
 		//If it's a skeleton-position message, which looks like this livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
-		if (address.Contains("livepose/skeletons/0"))
+		if (address.Contains("livepose/skeletons/0") && data.GetElementAsFloat(2) >= minConfidenceAllowed)
 		 //&& data.GetElementAsFloat(2) > 0.5f
 		{		
 			//Debug.Log(data.GetElementAsFloat(2));

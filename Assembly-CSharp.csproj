@@ -38,7 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets/randomAudioClip.cs" />
      <Compile Include="Assets/Scripts/MoveForward.cs" />
-     <Compile Include="Assets/lineDrawer.cs" />
+     <Compile Include="Assets/Scripts/ProximityDrawer.cs" />
+     <Compile Include="Assets/Scripts/lineDrawer.cs" />
      <Compile Include="Assets/Scripts/CustomOSC.cs" />
      <Compile Include="Assets/Samples/Animation Rigging/1.1.1/Animation Rigging Constraint Samples/Info/Scripts/Readme.cs" />
      <Compile Include="Assets/Spawner.cs" />

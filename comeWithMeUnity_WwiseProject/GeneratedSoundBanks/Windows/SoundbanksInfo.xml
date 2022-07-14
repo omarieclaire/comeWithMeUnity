@@ -11,11 +11,31 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="854170543" Language="SFX" Hash="3308230392">
+		<SoundBank Id="854170543" Language="SFX" Hash="2584235054">
 			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBanktest</ObjectPath>
 			<ShortName>New_SoundBanktest</ShortName>
 			<Path>New_SoundBanktest.bnk</Path>
 			<IncludedEvents>
+				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="588449863" Language="SFX">
+							<ShortName>shock1.wav</ShortName>
+							<Path>SFX/shock1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="847782685" Language="SFX">
+							<ShortName>ClampMid R-001.wav</ShortName>
+							<Path>SFX/ClampMid R-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1861205831" Name="delightHit" ObjectPath="\Events\Default Work Unit\delightHit" DurationType="OneShot" DurationMin="0.353104" DurationMax="0.353104">
+					<IncludedMemoryFiles>
+						<File Id="150322898" Language="SFX">
+							<ShortName>808Mid L-002.wav</ShortName>
+							<Path>SFX/808Mid L-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3398593705" Name="newtest" ObjectPath="\Events\Default Work Unit\newtest" DurationType="OneShot" DurationMin="64." DurationMax="64.">
 					<IncludedMemoryFiles>
 						<File Id="1003383027" Language="SFX">
@@ -25,9 +45,20 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2374045241" Name="newtest2" ObjectPath="\Events\Default Work Unit\newtest2" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.189938" DurationMax="0.189938">
+					<IncludedMemoryFiles>
+						<File Id="586812907" Language="SFX">
+							<ShortName>808Mid R-002.wav</ShortName>
+							<Path>SFX/808Mid R-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="1567385492" Name="rtpctest" ObjectPath="\Game Parameters\Default Work Unit\rtpctest"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1014113831">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
