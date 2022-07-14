@@ -3,36 +3,12 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="ConnectionGrowShrink" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" ShortID="179902357">
+				<RandomSequenceContainer Name="delightHitSoundsOLD" ID="{4083C17E-772D-4777-835F-00DCBE586ADB}" ShortID="524501398">
 					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Pitch" Type="int32">
-							<RTPCList>
-								<RTPC Name="" ID="{4FDA32CC-5F8F-4480-B13B-7EACA0B7C89D}" ShortID="718251448">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="rtpctest" ID="{667D25C8-0F4E-46FA-961B-69A166F4F890}" WorkUnitID="{F76D1A6C-C233-456D-AEF2-0F95ED7518E5}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{CE416EDB-6E4B-430F-99B9-D0F95C671B61}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="65537"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>-1020</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>100</XPos>
-												<YPos>1020</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -44,20 +20,436 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="shock1" ID="{8C351FED-993E-4A91-B3AA-558F68F0437B}">
-							<Language>SFX</Language>
-							<AudioFile>shock1.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="588449863"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-001" ID="{01331022-95F4-4959-AD09-DF1CA34D0FC1}" ShortID="919412271">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-001" ID="{8EA290E0-CAF2-4E9F-8D85-326A0EE234BB}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="636614671"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-001" ID="{8EA290E0-CAF2-4E9F-8D85-326A0EE234BB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-002" ID="{864D3546-45DF-4A7D-B7FA-FCA07C2FC93C}" ShortID="738383071">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-002" ID="{5E2F195F-63E2-474F-A903-5641118CCE3F}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="150007537"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-002" ID="{5E2F195F-63E2-474F-A903-5641118CCE3F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-003" ID="{18DBC9A3-7854-4F4F-84BF-EF0841E3C8BC}" ShortID="1064097240">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-003" ID="{DF5494F8-A723-4693-B3F5-78D65B5BA476}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="580718600"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-003" ID="{DF5494F8-A723-4693-B3F5-78D65B5BA476}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-004" ID="{626BF6CA-8976-4A13-B167-93C1A1A48857}" ShortID="416788994">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-004" ID="{3F438E2A-B95E-4CB9-9B9C-541EECC76BF9}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-004.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="806852409"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-004" ID="{3F438E2A-B95E-4CB9-9B9C-541EECC76BF9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-005" ID="{AB833641-C7E1-43A6-AFBC-EC1FA396B70A}" ShortID="373577070">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-005" ID="{8CCB06B8-596F-41B7-A19C-B531106449F7}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="831908089"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-005" ID="{8CCB06B8-596F-41B7-A19C-B531106449F7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-006" ID="{C661B592-5194-4DDD-8469-24844BD5C68B}" ShortID="943929677">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-006" ID="{59DCBE9A-B303-4FDC-AF9F-0019B29149AF}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-006.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="140478625"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-006" ID="{59DCBE9A-B303-4FDC-AF9F-0019B29149AF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-007" ID="{C475345A-F652-4944-BD2A-022E352B9949}" ShortID="59406432">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-007" ID="{39829B49-B00A-4069-BA4B-BC18378CA1CA}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-007.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="936133301"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-007" ID="{39829B49-B00A-4069-BA4B-BC18378CA1CA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-008" ID="{F83598DB-2A27-479F-B759-55AA7EDC9494}" ShortID="751112475">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-008" ID="{007A5D2B-DD1F-4397-B2DA-17940A39EFA9}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-008.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="627380608"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-008" ID="{007A5D2B-DD1F-4397-B2DA-17940A39EFA9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-009" ID="{614817F0-D091-4BC0-999B-152927E24C75}" ShortID="258190962">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-009" ID="{34BEBA2D-7CA5-43A1-A860-4AA554ECC0CA}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-009.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="296363359"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-009" ID="{34BEBA2D-7CA5-43A1-A860-4AA554ECC0CA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-010" ID="{39EE6FD4-12A4-47CC-9E0D-6EE7240BF8B2}" ShortID="359156035">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-010" ID="{2219CD36-2039-49CC-AC24-A1A4A3F0B050}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-010.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="630361041"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-010" ID="{2219CD36-2039-49CC-AC24-A1A4A3F0B050}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-011" ID="{AC72A037-A854-44ED-AC8B-6EE00F58788D}" ShortID="595491711">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-011" ID="{F2720273-5671-4B2B-9BE4-FBF548A8A776}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-011.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="45102167"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-011" ID="{F2720273-5671-4B2B-9BE4-FBF548A8A776}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-012" ID="{55E9ABD5-F666-46FA-91F3-70305F3DD665}" ShortID="676331349">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-012" ID="{8F0F3476-1049-4727-AD13-EAA5A30B7F8E}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-012.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="524736120"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-012" ID="{8F0F3476-1049-4727-AD13-EAA5A30B7F8E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-013" ID="{ED5774FB-0F0C-409A-B4FF-078886B52D1A}" ShortID="315288948">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-013" ID="{D9861C66-E017-4BDE-AFF1-44CDC96AA18D}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="86560868"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-013" ID="{D9861C66-E017-4BDE-AFF1-44CDC96AA18D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-014" ID="{DF300A07-C2B9-4645-A5DD-E187C2770D04}" ShortID="875504875">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-014" ID="{CC174913-F750-4B99-A811-349AF4DBA5FE}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-014.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="415002786"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-014" ID="{CC174913-F750-4B99-A811-349AF4DBA5FE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-015" ID="{46FB47EF-F05A-4B71-8DBD-4B5910F150CB}" ShortID="574606056">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-015" ID="{CC4E0403-3781-49CD-9AA9-EFA6915FC32F}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-015.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="436068396"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-015" ID="{CC4E0403-3781-49CD-9AA9-EFA6915FC32F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-016" ID="{79213CA7-020E-4D43-A4AF-9A446B906429}" ShortID="700420393">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-016" ID="{40F7F19B-707F-4D4B-A543-5899AB7DAF8D}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-016.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="81931134"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-016" ID="{40F7F19B-707F-4D4B-A543-5899AB7DAF8D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-017" ID="{46620922-5EB7-475A-8569-7B12ED908895}" ShortID="900072970">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-017" ID="{75E95BE2-453B-43BA-AF34-11BB038E315E}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-017.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="995137677"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-017" ID="{75E95BE2-453B-43BA-AF34-11BB038E315E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="delightHitSoundCWM_69BPM_ posibellsounds-018" ID="{A727DB7E-9D2D-4093-963C-58C96880E2E9}" ShortID="663205715">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="delightHitSoundCWM_69BPM_ posibellsounds-018" ID="{2609B4AD-216D-4FFA-A267-9F383F2BC80A}">
+									<Language>SFX</Language>
+									<AudioFile>delightHitSounds\delightHitSoundCWM_69BPM_ posibellsounds-018.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="806710889"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="delightHitSoundCWM_69BPM_ posibellsounds-018" ID="{2609B4AD-216D-4FFA-A267-9F383F2BC80A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="shock1" ID="{8C351FED-993E-4A91-B3AA-558F68F0437B}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="ConnectionMade" ID="{881FB1E0-D3FB-49AB-A097-99D01120CDBB}" ShortID="403779134">
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="sadHitSoundsOLD" ID="{DCC9A9D9-3FBF-4A19-BC15-475178D7EB09}" ShortID="388470557">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>20</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
@@ -67,20 +459,528 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="ClampMid R-001" ID="{A0F078A8-005F-4430-9302-6CB32CC433F7}">
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-001" ID="{BA2C25B3-D0B5-4D5F-A998-52E8EC05FB44}" ShortID="385110486">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-001" ID="{17B4E9C7-0891-4B3A-98ED-1F63926AA01B}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="811390982"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-001" ID="{17B4E9C7-0891-4B3A-98ED-1F63926AA01B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-002" ID="{C0D20A39-5C46-44D8-92E6-C57EE6019D79}" ShortID="814968376">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-002" ID="{0ED89044-F950-4AE9-A618-39BF6D549A07}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1028591576"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-002" ID="{0ED89044-F950-4AE9-A618-39BF6D549A07}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-003" ID="{8F41E513-B5BD-4627-AAB6-0EAECEBB1792}" ShortID="158376746">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-003" ID="{255102D1-64D5-483C-9F33-DF86BF80F552}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="922730640"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-003" ID="{255102D1-64D5-483C-9F33-DF86BF80F552}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-004" ID="{5A0BE6A6-1CB6-4B09-9917-522A59214BCF}" ShortID="385258097">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-004" ID="{4F0EC71E-44CF-494C-ACE0-67D6E1681B0A}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-004.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="641410911"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-004" ID="{4F0EC71E-44CF-494C-ACE0-67D6E1681B0A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-005" ID="{3FD19564-F3B7-4AC2-8D5F-B85F9AA782C0}" ShortID="598401371">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-005" ID="{ED09CB4F-901A-405D-B94C-61F3BD10D129}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="822640042"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-005" ID="{ED09CB4F-901A-405D-B94C-61F3BD10D129}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-006" ID="{33DB6F8D-2B09-4853-B65B-877B260814F4}" ShortID="435869538">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-006" ID="{55E7E165-EB4D-462B-8D10-3CD44EE2A30C}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-006.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="595842263"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-006" ID="{55E7E165-EB4D-462B-8D10-3CD44EE2A30C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-007" ID="{AD7DE0CC-5DB2-4DAB-92BA-F12748131E76}" ShortID="37235364">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-007" ID="{0959F12B-6F2B-4EE0-86F6-BAF30177C577}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-007.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="147473281"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-007" ID="{0959F12B-6F2B-4EE0-86F6-BAF30177C577}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sadHitSoundCWM_69BPM_ negsubhit-008" ID="{B458F37E-FFE1-45CF-8892-28BF216EA8B9}" ShortID="213166293">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sadHitSoundCWM_69BPM_ negsubhit-008" ID="{4D1AB014-C586-4198-868D-18E71984E758}">
+									<Language>SFX</Language>
+									<AudioFile>sadHitSounds\sadHitSoundCWM_69BPM_ negsubhit-008.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="478239909"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sadHitSoundCWM_69BPM_ negsubhit-008" ID="{4D1AB014-C586-4198-868D-18E71984E758}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+				<Folder Name="playerSound" ID="{91FF1243-4FC0-4502-AF5A-9C2D71DBB3B3}" ShortID="822345044">
+					<ChildrenList>
+						<Sound Name="PlayerOne" ID="{6139A2D8-D9BE-428E-AF25-E06178BFD571}" ShortID="45861196">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ chords" ID="{67F49E04-8EF5-40DB-B718-392CF17FED99}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ chords.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="814494138"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ chords" ID="{67F49E04-8EF5-40DB-B718-392CF17FED99}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerSeven" ID="{81E9A606-08C6-4943-915D-2A27B95B41DC}" ShortID="299921213">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ tail3" ID="{9BB9552C-2B26-47CC-A61A-379D52966ECF}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ tail3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="90087999"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ tail3" ID="{9BB9552C-2B26-47CC-A61A-379D52966ECF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerSix" ID="{9E824993-7243-4C83-9BDD-4404B1E9F1C7}" ShortID="845367067">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ tail2" ID="{2482C1AD-7EDB-4A25-B84B-1023CE4D0663}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ tail2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="740813780"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ tail2" ID="{2482C1AD-7EDB-4A25-B84B-1023CE4D0663}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerFive" ID="{082ED3B1-F61F-4733-B5FE-675D51C72886}" ShortID="923069862">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ tail" ID="{290EA359-5549-452D-B1E8-DFFFC8F31B05}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ tail.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="934121255"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ tail" ID="{290EA359-5549-452D-B1E8-DFFFC8F31B05}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerFour" ID="{118D0BE5-3E2C-4EF6-BECD-D8B7961B2B96}" ShortID="20794672">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ chords4" ID="{37F9A85B-882D-4820-9CCF-425AEAD9A459}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ chords4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="683058089"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ chords4" ID="{37F9A85B-882D-4820-9CCF-425AEAD9A459}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerThree" ID="{0F068200-34EA-4ABE-B89B-7B3CF4ABA2E8}" ShortID="823325112">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ chords3" ID="{B2DB0F44-D0A5-4BB1-8343-5F1263ADF7CA}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ chords3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="245979366"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ chords3" ID="{B2DB0F44-D0A5-4BB1-8343-5F1263ADF7CA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerTwo" ID="{50B2032A-1D02-4AA2-A87F-EE027DEC9807}" ShortID="936652919">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C103574F-C7C6-4F9E-9139-AC77732AC4F8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ chords2" ID="{37DFAD7A-95A1-492F-BCDB-25A4D3D2E60F}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ chords2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1061610956"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ chords2" ID="{37DFAD7A-95A1-492F-BCDB-25A4D3D2E60F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerEight" ID="{54422C6D-B859-4BF0-B219-B9BE3979583D}" ShortID="797603474">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ bass3" ID="{705B0155-B1D0-4A1F-9158-85257E78727D}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ bass3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="26329041"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ bass3" ID="{705B0155-B1D0-4A1F-9158-85257E78727D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerNine" ID="{DD4B6365-7658-4909-A1DA-2008439EEC6D}" ShortID="685126623">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ bass2" ID="{5C75048C-E57B-4C12-A58C-C82AA2E0BF0D}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ bass2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="500040173"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ bass2" ID="{5C75048C-E57B-4C12-A58C-C82AA2E0BF0D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerTen" ID="{34BB1E95-6DC1-4FF1-A163-FEAD6CB98A43}" ShortID="824745237">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CWM_69BPM_ bass" ID="{C966533F-93F7-480F-89C2-D4683E76ADC2}">
+									<Language>SFX</Language>
+									<AudioFile>CWM_69BPM_ bass.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="918806633"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CWM_69BPM_ bass" ID="{C966533F-93F7-480F-89C2-D4683E76ADC2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Sound Name="connectionSound" ID="{0BBCC2F6-6B48-44E2-B751-86796C4F8E0A}" ShortID="864788128">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>57</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Large_Church1" ID="{9B6E8B78-EF8C-494C-AADA-D01CF51B5FAC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="Effect1" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+							<ObjectRef Name="New_Wwise_Time_Stretch" ID="{A982DB4B-A66D-457C-BB8D-1AF7AFEAE3A6}" WorkUnitID="{18DA2471-14D0-4B3B-B068-C6D6195E0D4C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="connectionSoundCWM_69BPM_ loopbowlneedsreverb" ID="{82459167-5EFE-46BC-B88B-C91E60A5D663}">
 							<Language>SFX</Language>
-							<AudioFile>ClampMid R-001.wav</AudioFile>
+							<AudioFile>connectionSoundCWM_69BPM_ loopbowlneedsreverb.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="847782685"/>
+								<MediaID ID="768976350"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
-						<ActiveSource Name="ClampMid R-001" ID="{A0F078A8-005F-4430-9302-6CB32CC433F7}" Platform="Linked"/>
+						<ActiveSource Name="connectionSoundCWM_69BPM_ loopbowlneedsreverb" ID="{82459167-5EFE-46BC-B88B-C91E60A5D663}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="DelightHit" ID="{C424C9AD-34B5-4359-8BC7-6D64F00056CB}" ShortID="302161434">
+				<Sound Name="connectionMade" ID="{AEDD344C-80D4-4DB8-9130-51C17867E92F}" ShortID="923554016">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
@@ -90,20 +990,53 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="808Mid L-002" ID="{1CE9A672-72AA-474F-BEF1-EBFF4C511987}">
+						<AudioFileSource Name="connectionMade" ID="{634CA177-E946-4C01-828C-C06B3A2DA80B}">
 							<Language>SFX</Language>
-							<AudioFile>808Mid L-002.wav</AudioFile>
+							<AudioFile>connectionMade.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="150322898"/>
+								<MediaID ID="723459570"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
-						<ActiveSource Name="808Mid L-002" ID="{1CE9A672-72AA-474F-BEF1-EBFF4C511987}" Platform="Linked"/>
+						<ActiveSource Name="connectionMade" ID="{634CA177-E946-4C01-828C-C06B3A2DA80B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="SadHit" ID="{B36EB4D9-2BDE-4EB8-B4F4-D674F0284496}" ShortID="675382321">
+				<Sound Name="connectionBroken" ID="{5C6D8974-2BCD-481F-A241-8C8CE2967C45}" ShortID="336314892">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Large_Church1" ID="{9B6E8B78-EF8C-494C-AADA-D01CF51B5FAC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="connectionBroken" ID="{BD79CE1A-FC10-4F82-B15D-36361F6B0E9A}">
+							<Language>SFX</Language>
+							<AudioFile>connectionBroken.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="128261808"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="connectionBroken" ID="{BD79CE1A-FC10-4F82-B15D-36361F6B0E9A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="delightHitSound" ID="{6001B531-FFAA-4CFB-B344-08F63919FDE3}" ShortID="536859299">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
@@ -113,19 +1046,635 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="808Mid R-002" ID="{6EFD164C-3D2E-4098-BEA6-0662EAB0520F}">
-							<Language>SFX</Language>
-							<AudioFile>808Mid R-002.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="586812907"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<RandomSequenceContainer Name="delightHitSoundsNew" ID="{0BCF1EFD-E894-4742-A6B5-89B161B3D69E}" ShortID="1065377496">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="delightHitSoundsNew-001" ID="{A321667D-08BF-4601-A009-6B8F6BBA01A0}" ShortID="375697039">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-001" ID="{B0CD076D-70E1-483F-8D08-227CF9E2D2ED}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-001.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="289841071"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-001" ID="{B0CD076D-70E1-483F-8D08-227CF9E2D2ED}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-002" ID="{A7F2B5AC-E57C-454C-8A03-B2EF4920663E}" ShortID="586149660">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-002" ID="{8721C729-AA46-4ED3-A7FD-4AE452F6DBF4}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="114553429"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-002" ID="{8721C729-AA46-4ED3-A7FD-4AE452F6DBF4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-003" ID="{411CD371-284B-46DF-9826-26281E403755}" ShortID="73381299">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-003" ID="{0372B80E-868D-4595-9ABC-5B6F9D01544E}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-003.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1013380947"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-003" ID="{0372B80E-868D-4595-9ABC-5B6F9D01544E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-004" ID="{BBD070D5-48BB-4AC6-9896-813A80A9E14A}" ShortID="4506947">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-004" ID="{FB488E9D-908A-4A18-97C6-24B411C5A6FD}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-004.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="199392582"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-004" ID="{FB488E9D-908A-4A18-97C6-24B411C5A6FD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-005" ID="{D98A1870-E566-43CE-B269-31C6DE3E0AF3}" ShortID="21892783">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-005" ID="{BE895FCE-F8DC-4523-8B4E-838CFD70A31B}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-005.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="874067017"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-005" ID="{BE895FCE-F8DC-4523-8B4E-838CFD70A31B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-006" ID="{96533A01-CCE5-4DDB-9D6A-5B112F15B185}" ShortID="379161159">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-006" ID="{A2A3FDFC-D2D6-4964-8D53-B46B12D4F212}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-006.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="740925532"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-006" ID="{A2A3FDFC-D2D6-4964-8D53-B46B12D4F212}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-007" ID="{BAAB88F4-40C7-46FC-AF66-B440578A2F94}" ShortID="360335990">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-007" ID="{43BFC103-A1AA-41B5-8FA3-E57B6A5810DE}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-007.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="214113608"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-007" ID="{43BFC103-A1AA-41B5-8FA3-E57B6A5810DE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-008" ID="{605659D3-DF80-4623-8034-7AF45FFA079A}" ShortID="880445444">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-008" ID="{5DBA7313-03B1-48DE-89BE-1C5EEFB62880}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-008.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="157486970"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-008" ID="{5DBA7313-03B1-48DE-89BE-1C5EEFB62880}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-009" ID="{409DDCE0-68E5-4E61-A818-71C07C59CEE4}" ShortID="544693810">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-009" ID="{ABD52241-ECB3-4E5D-B1FE-0ED9536E5278}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-009.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1059464814"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-009" ID="{ABD52241-ECB3-4E5D-B1FE-0ED9536E5278}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-010" ID="{F96689E7-53A8-4283-BC72-B8850E900F25}" ShortID="104763612">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-010" ID="{F68B1022-E553-4B42-8352-6B64E89FD32B}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-010.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="738307865"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-010" ID="{F68B1022-E553-4B42-8352-6B64E89FD32B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-011" ID="{BF55FC4C-ED16-47F8-AD18-9992A322684A}" ShortID="287446956">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-011" ID="{9DC28DEC-2C87-405A-84E0-93399757920E}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-011.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="495760915"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-011" ID="{9DC28DEC-2C87-405A-84E0-93399757920E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-012" ID="{D1114656-65A2-4E6E-A352-79B793F0F79A}" ShortID="591345608">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-012" ID="{0FC9D266-CA44-47D9-8639-C73A4E734857}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-012.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="538686096"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-012" ID="{0FC9D266-CA44-47D9-8639-C73A4E734857}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-013" ID="{B852F2E3-682D-49BB-AF8E-20D592A6B008}" ShortID="768990061">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-013" ID="{B9E52AC5-923E-4DED-9A83-096ACB6DB831}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-013.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="210651248"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-013" ID="{B9E52AC5-923E-4DED-9A83-096ACB6DB831}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-014" ID="{8B034E26-8667-44A7-92F1-3ABFE41440BB}" ShortID="945499488">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-014" ID="{BE3E43E1-DEC7-435E-A917-CDC74A66F17B}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-014.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="286220010"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-014" ID="{BE3E43E1-DEC7-435E-A917-CDC74A66F17B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-015" ID="{E4FEE3F0-67CB-46D0-8AF8-F2D29FF0C7B6}" ShortID="438151263">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-015" ID="{4804EA33-9DDD-46B2-9644-B165DA1743B4}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-015.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="214778998"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-015" ID="{4804EA33-9DDD-46B2-9644-B165DA1743B4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-016" ID="{F1B2FE6B-5BFE-4F20-B965-0F7F7263138D}" ShortID="397373041">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-016" ID="{C7E8C956-889F-4BC8-858D-D9698B06E37C}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-016.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="797808865"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-016" ID="{C7E8C956-889F-4BC8-858D-D9698B06E37C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-017" ID="{3E15B096-3F3A-4C6E-8307-0EFA019DECE5}" ShortID="63459543">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-017" ID="{FFDE74DE-836E-479F-BA4B-875F34154CD1}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-017.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="631243543"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-017" ID="{FFDE74DE-836E-479F-BA4B-875F34154CD1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="delightHitSoundsNew-018" ID="{160AED3C-D167-4F08-8421-BFB1EC9700D1}" ShortID="480266697">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="delightHitSoundsNew-018" ID="{A9C5025B-C4C0-46F0-AB65-777B140A92DA}">
+											<Language>SFX</Language>
+											<AudioFile>delightHitSoundsNew\delightHitSoundsNew-018.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="396678348"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="delightHitSoundsNew-018" ID="{A9C5025B-C4C0-46F0-AB65-777B140A92DA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
-					<ActiveSourceList>
-						<ActiveSource Name="808Mid R-002" ID="{6EFD164C-3D2E-4098-BEA6-0662EAB0520F}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="sadHitSound" ID="{9730B031-9113-4C59-94C4-5258423EF285}" ShortID="783949906">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{4A5FF5E0-3E26-4C74-8DFD-70636C8D2362}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="52"/>
+											<Property Name="Min" Type="Real64" Value="-25"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{CC1B9B00-E440-4E7E-B96C-95DA1EA25BBA}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="51"/>
+											<Property Name="Min" Type="Real64" Value="-51"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Big_Garage1" ID="{172402A8-22F4-40FC-BE1D-5269594CB633}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="sadHitNew" ID="{A90FC294-9E2B-483E-AF78-6BE1D93C8BCE}" ShortID="613788820">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sadHitSoundsNew-001" ID="{F2751D80-B8BE-4278-A468-7F5FBF8A2AA0}" ShortID="397847713">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-001" ID="{282F7505-E004-4C14-AB2D-539B38A83C8B}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-001.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="599345724"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-001" ID="{282F7505-E004-4C14-AB2D-539B38A83C8B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sadHitSoundsNew-002" ID="{BFDC39C0-3856-4313-A040-1939691A8625}" ShortID="501381969">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-002" ID="{F28CF21E-A62C-439C-AACF-41C199106B94}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="554022719"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-002" ID="{F28CF21E-A62C-439C-AACF-41C199106B94}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sadHitSoundsNew-003" ID="{69112BC4-7D18-486F-84C2-6EDE7785D43D}" ShortID="819346096">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-003" ID="{4777DF77-2295-4710-8ACA-1E092D08BA4A}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-003.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="497840583"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-003" ID="{4777DF77-2295-4710-8ACA-1E092D08BA4A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sadHitSoundsNew-004" ID="{A430DCE8-845F-47B4-A193-7AE4FE91B3B5}" ShortID="176421884">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-004" ID="{742E75BD-1584-4851-B900-05D1C26406FC}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-004.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="674657443"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-004" ID="{742E75BD-1584-4851-B900-05D1C26406FC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sadHitSoundsNew-005" ID="{78DCD55D-00C9-4532-B48F-E4DACA67FC1C}" ShortID="1043655362">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-005" ID="{A55E9872-3814-47F7-849A-519E78D43E69}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-005.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="682301584"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-005" ID="{A55E9872-3814-47F7-849A-519E78D43E69}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sadHitSoundsNew-006" ID="{99D5A599-089E-403D-ACBA-53708DFD5780}" ShortID="572310558">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sadHitSoundsNew-006" ID="{4902967C-8E09-496E-845B-0AE42B3A7B2F}">
+											<Language>SFX</Language>
+											<AudioFile>sadHitNew\sadHitSoundsNew-006.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="516909236"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sadHitSoundsNew-006" ID="{4902967C-8E09-496E-845B-0AE42B3A7B2F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

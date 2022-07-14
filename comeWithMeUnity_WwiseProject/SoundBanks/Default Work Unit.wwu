@@ -5,8 +5,36 @@
 			<ChildrenList>
 				<SoundBank Name="New_SoundBanktest" ID="{BE32386A-1EC5-4CA5-A49F-91523D3E6E6C}">
 					<ObjectInclusionList>
+						<ObjectRef Name="PlayerSixOff" ID="{53A6DAB4-03D5-4030-831B-1C1D46DB94D7}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerEightOff" ID="{02256E18-AB0E-40D4-B85C-7DE7C1E86700}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="newtest2" ID="{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerSevenOff" ID="{EB3212C7-A698-420B-9A3D-35CB52EE4F3E}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Off" ID="{DC0F5A8B-02B5-4291-9152-193BB515AA5B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerTwo" ID="{2068519D-BB92-4295-8FFC-2A5B6B179144}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerOneOff" ID="{D456CF38-2295-429F-8A46-D0477634A458}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerNineOff" ID="{5E61B38D-C48C-42A3-AEDD-DD864537DFE4}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="connectionBroken" ID="{D800F445-2451-437B-A2FF-C5BFC5B9BF91}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerFourOff" ID="{5583A428-3AA7-43EE-8850-1238FF44730E}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerTenOff" ID="{6520A552-69C5-4430-B5D2-4EFD8CEB6D91}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerTwoOff" ID="{846D344E-8272-443C-8872-71EFF0B23F4F}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerSeven" ID="{D0934194-1919-44DB-BF6D-EAB5276C7B19}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="New_Event" ID="{86B48484-4B1C-4525-9158-63D9F6A182D3}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerTen" ID="{52F35F0D-AC6E-4654-83C6-93B7C82CF1C4}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerEight" ID="{CAD607E5-191E-46A4-9B78-E9E3AA0F701B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerNine" ID="{D9AFECC7-4609-46F1-B694-6FEC774C8B05}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerThreeOff" ID="{6A8F47E0-ABC4-477D-9F7C-1C1088544BB1}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="delightHit" ID="{104C590C-A23B-487C-B3D6-ED93090CDCF3}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="On" ID="{5CE4BAFD-3350-490E-BA7E-89D4C3463461}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerOne" ID="{48D0407A-6AFF-49AA-8341-A5C1C32DE885}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerThree" ID="{DF3DC001-BA1D-49D8-AFB5-1D348A853FE1}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerFiveOff" ID="{7E708236-BAC0-4B45-B7BF-82DA5C92505D}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sadHit" ID="{F2645DC8-4103-4D29-A8AD-D5125A62618A}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="newtest" ID="{AAE8D48D-F6DD-4D5B-8E73-5025D71E2BB8}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerSix" ID="{7E2D5BE4-B1D1-4DF7-BFF0-13160F216848}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="backgroundMusic" ID="{78CFB7F3-5280-4E0D-B500-7DD0A18F6441}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerFive" ID="{3BD20280-0C5D-4F8F-A575-AA574B591E0B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayerFour" ID="{EDC72F5A-7436-4FBB-A63C-0B740DFDEF41}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

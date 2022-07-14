@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2D42C221-291B-4BE8-BE43-92869E08B36B}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{2D42C221-291B-4BE8-BE43-92869E08B36B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2D42C221-291B-4BE8-BE43-92869E08B36B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{DAF9D049-276B-48A8-BDEA-7CA6C9B99950}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="PlayerEight" ID="{CAD607E5-191E-46A4-9B78-E9E3AA0F701B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerOne" ID="{48D0407A-6AFF-49AA-8341-A5C1C32DE885}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerThree" ID="{DF3DC001-BA1D-49D8-AFB5-1D348A853FE1}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="backgroundMusic" ID="{7687AC0B-7890-44AF-9211-584A6D7B8FE1}" WorkUnitID="{7265E86E-18C6-446C-8635-18C38EA6008F}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="delightHitSound" ID="{6001B531-FFAA-4CFB-B344-08F63919FDE3}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerFive" ID="{3BD20280-0C5D-4F8F-A575-AA574B591E0B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerSeven" ID="{D0934194-1919-44DB-BF6D-EAB5276C7B19}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerTwo" ID="{2068519D-BB92-4295-8FFC-2A5B6B179144}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="1" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="sadHitSound" ID="{9730B031-9113-4C59-94C4-5258423EF285}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerFour" ID="{EDC72F5A-7436-4FBB-A63C-0B740DFDEF41}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerSix" ID="{7E2D5BE4-B1D1-4DF7-BFF0-13160F216848}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="connectionBroken" ID="{D800F445-2451-437B-A2FF-C5BFC5B9BF91}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="2" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerNine" ID="{D9AFECC7-4609-46F1-B694-6FEC774C8B05}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerTen" ID="{52F35F0D-AC6E-4654-83C6-93B7C82CF1C4}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="rtpctest" ID="{667D25C8-0F4E-46FA-961B-69A166F4F890}"/>
+							<Value>50</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

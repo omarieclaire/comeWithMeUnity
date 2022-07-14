@@ -373,6 +373,310 @@
 						</MusicPlaylistItem>
 					</Playlist>
 				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="backgroundMusic" ID="{7687AC0B-7890-44AF-9211-584A6D7B8FE1}" ShortID="48123974">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="69"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="backgroundMusic" ID="{62E9F3F2-F079-42E1-9D09-F1350E4ACE86}" ShortID="650803591">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="13913.0434782609"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{20B4B45F-54F7-458D-BDA5-90AF80D6D4D1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="CWM_69BPM_ backing3" ID="{B00A50AC-9CAA-45BE-A028-4543C4C9A73F}" ShortID="442322839">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{3425D1EC-4097-4360-97AD-813DDCC9F148}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{F796CF9C-C7BC-4317-97E7-938B9F1ACF07}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-15"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CWM_69BPM_ backing3" ID="{685EEB7D-C0AF-4150-85E8-93198C305C09}">
+											<Language>SFX</Language>
+											<AudioFile>CWM_69BPM_ backing3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="372910417"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{109A8B94-0DD8-4B3A-8A17-9169075D6F56}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6FA29FEA-778F-4183-B501-21415FC8BB9B}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="CWM_69BPM_ backing3" ID="{FE6B2463-5257-428B-AE85-2AE26EFC8E99}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="13913.0416666667"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="CWM_69BPM_ backing3" ID="{685EEB7D-C0AF-4150-85E8-93198C305C09}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="CWM_69BPM_ backing2" ID="{BAB6A0DC-9EE9-4D02-ABE3-DB522FF49007}" ShortID="358948834">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{AE177728-3718-4A23-9545-39D045331AF6}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{444178DB-7856-4F95-9F16-2B80EB0D9854}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-15"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CWM_69BPM_ backing2" ID="{2E47470C-DBE4-4745-8C58-F805288CCF92}">
+											<Language>SFX</Language>
+											<AudioFile>CWM_69BPM_ backing2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="414213096"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{5A049AD9-4EA4-406B-A5D9-ABA9446217DA}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{F4FC5D9A-3349-4DFB-8EFD-BF831A522016}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="CWM_69BPM_ backing2" ID="{418AAE65-EF43-4CEE-9812-298EA59EC0FF}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="13913.0416666667"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="CWM_69BPM_ backing2" ID="{2E47470C-DBE4-4745-8C58-F805288CCF92}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="CWM_69BPM_ backing" ID="{E78A5809-FBC6-425A-A82B-426DFC0C57B0}" ShortID="335956935">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{159D4853-30F5-469F-BA99-6873855C188D}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{F0F23200-EA43-4A90-92B8-209F4F2F5C9E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-15"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B477C8D2-6483-4C37-94FC-5D0AA95607E9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CWM_69BPM_ backing" ID="{5CB4E884-9487-4AF6-9786-D173115D5BF2}">
+											<Language>SFX</Language>
+											<AudioFile>CWM_69BPM_ backing.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="553253144"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{86A327F5-FE01-4DF9-BBF1-FA36AD75D190}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{AF0F0385-AFA6-4923-882B-44A6B9DF050E}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="CWM_69BPM_ backing" ID="{026F4F69-42F7-464C-B1BF-80783B13E677}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="13913.0416666667"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="CWM_69BPM_ backing" ID="{5CB4E884-9487-4AF6-9786-D173115D5BF2}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{6AE8D9CA-626F-438D-882D-723567C31BA0}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{E394FB0F-0633-460E-84FF-44C622A44122}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="13913.0434782609"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{B368C19D-676A-4739-8D56-BB9D69F03B74}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{873E50C3-E224-4D8C-9DA5-7013331062A2}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ObjectLists/>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{C6DBF0C1-3A2A-403D-A691-B6EB443623C6}" ShortID="731830461">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{8FA89FB9-B619-4605-9C63-AFDEEBD95820}" ShortID="97397299">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="backgroundMusic" ID="{62E9F3F2-F079-42E1-9D09-F1350E4ACE86}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>

@@ -17,17 +17,22 @@
 				<Event Name="newtest2" ID="{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}"/>
 				<Event Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}">
 					<ChildrenList>
-						<Action Name="" ID="{515D8265-1288-4729-A7BE-09BCAB6F1985}" ShortID="128916566">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="ConnectionGrowShrink" ID="{A0AA36EF-C39C-45BE-B457-3680EC00B3A3}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{58E9851F-834B-4970-A208-C427D204C592}" ShortID="63055479">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="ConnectionMade" ID="{881FB1E0-D3FB-49AB-A097-99D01120CDBB}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+									<ObjectRef Name="connectionMade" ID="{AEDD344C-80D4-4DB8-9130-51C17867E92F}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{515D8265-1288-4729-A7BE-09BCAB6F1985}" ShortID="128916566">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+								<Property Name="FadeInCurve" Type="int16" Value="6"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="connectionSound" ID="{0BBCC2F6-6B48-44E2-B751-86796C4F8E0A}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -38,7 +43,7 @@
 						<Action Name="" ID="{585FA4B5-C53D-482C-B8B6-E5078817A270}" ShortID="112420699">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="DelightHit" ID="{C424C9AD-34B5-4359-8BC7-6D64F00056CB}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+									<ObjectRef Name="delightHitSound" ID="{6001B531-FFAA-4CFB-B344-08F63919FDE3}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -49,7 +54,358 @@
 						<Action Name="" ID="{26A15D92-0378-4FF0-B469-B485DB8DA2EE}" ShortID="506819836">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SadHit" ID="{B36EB4D9-2BDE-4EB8-B4F4-D674F0284496}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+									<ObjectRef Name="sadHitSound" ID="{9730B031-9113-4C59-94C4-5258423EF285}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="backgroundMusic" ID="{78CFB7F3-5280-4E0D-B500-7DD0A18F6441}">
+					<ChildrenList>
+						<Action Name="" ID="{5C616311-86CE-420E-B0C9-87C068D7458E}" ShortID="810441574">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="backgroundMusic" ID="{7687AC0B-7890-44AF-9211-584A6D7B8FE1}" WorkUnitID="{7265E86E-18C6-446C-8635-18C38EA6008F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="New_Event" ID="{86B48484-4B1C-4525-9158-63D9F6A182D3}">
+					<ChildrenList>
+						<Action Name="" ID="{BB265123-BA8D-4078-B198-811C4BA9C61A}" ShortID="788114583"/>
+					</ChildrenList>
+				</Event>
+				<Folder Name="PlayerLoops" ID="{D6C27301-A3A6-4515-B6FF-E6184F4B9474}" ShortID="448277694">
+					<ChildrenList>
+						<Folder Name="On" ID="{5CE4BAFD-3350-490E-BA7E-89D4C3463461}" ShortID="243784448">
+							<ChildrenList>
+								<Event Name="PlayerEight" ID="{CAD607E5-191E-46A4-9B78-E9E3AA0F701B}">
+									<ChildrenList>
+										<Action Name="" ID="{25588847-768B-4A2C-BD04-F5038E032A9D}" ShortID="529955269">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerEight" ID="{54422C6D-B859-4BF0-B219-B9BE3979583D}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerFive" ID="{3BD20280-0C5D-4F8F-A575-AA574B591E0B}">
+									<ChildrenList>
+										<Action Name="" ID="{2DE07FF3-54A6-4E30-A26A-6A55DBE54DA0}" ShortID="958148012">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFive" ID="{082ED3B1-F61F-4733-B5FE-675D51C72886}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerFour" ID="{EDC72F5A-7436-4FBB-A63C-0B740DFDEF41}">
+									<ChildrenList>
+										<Action Name="" ID="{25CD1938-0225-46CD-9AFC-CF8B825378D2}" ShortID="832816252">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFour" ID="{118D0BE5-3E2C-4EF6-BECD-D8B7961B2B96}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerNine" ID="{D9AFECC7-4609-46F1-B694-6FEC774C8B05}">
+									<ChildrenList>
+										<Action Name="" ID="{63C75122-62F3-4F60-867D-884BA1B17E0B}" ShortID="163602717">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerNine" ID="{DD4B6365-7658-4909-A1DA-2008439EEC6D}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerOne" ID="{48D0407A-6AFF-49AA-8341-A5C1C32DE885}">
+									<ChildrenList>
+										<Action Name="" ID="{B0AF9F03-4231-449D-A2A3-EF50D8C883DF}" ShortID="1055154762">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerOne" ID="{6139A2D8-D9BE-428E-AF25-E06178BFD571}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerSeven" ID="{D0934194-1919-44DB-BF6D-EAB5276C7B19}">
+									<ChildrenList>
+										<Action Name="" ID="{DD5670D7-943B-420F-9EFA-5161D5BDDF19}" ShortID="609947889">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSeven" ID="{81E9A606-08C6-4943-915D-2A27B95B41DC}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerSix" ID="{7E2D5BE4-B1D1-4DF7-BFF0-13160F216848}">
+									<ChildrenList>
+										<Action Name="" ID="{E98762E2-2128-4C50-9DA1-4872D983A6B2}" ShortID="661582635">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSix" ID="{9E824993-7243-4C83-9BDD-4404B1E9F1C7}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerTen" ID="{52F35F0D-AC6E-4654-83C6-93B7C82CF1C4}">
+									<ChildrenList>
+										<Action Name="" ID="{CD11E8BC-C69E-4110-82AA-3397B16B4712}" ShortID="599448154">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerTen" ID="{34BB1E95-6DC1-4FF1-A163-FEAD6CB98A43}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerThree" ID="{DF3DC001-BA1D-49D8-AFB5-1D348A853FE1}">
+									<ChildrenList>
+										<Action Name="" ID="{765F3196-8729-45EA-B3DE-77D91F6CA8ED}" ShortID="22352064">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerThree" ID="{0F068200-34EA-4ABE-B89B-7B3CF4ABA2E8}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerTwo" ID="{2068519D-BB92-4295-8FFC-2A5B6B179144}">
+									<ChildrenList>
+										<Action Name="" ID="{9896CD6A-C912-46E2-AD5C-FDEB19CA9E1E}" ShortID="742780774">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerTwo" ID="{50B2032A-1D02-4AA2-A87F-EE027DEC9807}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Off" ID="{DC0F5A8B-02B5-4291-9152-193BB515AA5B}" ShortID="354076351">
+							<ChildrenList>
+								<Event Name="PlayerThreeOff" ID="{6A8F47E0-ABC4-477D-9F7C-1C1088544BB1}">
+									<ChildrenList>
+										<Action Name="" ID="{583FDE7B-3B4C-46CD-94F3-CA3FA983BD94}" ShortID="659942483">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerThree" ID="{0F068200-34EA-4ABE-B89B-7B3CF4ABA2E8}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerFiveOff" ID="{7E708236-BAC0-4B45-B7BF-82DA5C92505D}">
+									<ChildrenList>
+										<Action Name="" ID="{78F9D8E9-1ADE-47B6-8C1F-CC5EA96AE7CB}" ShortID="339389258">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFive" ID="{082ED3B1-F61F-4733-B5FE-675D51C72886}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerNineOff" ID="{5E61B38D-C48C-42A3-AEDD-DD864537DFE4}">
+									<ChildrenList>
+										<Action Name="" ID="{42A04A88-FD76-4E8C-BF53-2CDB4E3B4CF7}" ShortID="202460947">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerNine" ID="{DD4B6365-7658-4909-A1DA-2008439EEC6D}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerOneOff" ID="{D456CF38-2295-429F-8A46-D0477634A458}">
+									<ChildrenList>
+										<Action Name="" ID="{5ADC200E-BB7B-4059-B787-004CF59C617A}" ShortID="683129931">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerOne" ID="{6139A2D8-D9BE-428E-AF25-E06178BFD571}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerSixOff" ID="{53A6DAB4-03D5-4030-831B-1C1D46DB94D7}">
+									<ChildrenList>
+										<Action Name="" ID="{EECA7907-6297-4982-A9A7-C82FA300574E}" ShortID="865389904">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSix" ID="{9E824993-7243-4C83-9BDD-4404B1E9F1C7}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerSevenOff" ID="{EB3212C7-A698-420B-9A3D-35CB52EE4F3E}">
+									<ChildrenList>
+										<Action Name="" ID="{A3D671FC-6AD0-40B4-BFE7-BB4E3AAFA2C7}" ShortID="585431698">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerSeven" ID="{81E9A606-08C6-4943-915D-2A27B95B41DC}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerTenOff" ID="{6520A552-69C5-4430-B5D2-4EFD8CEB6D91}">
+									<ChildrenList>
+										<Action Name="" ID="{DA581394-6D0B-4383-A4AA-E8E111DA5B3D}" ShortID="341499522">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerTen" ID="{34BB1E95-6DC1-4FF1-A163-FEAD6CB98A43}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerTwoOff" ID="{846D344E-8272-443C-8872-71EFF0B23F4F}">
+									<ChildrenList>
+										<Action Name="" ID="{9B8FAB0A-A5C4-4FE4-8A65-9239E3460B70}" ShortID="1030311083">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerTwo" ID="{50B2032A-1D02-4AA2-A87F-EE027DEC9807}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerFourOff" ID="{5583A428-3AA7-43EE-8850-1238FF44730E}">
+									<ChildrenList>
+										<Action Name="" ID="{8AC4C138-F758-499F-BD88-2EC1D668A490}" ShortID="329261529">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFour" ID="{118D0BE5-3E2C-4EF6-BECD-D8B7961B2B96}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerEightOff" ID="{02256E18-AB0E-40D4-B85C-7DE7C1E86700}">
+									<ChildrenList>
+										<Action Name="" ID="{C44A98C7-9665-471D-8E6E-AC96826FC28A}" ShortID="850675535">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerEight" ID="{54422C6D-B859-4BF0-B219-B9BE3979583D}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Event Name="connectionBroken" ID="{D800F445-2451-437B-A2FF-C5BFC5B9BF91}">
+					<ChildrenList>
+						<Action Name="" ID="{8524B82E-B573-45D7-B848-7F004A3E1E22}" ShortID="726060119">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="connectionSound" ID="{0BBCC2F6-6B48-44E2-B751-86796C4F8E0A}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{753E56F8-F688-45F0-80A5-48EFDF4B2908}" ShortID="133715383">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="connectionMade" ID="{AEDD344C-80D4-4DB8-9130-51C17867E92F}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{49CB72C3-3252-4297-A0A5-714FBEE5852A}" ShortID="747773085">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="connectionBroken" ID="{5C6D8974-2BCD-481F-A241-8C8CE2967C45}" WorkUnitID="{F7F9C302-74D1-4C8B-AEC8-F4B3FCDAD1E2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
