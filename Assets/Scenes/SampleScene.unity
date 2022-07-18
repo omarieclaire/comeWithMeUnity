@@ -1164,9 +1164,9 @@ MonoBehaviour:
   depthSphere: {fileID: 2041394719}
   debugSphere: {fileID: 2374789022815624427}
   speed: 1
-  timeToWaitForMissingPlayers: 10
+  timeToWaitForMissingPlayers: 2
   timeToWaitForMissingFeet: 0.5
-  minConfidenceAllowed: 0.8
+  minConfidenceAllowed: 0.2
   depthFactorial: 0.3
   maxAllowedDepthJumping: 200
   oscDepthMin: 0
