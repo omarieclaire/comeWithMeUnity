@@ -213,6 +213,9 @@ public class CustomOSC : MonoBehaviour
 			Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1)); 
 			threshold = data.GetElementAsFloat(2);
 			position = vec;
+			// invert the x.
+			//position.x = -1 * position.x;
+			position.x = 640 - position.x;
 			address = add;
 			playerId = GetPlayerNumber(address);
 		}
@@ -414,13 +417,13 @@ public class CustomOSC : MonoBehaviour
 			bodyPart.positionHistory.TryDequeue(out tmp);
 		}
 		// now calculate the average
-		Vector3 average = new Vector3();
+		Vector3 sum = new Vector3();
 		foreach(var v in bodyPart.positionHistory) {
-			average.x = average.x + v.x;
-			average.y = average.y + v.y;
+			sum.x = sum.x + v.x;
+			sum.y = sum.y + v.y;
 		}
-		bodyPart.averageX = average.x / bodyPart.positionHistory.Count;
-		bodyPart.averageY = average.y / bodyPart.positionHistory.Count;
+		bodyPart.averageX = sum.x / bodyPart.positionHistory.Count;
+		bodyPart.averageY = sum.y / bodyPart.positionHistory.Count;
 	}
 	
 
@@ -480,7 +483,7 @@ public class CustomOSC : MonoBehaviour
 			double elapsed = currentTime - bodyPart.lastOSCTimeStamp;
 			if(address.Contains("TOE") && elapsed > timeToWaitForMissingFeet)
 			{
-				target[1] = 10;
+				//target[1] = 10;
 			}
 		        
 			//Debug.Log(playerRig.playerDepth);
@@ -782,7 +785,7 @@ public class CustomOSC : MonoBehaviour
 		} else {
 			// if I can't find a relevant body part, just make a sphere
 			thisObject = Instantiate(debugSphere);
-			thisObject.transform.localScale = new Vector3(0.5f, 0.05f, 0.05f);
+			thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 			thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
 
 			// I can't remember why I do this parenting step
