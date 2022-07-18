@@ -6,6 +6,9 @@
 				<SoundBank Name="New_SoundBanktest" ID="{BE32386A-1EC5-4CA5-A49F-91523D3E6E6C}">
 					<ObjectInclusionList>
 						<ObjectRef Name="newtest2" ID="{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="delightHit" ID="{104C590C-A23B-487C-B3D6-ED93090CDCF3}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="sadHit" ID="{F2645DC8-4103-4D29-A8AD-D5125A62618A}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="newtest" ID="{AAE8D48D-F6DD-4D5B-8E73-5025D71E2BB8}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
