@@ -13,7 +13,7 @@ public class lineDrawer : MonoBehaviour
 	// only colliders of a certain layer will be impacted
 	public LayerMask layerMask;
 	//public AudioSource audioSource;
-	private Transform target;
+	private Vector3 target;
 	public UnityEvent onPoint;
 	public UnityEvent offPoint;
 	
@@ -41,11 +41,10 @@ public class lineDrawer : MonoBehaviour
 			//}			
 			if (hit.collider.tag != pointer.tag)
 			{
-				target = hit.transform;
+				target = hit.point;
 				//line.enabled = true;
 				//Debug.Log("hit");
 				onPoint.Invoke();
-			
 				//if (!audioSource.isPlaying)
 				//{
 				//	audioSource.Play();
@@ -65,9 +64,9 @@ public class lineDrawer : MonoBehaviour
 			return;
 		}
 		// render a line to whereever the ray is hitting. hit holds the information about the raycast hit
-		if (target.position != Vector3.zero)
+		if (target != Vector3.zero)
 		{
-			line.SetPosition(1, target.position);			
+			line.SetPosition(1, target);			
 		} else 
 		{
 			line.enabled = false;

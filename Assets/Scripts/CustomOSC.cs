@@ -5,32 +5,6 @@ using UnityEngine;
 using OscJack;
 using RootMotion.FinalIK;
 
-	////////////////////////////////////////////////////////
-	// WHAT IS HAPPENING IN THIS MONSTER FILE ANYWAY??!! //
-	////////////////////////////////////////////////////////
-
-	// 1. First: I receive each OSC Message using OSC Jack (it's just a string, one example: livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268)
-	// 2. Then I extract the address (string), coords (x,y,z values). z is a bit special!
-	// 3. Then I constantly add these address (key) and coord (value) pairs to a special threadsafe dictionary (I bundle in the time "System.DateTime.Now.Ticks")
-	// 4. Then, in the update function (every frame) I:
-	//		- Deactivate any missing players (players who have left the screen)
-	//		- Loop through my threadsafe dictionary. For each item in the dictionary I:
-	//			- grab the address, coords, and time
-	//			- add new players when needed (I create a new player and/or grab a player's number)
-	//			- add the body part to the player's "addressBodyPartMap" if it's a new body part (or make spheres)
-	//			- reactivate any players when needed (if they were gone and have reappeared)
-	//			- check and update all my weird clocks/timestamps (related to deactivating and reactivating players)
-	//			- if the player is active, I update body part positions by translating the LivePose coordinates to the Unity coordinates
-	
-	// Also useful to know?
-
-	// - I have a playerRig class that I use to create players
-	// - I have a LIST of players that stores each playerRig
-	// - 
-	// - 
-	// - 
-	
-	
 	
 	/////////////////////
 	// OPEN QUESTIONS //
@@ -38,13 +12,6 @@ using RootMotion.FinalIK;
 	
 	// CAMERA WEIRDNESS
 	// Why do I need to rotate the camera Y 180?
-	
-	
-	/// <summary>
-	///  do I want to use mm pose and get the face and hands and have a buggy stream?
-	///  or trt and not get the face and hands and have a smoohter stream
-	/// </summary>
-	
 	
 	///////////////
 	// TODO!!!! //
@@ -132,10 +99,22 @@ public class CustomOSC : MonoBehaviour
 	[SerializeField]
 	public GameObject depthSphere;
 
+	[SerializeField]
+	public GameObject debugSphere;
+	
+	[SerializeField]
 	    
 	public float speed = 0.15f;
+
+	[SerializeField]
 	public float timeToWaitForMissingPlayers = 0.5f;
 	
+	[SerializeField]
+	public float timeToWaitForMissingFeet = 0.5f;
+
+	[SerializeField]
+	public float minConfidenceAllowed = 0f;
+
 	[SerializeField]
 	public float depthFactorial = 0.3f;
 	
@@ -181,14 +160,11 @@ public class CustomOSC : MonoBehaviour
 	[SerializeField]
 	public float unityXMax = -3f;
 	
-
-	
 	[SerializeField]
 	public float player0Y = 0f;
 	
 	[SerializeField]
 	public float player0X = 0f;
-
 
 	[SerializeField]
 	private GameObject dummyPrefab;
@@ -201,27 +177,76 @@ public class CustomOSC : MonoBehaviour
 	
 	[SerializeField]
 	private GameObject sadSquare;
-
-	[SerializeField]
-	private bool enableSmoothing = true;
-    
-	//[SerializeField]
-	//private List<GameObject> nose = new List<GameObject>();
+ 
+	
+	////////////////////////////////////
+	// GET PLAYER NUMBER FROM STRING //
+	//////////////////////////////////
+	
+	static int GetPlayerNumber(string address) {
+		string[] splitString = address.Split('/');
+		if(splitString.Length > 3)
+		{
+			return int.Parse(splitString[4]);
+		} else
+		{
+			return -1;
+		}		
+	}
 	
 	///////////////////////////
 	// PLAYER RIG CLASS!!!! //
 	//////////////////////////
 	
+	// Class to hold data for all skeleton position messages
+	// These messages differ from "head follower" messages because they have a position (x and y)
+	// (head follower messages only have a depth)
+	public class SkeletonPositionMessage
+	{
+		public string address;
+		public int playerId;
+		public Vector3 position;
+		public float threshold; 
+		
+		public SkeletonPositionMessage(string add, OscDataHandle data)
+		{
+			Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1)); 
+			threshold = data.GetElementAsFloat(2);
+			position = vec;
+			address = add;
+			playerId = GetPlayerNumber(address);
+		}
+	}
+	
+	// Class to hold data for all head follower messages
+	// These messages differ from "skeleton position" messages beacause they only have a depth (z)
+	// (skeleton position messages have a vector position but no depth)
+	public class HeadFollowerMessage
+	{
+		public string address;
+		public int playerId;
+		public float depth;
+		
+		public HeadFollowerMessage(string add, OscDataHandle data)
+		{
+			depth = data.GetElementAsFloat(2);
+			address = add;
+			playerId = GetPlayerNumber(address);
+		}
+		
+	}
+	
 	public class BodyPart{
 		public GameObject gameObject;
-		public ConcurrentQueue<Vector3> positionHistory;
+		public Queue<Vector3> positionHistory;
 		public float averageX = 0f;
 		public float averageY = 0f;
+		public double lastOSCTimeStamp = 0.0;
 	}
     
 	public class PlayerRig{
 		public GameObject dummy;
-		public GameObject playerTransform; //transform is the main way to scale, rotate and position a gameobject
+		public GameObject playerTransform; 
 		public bool active;
 		public GameObject nose;
 		public GameObject leftHip; 
@@ -238,45 +263,26 @@ public class CustomOSC : MonoBehaviour
 		public GameObject rightAnkle;
 		public GameObject leftKnee;
 		public GameObject rightKnee;
-		//public List<Vector3> positionHistory = new List<Vector3>(new Vector3[10]);
-		
-		//public Dictionary<string, GameObject> addressBodyPartMap;
-
-		public ConcurrentDictionary<string, BodyPart> addressBodyPartMap;
-		public float lastUpdated;
-		public long lastOSCTimeStamp;
+		public Dictionary<string, BodyPart> addressBodyPartMap;
+		public double lastOSCTimeStamp;
 		public int playerNumber;
 		public float lastPlayerDepth = 999; //an impossible number
 		public float playerDepth;		
 	}
+	
+	public ConcurrentQueue<SkeletonPositionMessage> skeletonPositionMessages = new ConcurrentQueue<SkeletonPositionMessage>();
+	public ConcurrentQueue<HeadFollowerMessage> headFollowerMessages = new ConcurrentQueue<HeadFollowerMessage>();
 
-		
 	////////////////////////////
 	// MY LIST OF PLAYERS!!!! //
 	////////////////////////////
-	
-	// hold all the players in a list, which is basically a dynamically sized array
-	// - can access items in a list in the same way as an array 
-	// - can find the length: players.length
-	// - can add to it: .add(new PlayerRig("Whatever", 50));
-	// - remove an element at an index and move everything down a place - list.RemoveAt(0)
-	//public List<PlayerRig> players = new List<PlayerRig>();
-	public ConcurrentDictionary<int, PlayerRig> players = new ConcurrentDictionary<int, PlayerRig>();
+	public Dictionary<int, PlayerRig> players = new Dictionary<int, PlayerRig>();
 	
 	
 	//////////////////
 	// OSC SERVER! //
 	/////////////////
-	
-	OscJack.OscServer server;
-
-	////////////////////////////
-	// MY SPECIAL DICTIONARY! //
-	////////////////////////////
-	
-	// my special "threadsafe" dictionary - mapping address to coordinates (and a timestamp)
-	ConcurrentDictionary<string, (Vector3, long)> addressCoordinateAndTimeStampMap = new ConcurrentDictionary<string,(Vector3, long)>();
-			
+	OscJack.OscServer server;			
 	
 	////////////////////////////
 	// START! LET'S GO OSC!!! //
@@ -287,21 +293,6 @@ public class CustomOSC : MonoBehaviour
         server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
     }
     
-    
-	////////////////////////////////////
-	// GET PLAYER NUMBER FROM STRING //
-	//////////////////////////////////
-	
-	int GetPlayerNumber(string address) {
-		string[] splitString = address.Split('/');
-		if(splitString.Length > 3)
-		{
-			 return int.Parse(splitString[4]);
-		} else
-		{
-			return -1;
-		}		
-	}
 	
 	//////////////////////////
 	// ADD TAG RECURSIVELY //
@@ -329,17 +320,16 @@ public class CustomOSC : MonoBehaviour
 	// DECTIVATE MISSING PLAYERS //
 	//////////////////////////////
 	
-	void CheckForMissingPlayers(){
+	void CheckForMissingPlayers(double currentTime){
 		// loop through all the players
 		foreach (PlayerRig rig in players.Values) {
 			if (rig.active)
 			{
 				//if the UNITY time minus the time of creation is greater than 1 second
-				float elapsed = Time.time - rig.lastUpdated;
-				
+				double elapsed = currentTime - rig.lastOSCTimeStamp;
+								
 				if (elapsed > timeToWaitForMissingPlayers)
 				{
-					//Debug.Log($"deactivating {i} elapsed: {elapsed}");
 					rig.active = false;
 					rig.dummy.SetActive(false);
 					rig.playerTransform.SetActive(false);
@@ -348,159 +338,248 @@ public class CustomOSC : MonoBehaviour
 		}		
 	}
 	
+	PlayerRig MakeNewPlayer(int playerNumber, double oscTime)
+	{
+		// make a new player
+		PlayerRig playerRig = AddPlayer(playerNumber, oscTime);
+		// add the player to my list
+		players.Add(playerNumber, playerRig);
+		// return my rig
+		return playerRig;
+	}
 	
-	PlayerRig MakeNewPlayerOrUpdatePlayer(string address, long oscTime){
-		// get the player number by extracting it from the string
-		int playerNumber = GetPlayerNumber(address);
-		
-		if(players.ContainsKey(playerNumber)) {
-			return players[playerNumber];
-		} else {
-			// player corresponding to playerNumber does not exist
-			// therefore we make a new rig
-			PlayerRig playerRig = AddPlayer(playerNumber, oscTime);
-			// Adds a new thing if the key doesn't exist.
-			// If the key exists, update it with the function (key, oldValue) => playerRig
-			// (for our update we just replace the old value)
-			players.AddOrUpdate(playerNumber, playerRig, (key, oldValue) => playerRig);
-			return playerRig;
+	
+	// update the player depth
+	// note: when we initialize a player we set their depth to 999 because they have no sensible "last player depth"
+	// * we get some weird OSC messages that cause the player to jump around, so we don't update the depth, which can cause problems
+	void UpdatePlayerDepth(PlayerRig currPlayer, string address, float depth)
+	{
+		// head follower depth nonsense
+		if (depth != 0.000000)
+		{							
+			if (currPlayer.lastPlayerDepth == 999){
+				currPlayer.lastPlayerDepth = depth; // the first time is tricky
+			} else {
+				currPlayer.lastPlayerDepth = currPlayer.playerDepth; // go store current depth in "last depth so its there when we look for it"				
+			} 
+			
+			if (Mathf.Abs(currPlayer.lastPlayerDepth - depth) > maxAllowedDepthJumping) // if we are jumping too much
+			{
+				// do nothing
+			} else {
+				currPlayer.playerDepth = depth;	
+			}
+		}	
+	}
+	
+	// This function gets a body party if it already exists
+	// if the body part doesn't exist, we create it and update it with position & time information, and add it to the address map.
+	BodyPart GetOrMakeAndUpdateBodyPart(PlayerRig currPlayer, string address, Vector3 position, double oscTime)
+	{		
+		if(currPlayer.addressBodyPartMap.ContainsKey(address))
+		{
+			return currPlayer.addressBodyPartMap[address];
+		} else
+		{
+			/////////////////////////////////////////////////////
+			// ADD NEW BODY PARTS TO THE ADDRESS BODY PART MAP //
+			////////////////////////////////////////////////////
+			// if it's a NEW body part - if I haven't seen this this body part for this player before
+			// grab the relevant body-part-object from the player rig (or a sphere if there is no relevant body part)
+			GameObject rigBodyPartObject = OSCBodyPartAssigner(address, currPlayer);
+			// set the body part name to the OSC string so I can identify it in the scene
+			rigBodyPartObject.name = address;
+			// create a body part using the body part class
+			// we're passing it the game object and an empty queue (this queue will hold the history of vectors)
+			BodyPart bodyPart = new BodyPart();
+			bodyPart.gameObject = rigBodyPartObject;
+			bodyPart.positionHistory = new Queue<Vector3>();
+			bodyPart.lastOSCTimeStamp = oscTime;
+			// add the body part to my map
+			currPlayer.addressBodyPartMap.Add(address, bodyPart);
+			return bodyPart;
 		}
 		
+	}
+	
+	
+	// This function updates the Body Part position history. We then do an averaging over the position history
+	// so we can smoothen out their movement.
+	void UpdateBodyPartPositionHistoryAndAverage(BodyPart bodyPart, Vector3 position)
+	{				
+		// low pass filter to average out the values and jumpiness
+		bodyPart.positionHistory.Enqueue(position);
+		if(bodyPart.positionHistory.Count > 10) {
+			Vector3 tmp;
+			bodyPart.positionHistory.TryDequeue(out tmp);
+		}
+		// now calculate the average
+		Vector3 average = new Vector3();
+		foreach(var v in bodyPart.positionHistory) {
+			average.x = average.x + v.x;
+			average.y = average.y + v.y;
+		}
+		bodyPart.averageX = average.x / bodyPart.positionHistory.Count;
+		bodyPart.averageY = average.y / bodyPart.positionHistory.Count;
+	}
+	
+
+	//////////////////////
+	// REACTIVATE PLAYER//
+	/////////////////////
+	void ReactivatePlayer(PlayerRig playerRig, string address, double oscTime)
+	{
+                
+		// if the player rig is currently NOT active and I get a nose 
+		if(!playerRig.active && address.Contains("FACE_38") || !playerRig.active && address.Contains("NOSE")){
+			//reactivate player
+			playerRig.active = true;
+			playerRig.dummy.SetActive(true);
+			playerRig.playerTransform.SetActive(true);	
+		}
+	}
+	
+	// Update the position of a body part. Lots of complex logic here because
+	// we deal with a few things:
+	// 1. depth projection
+	// 2. if we haven't seen this body part for a while, we set its y = 0
+	// 3. LERP for additional smoothing
+	void UpdateBodyPartPosition(PlayerRig playerRig, BodyPart bodyPart, string address, double currentTime)
+	{       
+		if (playerRig.active)
+		{
+	        	
+			////////////////////////////////////////////////////////////////
+			// UPDATE BODY PART POSITIONS SO THE PLAYER-DUMMY WILL MOVE //
+			//////////////////////////////////////////////////////////////
+	        	
+			// get the old vector3 for a given body part (by looking up the osc string in the addressBodyPartMap)
+			GameObject bodyPartGameObject = bodyPart.gameObject;
+			
+			// get the "target" position for a given body part using the map function (osc xyz to unity xyz)
+			Vector3 target = MapOSCCoordToUnityCoord(bodyPart.averageX, bodyPart.averageY, playerRig.playerDepth);
+		        
+			// account for depth dimensions in the OSC to unity mapping - it's a 3d world!
+			//if(playerRig.playerDepth > 0)
+			//{
+			//	float depthFactor = depthFactorial * playerRig.playerDepth;
+			//	target = new Vector3(target[0] * depthFactor, target[1], target[2]);
+			//}	
+		    
+			/*
+			//so the feet don't go above the head - annoying bug
+			if(address.Contains("TOE")) 
+			{
+				//Debug.Log("got a toe");
+				//target[1] = 0;
+			}
+			*/
+			
+			// if we haven't received a message for this body part
+			// in 0.5 seconds then we set it to zero.
+			double elapsed = currentTime - bodyPart.lastOSCTimeStamp;
+			if(address.Contains("TOE") && elapsed > timeToWaitForMissingFeet)
+			{
+				target[1] = 10;
+			}
+		        
+			//Debug.Log(playerRig.playerDepth);
+		        
+		        
+			//depthSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+			//depthSphere.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+			//depthSphere.GetComponent<Renderer>().material = debugSphereMaterial;
+				
+			Vector3 p = transform.position;
+			p.y = playerRig.playerDepth;
+		        
+
+			//depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
+		        
+			// use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
+			bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, speed);  
+			//bodyPart.transform.position = target;
+		}
+		
+	}
+	
+	// Small helper to clean up some code. This just fetches a player from the
+	// map of players, or if that player doesn't exist yet it makes one.
+	PlayerRig GetOrMakePlayer(int playerId, double oscTime)
+	{
+		if(players.ContainsKey(playerId))
+		{
+			return players[playerId];
+		} else
+		{
+			return MakeNewPlayer(playerId, oscTime);
+		}
 	}
 		
 
     void Update()
 	{
-		// First, deactivate any missing players
-		CheckForMissingPlayers();
-    	    
-		// Next, loop through the "safe" dictionary (osc address string: vector3 coordinates, time) and process each key value pair
-        foreach (KeyValuePair<string, (Vector3, long)> addressCoordinateTimeStampKVPair in addressCoordinateAndTimeStampMap)
-        {
-	        // Extract the osc address string, the osc vector 3 coordinate, and the osc timestamp
-	        string address = addressCoordinateTimeStampKVPair.Key;
-            (Vector3, long) coordinateAndTimeStamp = addressCoordinateTimeStampKVPair.Value;
-            Vector3 coords = coordinateAndTimeStamp.Item1;
-	        long oscTime = coordinateAndTimeStamp.Item2;
-	        
-	        ///////////////////////////////
-	        // ADD NEW PLAYER AS NEEDED //
-	        /////////////////////////////
-	        
-	        // grab the relevant player (if the player number is new, add a player - if not, update the player)
-	        PlayerRig playerRig = MakeNewPlayerOrUpdatePlayer(address, oscTime);
-	        
-	        /////////////////////////////////////////////////////
-	        // ADD NEW BODY PARTS TO THE ADDRESS BODY PART MAP //
-	        ////////////////////////////////////////////////////
-
-	        // if it's a NEW body part - if I haven't seen this this body part for this player before
-	        if(!playerRig.addressBodyPartMap.ContainsKey(address)){
-		        // grab the relevant body-part-object from the player rig (or a sphere if there is no relevant body part)
-	        	GameObject rigBodyPartObject = OSCBodyPartAssigner(address, playerRig);
-	        	// set the body part name to the OSC string so I can identify it in the scene
-	        	rigBodyPartObject.name = address;
-	        	// create a body part using the body part class
-	        	// we're passing it the game object and an empty queue (this queue will hold the history of vectors)
-	        	BodyPart bodyPart = new BodyPart();
-	        	bodyPart.gameObject = rigBodyPartObject;
-	        	bodyPart.positionHistory = new ConcurrentQueue<Vector3>();
-	        	// add the body part to my map
-	        	playerRig.addressBodyPartMap.AddOrUpdate(address, bodyPart, (k,v) => v = bodyPart);
-	        } 
-	        
-
-	        //////////////////////
-	        // REACTIVATE PLAYER//
-	        /////////////////////
-	                
-	        // if the player rig is currently NOT active and I got the nose and ??the time is different than now??
-	        if(!playerRig.active && address.Contains("FACE_38") && playerRig.lastOSCTimeStamp != oscTime){
-	        	//reactivate player
-		        //Debug.Log($"reactivating {playerRig.playerNumber}");
-		        playerRig.active = true;
-		        playerRig.dummy.SetActive(true);
-		        playerRig.playerTransform.SetActive(true);	
-	        }
-	        
-	        ////////////////////////////////////////////////////////////
-	        // TIME STUFF - KNOW WHEN TO ACTIVATE/DEACTIVATE PLAYERS //
-	        ///////////////////////////////////////////////////////////
-	        
-	        if (playerRig.active)
-	        {
-	        	//WHAT IS UP WITH THIS NOSE STUFF? I think I was trying to deal with missing body parts
-	        	if(address.Contains("FACE_38")){
-		        	//Debug.Log($"player number {playerRig.playerNumber}");
-		        	//Debug.Log($"last osc: {playerRig.lastOSCTimeStamp} | current: {oscTime}");
-		        	//Debug.Log($"last updated: {playerRig.lastUpdated } | time: {Time.time}");		
-		        	//Debug.Log($"player postion {coords}");
-
-		        	if (playerRig.lastOSCTimeStamp != oscTime)
-		        	{
-			        	playerRig.lastOSCTimeStamp = oscTime;
-			        	playerRig.lastUpdated = Time.time;
-		        	}
-	        	}
-	        	
-	        	////////////////////////////////////////////////////////////////
-		        // UPDATE BODY PART POSITIONS SO THE PLAYER-DUMMY WILL MOVE //
-		        //////////////////////////////////////////////////////////////
-	        	
-	        	// get the old vector3 for a given body part (by looking up the osc string in the addressBodyPartMap)
-	        	BodyPart bodyPart = playerRig.addressBodyPartMap[address];
-	        	GameObject bodyPartGameObject = bodyPart.gameObject;
-	        
-		        //playerRig.dummy.transform.transform.rotation = Quaternion.identity;
-	        
-		        // get the "target" position for a given body part using the map function (osc xyz to unity xyz)
-
-				Vector3 target;
-				if(enableSmoothing)
-				{
-					target = MapOSCCoordToUnityCoord(bodyPart.averageX, bodyPart.averageY, playerRig.playerDepth);
-				} else
-				{
-					target = MapOSCCoordToUnityCoord(coords[0], coords[1], playerRig.playerDepth);
-				}
-		        
-		        // account for depth dimensions in the OSC to unity mapping - it's a 3d world!
-		        if(playerRig.playerDepth > 0)
-		        {
-			        //target = new Vector3(target[0] * depthFactor, target[1] * depthFactor, target[2]);
-
-			        float depthFactor = depthFactorial * playerRig.playerDepth;
-			        target = new Vector3(target[0] * depthFactor, target[1], target[2]);
-		        }	
-			    
-		        //so the feet don't go above the head - annoying bug
-		        if(address.Contains("TOE") && target[1] > 1) 
-		        {
-		            target[1] = 0;
-		        }
-		        
-		        //Debug.Log(playerRig.playerDepth);
-		        
-		        
-		        //depthSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		        //depthSphere.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-		        //depthSphere.GetComponent<Renderer>().material = debugSphereMaterial;
+		
+		// Get the "current time"! This is used for determining whether
+		// we should draw a player or amend the .y position of a body part.
+		double currentTime = Time.unscaledTimeAsDouble;
 				
-		        //Vector3 p = transform.position;
-		        //p.y = playerRig.playerDepth;
-		        
+		// handle Head follower messages
+		HeadFollowerMessage headFollowerMessage;
+		while(headFollowerMessages.TryDequeue(out headFollowerMessage))
+		{
+			// extract useful data from the message
+			string address = headFollowerMessage.address;
+			int playerId = headFollowerMessage.playerId;
+			float depth = headFollowerMessage.depth;
+			
+			PlayerRig currPlayer = GetOrMakePlayer(playerId, currentTime);
+			
+			UpdatePlayerDepth(currPlayer, address, depth);
+		}
+		
+		// handle Skeleton position messages
+		SkeletonPositionMessage skeletonPositionMessage;
+		while(skeletonPositionMessages.TryDequeue(out skeletonPositionMessage))
+		{
+			// extract useful data from the message
+			string address = skeletonPositionMessage.address;
+			Vector3 position = skeletonPositionMessage.position;
+			int playerId = skeletonPositionMessage.playerId;
+			
+			PlayerRig currPlayer = GetOrMakePlayer(playerId, currentTime);
+			// when we receive an osc message, update the position of the body part (and more?)
+			BodyPart bodyPart = GetOrMakeAndUpdateBodyPart(currPlayer, address, position, currentTime);
+			
+			// update the timestamp on this body part so we know the last time we received a message for it
+			bodyPart.lastOSCTimeStamp = currentTime;
 
-		        depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
-		        
-		        // use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
-		        bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, speed);  
-		        //bodyPart.transform.position = target;
-	        }
-     
-        }
+			UpdateBodyPartPositionHistoryAndAverage(bodyPart, position);
+			ReactivatePlayer(currPlayer, address, currentTime);
+			
+			// update the timestamp on this player so we know the last time we received a message for this player.
+			currPlayer.lastOSCTimeStamp = currentTime;
+		}
+		
+		
+		// First, deactivate any missing players
+		CheckForMissingPlayers(currentTime);
+		
+		// Lets go through each known body part an dupdate it's position.
+		foreach(PlayerRig player in players.Values)
+		{
+			foreach(KeyValuePair<string,BodyPart> pair in player.addressBodyPartMap)
+			{
+				string address = pair.Key;
+				BodyPart bodyPart = pair.Value;
+				
+				// we need to touch every single body part to force it to draw
+				UpdateBodyPartPosition(player, bodyPart, address, currentTime);
+			}
+		}
+
         
 		UpdatePlayersPelvis();
-        
 	}
     
     
@@ -538,15 +617,15 @@ public class CustomOSC : MonoBehaviour
 	// MAKE A NEW PLAYER - RIG, DUMMY, ISACTIVE, MORE ///
 	/////////////////////////////////////////////////////
 	
-	public PlayerRig AddPlayer(int playernum, long oscTime) {
+	public PlayerRig AddPlayer(int playernum, double oscTime) {
 		PlayerRig playerRig = new PlayerRig(); // make a new playerRig using my playerRig class
-		playerRig.addressBodyPartMap = new ConcurrentDictionary<string, BodyPart>(); //make a new addressBodyPartMap - no v3s, just the links
+		playerRig.addressBodyPartMap = new Dictionary<string, BodyPart>(); //make a new addressBodyPartMap - no v3s, just the links
 		GameObject dummy = Instantiate(dummyPrefab); //Instantiate a dummy
 		dummy.name = $"Dummy {playernum}"; //set the dummy prefab's name name to the player num
 		
 		string dummyTag = $"Player{playernum}";
 		//dummy.tag = dummyTag;
-		AddTagRecursively(dummy.transform, dummyTag);
+		//AddTagRecursively(dummy.transform, dummyTag);
 
 			
 		VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
@@ -556,7 +635,7 @@ public class CustomOSC : MonoBehaviour
 		player.name = $"Player {playernum}"; //set the player prefab's name to the player num
 		
 		string playerTag = $"Player{playernum}";
-		AddTagRecursively (player.transform, playerTag);
+		//AddTagRecursively (player.transform, playerTag);
 		
 		PlayerTransform playerTransform = player.GetComponent<PlayerTransform>(); //get the player's transform (position, scale, depth)
 		
@@ -593,14 +672,19 @@ public class CustomOSC : MonoBehaviour
 
 		// Connect the VRIK solver to the playerTransforms?????
 		vrik.solver.spine.headTarget = playerTransform.head.transform;
+		
 		vrik.solver.leftArm.target = playerTransform.leftWrist.transform;
 		vrik.solver.rightArm.target = playerTransform.rightWrist.transform;
 		
 		vrik.solver.spine.pelvisTarget = playerTransform.pelvis.transform;
 		//vrik.solver.spine.chestGoal = playerTransform.chest.transform;
+		
+		vrik.solver.leftLeg.target = playerTransform.leftAnkle.transform;
+		vrik.solver.rightLeg.target = playerTransform.rightAnkle.transform;
+		
 				
-		vrik.solver.leftLeg.target = playerTransform.leftToe.transform;
-		vrik.solver.rightLeg.target = playerTransform.rightToe.transform;
+		//vrik.solver.leftLeg.target = playerTransform.leftToe.transform;
+		//vrik.solver.rightLeg.target = playerTransform.rightToe.transform;
 		
 		//playerRig.pelvis = getCenterBetweenTwoBodyParts(playerRig.leftHip, playerRig.rightHip);
 
@@ -612,37 +696,27 @@ public class CustomOSC : MonoBehaviour
 		
 	
 		playerRig.active = true; // player rig is set to active because it was just set up
-		playerRig.lastUpdated = Time.time; // the lastupdated time should be set to now
-		playerRig.lastOSCTimeStamp = oscTime; // the OSC time is set to the ticks time we passed in when receiving the message
+		playerRig.lastOSCTimeStamp = oscTime; //oscTime; // the OSC time is set to the ticks time we passed in when receiving the message
 		playerRig.playerNumber = playernum; // add player number
 		return playerRig;
 		
 	} 
-	
-	
-	
     
 	/////////////////////////////////////////////////////////////////
 	// LINK SPECIFIC OSC MESSAGES TO SPECIFIC PLAYER BODY PARTS  ///
 	//   only called if the address has NOT been seen before      ///
 	////////////////////////////////////////////////////////////////
 	
-	// This is used by map#2. Both my maps use strings as keys. Map #2 connects OSC strings to game objects (example rig.leftWrist)
 	// This function determines what object is related to a given string address
 	
 	public GameObject OSCBodyPartAssigner(string address, PlayerRig rig) {
-		
 		GameObject thisObject;
 		
-		if (address.Contains("FACE_38")) {
+		if (address.Contains("FACE_38") || address.Contains("NOSE")) {
 			thisObject = rig.nose;
-			// update the time the player was last updated - should I be doing this for all body parts?!!!			
-			// Debug.Log($"lastUpdated {rig.lastUpdated}");			
-			// Debug.Log($"lastOSCTimeStamp {rig.lastOSCTimeStamp}");
-			rig.lastUpdated = Time.time;
-		} else if (address.Contains("RIGHT_MIDDLE_FINGER3")) { 
+		} else if (address.Contains("RIGHT_MIDDLE_FINGER3") || address.Contains("RIGHT_WRIST")) { 
 			thisObject = rig.rightWrist;
-		}  else if (address.Contains("LEFT_MIDDLE_FINGER3")) { 
+		}  else if (address.Contains("LEFT_MIDDLE_FINGER3") || address.Contains("LEFT_WRIST")) { 
 			thisObject = rig.leftWrist;
 		
 		} else if (address.Contains("RIGHT_KNEE")) { 
@@ -664,16 +738,16 @@ public class CustomOSC : MonoBehaviour
 		}  else if (address.Contains("NECK")) { 
 			thisObject = rig.chest;
 			
-		} else if (address.Contains("RIGHT_BIG_TOE")) { 
-			thisObject = rig.rightToe;
-		}  else if (address.Contains("LEFT_BIG_TOE")) { 
-			thisObject = rig.leftToe;
+		//} else if (address.Contains("RIGHT_BIG_TOE")) { 
+		//	thisObject = rig.rightToe;
+		//}  else if (address.Contains("LEFT_BIG_TOE")) { 
+		//	thisObject = rig.leftToe;
 			
 						
-		//} else if (address.Contains("RIGHT_ANKLE")) { 
-		//	thisObject = rig.rightAnkle;
-		//}  else if (address.Contains("LEFT_ANKLE")) { 
-		//	thisObject = rig.leftAnkle;
+		} else if (address.Contains("RIGHT_ANKLE")) { 
+			thisObject = rig.rightAnkle;
+		}  else if (address.Contains("LEFT_ANKLE")) { 
+			thisObject = rig.leftAnkle;
 		
 		//} else if (address.Contains("RIGHT_MIDDLE_FINGER3")) { 
 		//	thisObject = rig.leftWrist;
@@ -707,9 +781,8 @@ public class CustomOSC : MonoBehaviour
 						
 		} else {
 			// if I can't find a relevant body part, just make a sphere
-	        thisObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-			thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-			//thisObject.renderer. = debugSphereMaterial;
+			thisObject = Instantiate(debugSphere);
+			thisObject.transform.localScale = new Vector3(0.5f, 0.05f, 0.05f);
 			thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
 
 			// I can't remember why I do this parenting step
@@ -739,67 +812,29 @@ public class CustomOSC : MonoBehaviour
 	
 	
 	void OscReceiver1 (string address, OscDataHandle data){
-		// receive OSC message and update the values (coordinates) for the keys (addresses)
-		// it would be much easier if I could just update the coordinates HERE in the osc receiver
-		// but I can't create a gameobject outside of the update function 
+		//if(address.Contains("ANKLE"))
+		//{
+		//	Debug.Log("got a toe");
+		//}
 		
-		long currentTime = System.DateTime.Now.Ticks;	
-		Vector3 vec = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1));
-
-		int playerId = GetPlayerNumber(address); // extract the player number from the OSC string
-		//Debug.Log(playerId);
-
-		// make sure I don't try to set a depth value before I've seen this player
-		if(players.ContainsKey(playerId))
+		if(address.Contains("livepose/skeletons/0"))
 		{
-				PlayerRig currPlayer = players[playerId]; //grab the current player
-
-				// head follower depth nonsense
-				if (address.Contains("livepose/pyrealsense_head_follower/0") && data.GetElementAsFloat(2) != 0.000000)
-				{
-					float z = data.GetElementAsFloat(2); // extract the depth from the OSC data - which looks like this   livepose/position/0/1 fff -0.212375 0.803258 2.666000
-							
-					
-					if (currPlayer.lastPlayerDepth == 999){
-						currPlayer.lastPlayerDepth = z; // the first time is tricky
-					} else {
-						currPlayer.lastPlayerDepth = currPlayer.playerDepth; // go store current depth in "last depth so its there when we look for it"				
-					} if (Mathf.Abs(currPlayer.lastPlayerDepth - z) > maxAllowedDepthJumping) // if we are jumping too much
-					{
-						// do nothing
-					} else {
-						currPlayer.playerDepth = z;	
-					}
-				}				
-			// low pass filter to average out the values and jumpiness
-			// right now this is per player, I need it to be per body part
-			// so I either need to make a map for this or I need to make a Tupple and store it in the existing address-bodypart map
-			if (currPlayer.addressBodyPartMap.ContainsKey(address)){
-				BodyPart bodyPart = currPlayer.addressBodyPartMap[address];
-				bodyPart.positionHistory.Enqueue(vec);
-				if(bodyPart.positionHistory.Count > 10) {
-					Vector3 tmp;
-					bodyPart.positionHistory.TryDequeue(out tmp);
-				}
-				// now calculate the average
-				Vector3 average = new Vector3();
-				foreach(var v in bodyPart.positionHistory) {
-					average.x = average.x + v.x;
-					average.y = average.y + v.y;
-				}
-				bodyPart.averageX = average.x / bodyPart.positionHistory.Count;
-				bodyPart.averageY = average.y / bodyPart.positionHistory.Count;
+			
+			//float getXValue = data.GetElementAsFloat(0);
+			//float reversedXValue = getXValue * -1;
+			//Vector3 fixedData = new Vector3(data.GetElementAsFloat(0), reversedXValue, data.GetElementAsFloat(2)); 
+			
+			SkeletonPositionMessage msg = new SkeletonPositionMessage(address, data);
+			// make sure confidence is big enough before adding msg to the queue
+			if(msg.threshold > minConfidenceAllowed)
+			{
+				skeletonPositionMessages.Enqueue(msg);
 			}
-		} 
-
-		//If it's a skeleton-position message, which looks like this livepose/skeletons/0/0/keypoints/RIGHT_RING_FINGER2 fff 370.167511 253.175644 0.810268
-		if (address.Contains("livepose/skeletons/0"))
-		 //&& data.GetElementAsFloat(2) > 0.5f
-		{		
-			//Debug.Log(data.GetElementAsFloat(2));
-			//Update a special threadsafe map of all the OSC Messages (a string, and a vector3-time tupple 
-			addressCoordinateAndTimeStampMap.AddOrUpdate(address, (vec, currentTime), (k,v) => v = (vec, currentTime));
+		} else if(address.Contains("livepose/pyrealsense_head_follower/0"))
+		{
+			headFollowerMessages.Enqueue(new HeadFollowerMessage(address, data));
 		}
+		
     }
 }
 
