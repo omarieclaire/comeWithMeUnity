@@ -36,10 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/randomAudioClip.cs" />
+     <Compile Include="Assets/Scripts/randomAudioClip.cs" />
      <Compile Include="Assets/Scripts/MoveForward.cs" />
      <Compile Include="Assets/lineDrawer.cs" />
      <Compile Include="Assets/Scripts/CustomOSC.cs" />
+     <Compile Include="Assets/invokeEvent.cs" />
      <Compile Include="Assets/Samples/Animation Rigging/1.1.1/Animation Rigging Constraint Samples/Info/Scripts/Readme.cs" />
      <Compile Include="Assets/Spawner.cs" />
      <Compile Include="Assets/TogglePhysics.cs" />
@@ -47,6 +48,8 @@
      <Compile Include="Assets/PlayerTransform.cs" />
      <Compile Include="Assets/Samples/Animation Rigging/1.1.1/Animation Rigging Constraint Samples/Scripts/mParent.cs" />
      <Compile Include="Assets/TriggerInteraction.cs" />
+     <Compile Include="Assets/moveTowardsSimilarlyNamed.cs" />
+     <Compile Include="Assets/randomAudioClip.cs" />
      <None Include="Assets/StreamingAssets/desc.txt" />
      <None Include="Assets/__www.unityassetcollection.com__.txt" />
      <None Include="Assets/WwiseSettings.xml" />

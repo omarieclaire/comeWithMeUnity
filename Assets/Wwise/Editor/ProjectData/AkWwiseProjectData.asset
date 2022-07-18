@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: b9e4693691a9144f8b7f312e7018abb5
     GuidInternal: 
-    m_lastTime: -8585447181021576448
+    m_lastTime: -8585435034339884216
     List:
     - name: New_SoundBanktest
       guid: 6a3832bec51ea54ca49f91523d3e6e6c
@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 36cd61d05128d64595a3a1a8fb00fabb
     GuidInternal: 
-    m_lastTime: -8585447181021684215
+    m_lastTime: -8585447139252857545
     List:
+    - name: connectionMade
+      guid: bef912836c74474a93a13a7ff2bf6212
+      id: 783006334
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 36cd61d05128d64595a3a1a8fb00fabb
+      - ElementName: connectionMade
+        ObjectType: 3
+        guid: bef912836c74474a93a13a7ff2bf6212
+      Path: Events/Default Work Unit/connectionMade
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: delightHit
+      guid: 0c594c103ba27c48b3d6ed93090cdcf3
+      id: 1861205831
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 36cd61d05128d64595a3a1a8fb00fabb
+      - ElementName: delightHit
+        ObjectType: 3
+        guid: 0c594c103ba27c48b3d6ed93090cdcf3
+      Path: Events/Default Work Unit/delightHit
+      maxAttenuation: 0
+      maxDuration: 0.353104
+      minDuration: 0.353104
     - name: newtest
       guid: 8dd4e8aaddf65b4d8e735025d71e2bb8
       id: 3398593705
@@ -130,6 +164,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: sadHit
+      guid: c85d64f20341294da8add5125a62618a
+      id: 3597628402
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 36cd61d05128d64595a3a1a8fb00fabb
+      - ElementName: sadHit
+        ObjectType: 3
+        guid: c85d64f20341294da8add5125a62618a
+      Path: Events/Default Work Unit/sadHit
+      maxAttenuation: 0
+      maxDuration: 0.189938
+      minDuration: 0.189938
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -142,8 +193,22 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 6c1a6df733c26d45aef20f95ed7518e5
     GuidInternal: 
-    m_lastTime: -8585447208493032591
-    List: []
+    m_lastTime: -8585447152022207960
+    List:
+    - name: rtpctest
+      guid: c8257d664e0ffa46961b69a166f4f890
+      id: 1567385492
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6c1a6df733c26d45aef20f95ed7518e5
+      - ElementName: rtpctest
+        ObjectType: 13
+        guid: c8257d664e0ffa46961b69a166f4f890
+      Path: Game Parameters/Default Work Unit/rtpctest
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     PathAndIcons:

@@ -13,9 +13,17 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CONNECTIONMADE = 783006334U;
+        static const AkUniqueID DELIGHTHIT = 1861205831U;
         static const AkUniqueID NEWTEST = 3398593705U;
         static const AkUniqueID NEWTEST2 = 2374045241U;
+        static const AkUniqueID SADHIT = 3597628402U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID RTPCTEST = 1567385492U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
