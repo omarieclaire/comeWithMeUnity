@@ -1164,7 +1164,8 @@ MonoBehaviour:
   depthSphere: {fileID: 2041394719}
   debugSphere: {fileID: 2374789022815624427}
   speed: 1
-  timeToWaitForMissingPlayers: 0.5
+  timeToWaitForMissingPlayers: 10
+  timeToWaitForMissingFeet: 0.5
   minConfidenceAllowed: 0.8
   depthFactorial: 0.3
   maxAllowedDepthJumping: 200
@@ -1186,7 +1187,6 @@ MonoBehaviour:
   playerPrefab: {fileID: 6300436808696301151, guid: 3d790b07b9b5547cc893cf26d87f053c, type: 3}
   delightBall: {fileID: 648132308}
   sadSquare: {fileID: 10898449}
-  enableSmoothing: 1
 --- !u!120 &861467985
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f29985fc44d8b410c94d48fc79dec8be, type: 3}
   m_Name: 
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c7fd145bbdd043f8b229b30af759561, type: 3}
   m_Name: 
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0ac408c6189148c3942a7295264ab0e, type: 3}
   m_Name: 
@@ -2130,6 +2130,10 @@ PrefabInstance:
     - target: {fileID: 2948178578426080330, guid: b696adf79f189476cb39347a960e217b, type: 3}
       propertyPath: m_Name
       value: debugSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948178578426080330, guid: b696adf79f189476cb39347a960e217b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b696adf79f189476cb39347a960e217b, type: 3}

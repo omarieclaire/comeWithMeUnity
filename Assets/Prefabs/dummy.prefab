@@ -2034,7 +2034,7 @@ GameObject:
   - component: {fileID: 2460422044945888451}
   m_Layer: 6
   m_Name: Bip002 L Hand
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2617,7 +2617,7 @@ MonoBehaviour:
   solver:
     executedInEditor: 0
     IKPosition: {x: 0, y: 0, z: 0}
-    IKPositionWeight: 0.79
+    IKPositionWeight: 0.854
     root: {fileID: 0}
     LOD: 0
     scale: 1
@@ -3571,7 +3571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502513, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502518, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_RootOrder
@@ -3735,7 +3735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502513, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502518, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_RootOrder
@@ -3951,7 +3951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502513, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502518, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_RootOrder
@@ -4163,7 +4163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502513, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3990108833682502518, guid: a4d26c501c87a43adaceb6395be36459, type: 3}
       propertyPath: m_RootOrder
