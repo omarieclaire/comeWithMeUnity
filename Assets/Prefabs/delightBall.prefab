@@ -129,3 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 10}
   rotateVelocity: {x: 100, y: 100, z: 0}
+  speedLimit: 30
