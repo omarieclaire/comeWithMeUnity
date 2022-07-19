@@ -13,6 +13,10 @@ using RootMotion.FinalIK;
 	// CAMERA WEIRDNESS
 	// Why do I need to rotate the camera Y 180?
 	
+	
+	
+	// turned off "is kinematic" on hands
+	
 	///////////////
 	// TODO!!!! //
 	//////////////
@@ -97,6 +101,9 @@ public class CustomOSC : MonoBehaviour
 	public Material debugSphereMaterial;
 	
 	[SerializeField]
+	static public bool usingMMPose = false;
+	
+	[SerializeField]
 	public GameObject depthSphere;
 
 	[SerializeField]
@@ -114,6 +121,9 @@ public class CustomOSC : MonoBehaviour
 
 	[SerializeField]
 	public float minConfidenceAllowed = 0f;
+	
+	[SerializeField]
+	public float minWristConfidenceAllowed = 0f;
 
 	[SerializeField]
 	public float depthFactorial = 0.3f;
@@ -215,7 +225,11 @@ public class CustomOSC : MonoBehaviour
 			position = vec;
 			// invert the x.
 			//position.x = -1 * position.x;
-			position.x = 640 - position.x;
+			
+			if (!usingMMPose)
+			{
+				position.x = 640 - position.x;
+			}
 			address = add;
 			playerId = GetPlayerNumber(address);
 		}
@@ -715,82 +729,91 @@ public class CustomOSC : MonoBehaviour
 	public GameObject OSCBodyPartAssigner(string address, PlayerRig rig) {
 		GameObject thisObject;
 		
-		if (address.Contains("FACE_38") || address.Contains("NOSE")) {
-			thisObject = rig.nose;
-		} else if (address.Contains("RIGHT_MIDDLE_FINGER3") || address.Contains("RIGHT_WRIST")) { 
-			thisObject = rig.rightWrist;
-		}  else if (address.Contains("LEFT_MIDDLE_FINGER3") || address.Contains("LEFT_WRIST")) { 
-			thisObject = rig.leftWrist;
+		if (usingMMPose)
+		{
+			if (address.Contains("FACE_38") || address.Contains("NOSE")) {
+				thisObject = rig.nose;
+			} else if (address.Contains("RIGHT_MIDDLE_FINGER3") || address.Contains("RIGHT_WRIST")) { 
+				thisObject = rig.rightWrist;
+			}  else if (address.Contains("LEFT_MIDDLE_FINGER3") || address.Contains("LEFT_WRIST")) { 
+				thisObject = rig.leftWrist;
 		
-		} else if (address.Contains("RIGHT_KNEE")) { 
-			thisObject = rig.rightKnee;
-		}  else if (address.Contains("LEFT_KNEE")) { 
-			thisObject = rig.leftKnee;
+			} else if (address.Contains("RIGHT_KNEE")) { 
+				thisObject = rig.rightKnee;
+			}  else if (address.Contains("LEFT_KNEE")) { 
+				thisObject = rig.leftKnee;
 				
-		} else if (address.Contains("RIGHT_ELBOW")) { 
-			thisObject = rig.rightElbow;
-		}  else if (address.Contains("LEFT_ELBOW")) { 
-			thisObject = rig.leftElbow;
+			} else if (address.Contains("RIGHT_ELBOW")) { 
+				thisObject = rig.rightElbow;
+			}  else if (address.Contains("LEFT_ELBOW")) { 
+				thisObject = rig.leftElbow;
 				
-		} else if (address.Contains("LEFT_HIP")) { 
-			thisObject = rig.leftHip;
+			} else if (address.Contains("LEFT_HIP")) { 
+				thisObject = rig.leftHip;
 
-		} else if (address.Contains("RIGHT_HIP")) { 
-			thisObject = rig.rightHip;	
+			} else if (address.Contains("RIGHT_HIP")) { 
+				thisObject = rig.rightHip;	
 			
-		}  else if (address.Contains("NECK")) { 
-			thisObject = rig.chest;
-			
-		//} else if (address.Contains("RIGHT_BIG_TOE")) { 
-		//	thisObject = rig.rightToe;
-		//}  else if (address.Contains("LEFT_BIG_TOE")) { 
-		//	thisObject = rig.leftToe;
-			
-						
-		} else if (address.Contains("RIGHT_ANKLE")) { 
-			thisObject = rig.rightAnkle;
-		}  else if (address.Contains("LEFT_ANKLE")) { 
-			thisObject = rig.leftAnkle;
-		
-		//} else if (address.Contains("RIGHT_MIDDLE_FINGER3")) { 
-		//	thisObject = rig.leftWrist;
-		//}  else if (address.Contains("LEFT_MIDDLE_FINGER3")) { 
-		//	thisObject = rig.rightWrist;
-		
-		//} else if (address.Contains("RIGHT_KNEE")) { 
-		//	thisObject = rig.leftKnee;
-		//}  else if (address.Contains("LEFT_KNEE")) { 
-		//	thisObject = rig.rightKnee;
-				
-		//} else if (address.Contains("RIGHT_ELBOW")) { 
-		//	thisObject = rig.leftElbow;
-		//}  else if (address.Contains("LEFT_ELBOW")) { 
-		//	thisObject = rig.rightElbow;
-				
-		//} else if (address.Contains("MID_HIP")) { 
-		//	thisObject = rig.pelvis;	
-		//}  else if (address.Contains("NECK")) { 
-		//	thisObject = rig.chest;
-			
-		//} else if (address.Contains("RIGHT_BIG_TOE")) { 
-		//	thisObject = rig.leftToe;
-		//}  else if (address.Contains("LEFT_BIG_TOE")) { 
-		//	thisObject = rig.rightToe;
-			
-		//} else if (address.Contains("RIGHT_ANKLE")) { 
-		//	thisObject = rig.leftAnkle;
-		//}  else if (address.Contains("LEFT_ANKLE")) { 
-		//	thisObject = rig.rightAnkle;
-						
+			}  else if (address.Contains("NECK")) { 
+				thisObject = rig.chest;
+							
+			} else if (address.Contains("RIGHT_ANKLE")) { 
+				thisObject = rig.rightAnkle;
+			}  else if (address.Contains("LEFT_ANKLE")) { 
+				thisObject = rig.leftAnkle;
+			} else {
+				// if I can't find a relevant body part, just make a sphere
+				thisObject = Instantiate(debugSphere);
+				thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+				thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
+
+				// I can't remember why I do this parenting step
+				thisObject.transform.parent = rig.playerTransform.transform;
+			}
+			//not using mmpose (using a buggy version of TRT) so flip everything
 		} else {
-			// if I can't find a relevant body part, just make a sphere
-			thisObject = Instantiate(debugSphere);
-			thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-			thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
+			if (address.Contains("FACE_38") || address.Contains("NOSE")) {
+				thisObject = rig.nose;
+			} else if (address.Contains("RIGHT_MIDDLE_FINGER3") || address.Contains("RIGHT_WRIST")) { 
+				thisObject = rig.leftWrist;
+			}  else if (address.Contains("LEFT_MIDDLE_FINGER3") || address.Contains("LEFT_WRIST")) { 
+				thisObject = rig.rightWrist;
+		
+			} else if (address.Contains("RIGHT_KNEE")) { 
+				thisObject = rig.leftKnee;
+			}  else if (address.Contains("LEFT_KNEE")) { 
+				thisObject = rig.rightKnee;
+				
+			} else if (address.Contains("RIGHT_ELBOW")) { 
+				thisObject = rig.leftElbow;
+			}  else if (address.Contains("LEFT_ELBOW")) { 
+				thisObject = rig.rightElbow;
+				
+			} else if (address.Contains("LEFT_HIP")) { 
+				thisObject = rig.rightHip;
 
-			// I can't remember why I do this parenting step
-			thisObject.transform.parent = rig.playerTransform.transform;
-        }
+			} else if (address.Contains("RIGHT_HIP")) { 
+				thisObject = rig.leftHip;	
+			}  else if (address.Contains("NECK")) { 
+				thisObject = rig.chest;	
+						
+			} else if (address.Contains("RIGHT_ANKLE")) { 
+				thisObject = rig.leftAnkle;
+			}  else if (address.Contains("LEFT_ANKLE")) { 
+				thisObject = rig.rightAnkle;
+						
+			} else {
+				// if I can't find a relevant body part, just make a sphere
+				thisObject = Instantiate(debugSphere);
+				thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+				thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
+
+				// I can't remember why I do this parenting step
+				thisObject.transform.parent = rig.playerTransform.transform;
+			}
+		}
+
+		
 		return thisObject;
     }
 
@@ -823,15 +846,13 @@ public class CustomOSC : MonoBehaviour
 		if(address.Contains("livepose/skeletons/0"))
 		{
 			
-			//float getXValue = data.GetElementAsFloat(0);
-			//float reversedXValue = getXValue * -1;
-			//Vector3 fixedData = new Vector3(data.GetElementAsFloat(0), reversedXValue, data.GetElementAsFloat(2)); 
-			
 			SkeletonPositionMessage msg = new SkeletonPositionMessage(address, data);
 			// make sure confidence is big enough before adding msg to the queue
-			if(msg.threshold > minConfidenceAllowed)
+			
+			if ((address.Contains("ANKLE") || address.Contains("WRIST")) && msg.threshold > minWristConfidenceAllowed || msg.threshold > minConfidenceAllowed)
 			{
 				skeletonPositionMessages.Enqueue(msg);
+
 			}
 		} else if(address.Contains("livepose/pyrealsense_head_follower/0"))
 		{
