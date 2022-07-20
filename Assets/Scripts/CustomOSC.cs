@@ -101,17 +101,22 @@ public class CustomOSC : MonoBehaviour
 	public Material debugSphereMaterial;
 	
 	[SerializeField]
-	static public bool usingMMPose = false;
+	public bool lerpOn = false;
+	
+	[SerializeField]    
+	public float lerpSpeed = 0.15f;
+	
+	[SerializeField]
+	public int avgFilterSize = 10;
+	
+	[SerializeField]
+	static public bool usingMMPose = true;
 	
 	[SerializeField]
 	public GameObject depthSphere;
 
 	[SerializeField]
 	public GameObject debugSphere;
-	
-	[SerializeField]
-	    
-	public float speed = 0.15f;
 
 	[SerializeField]
 	public float timeToWaitForMissingPlayers = 0.5f;
@@ -240,15 +245,19 @@ public class CustomOSC : MonoBehaviour
 	// (skeleton position messages have a vector position but no depth)
 	public class HeadFollowerMessage
 	{
-		public string address;
 		public int playerId;
 		public float depth;
 		
 		public HeadFollowerMessage(string add, OscDataHandle data)
 		{
 			depth = data.GetElementAsFloat(2);
-			address = add;
-			playerId = GetPlayerNumber(address);
+			playerId = GetPlayerNumber(add);
+		}
+		
+		public HeadFollowerMessage(float d, int id)
+		{
+			depth = d;
+			playerId = id;
 		}
 		
 	}
@@ -284,7 +293,8 @@ public class CustomOSC : MonoBehaviour
 		public double lastOSCTimeStamp;
 		public int playerNumber;
 		public float lastPlayerDepth = 999; //an impossible number
-		public float playerDepth;		
+		// this is offset by 4 because of the mapping?
+		public float playerDepth = 4f;			
 	}
 	
 	public ConcurrentQueue<SkeletonPositionMessage> skeletonPositionMessages = new ConcurrentQueue<SkeletonPositionMessage>();
@@ -369,7 +379,7 @@ public class CustomOSC : MonoBehaviour
 	// update the player depth
 	// note: when we initialize a player we set their depth to 999 because they have no sensible "last player depth"
 	// * we get some weird OSC messages that cause the player to jump around, so we don't update the depth, which can cause problems
-	void UpdatePlayerDepth(PlayerRig currPlayer, string address, float depth)
+	void UpdatePlayerDepth(PlayerRig currPlayer, float depth)
 	{
 		// head follower depth nonsense
 		if (depth != 0.000000)
@@ -426,9 +436,13 @@ public class CustomOSC : MonoBehaviour
 	{				
 		// low pass filter to average out the values and jumpiness
 		bodyPart.positionHistory.Enqueue(position);
-		if(bodyPart.positionHistory.Count > 10) {
+		while(bodyPart.positionHistory.Count > avgFilterSize)
+		{
 			Vector3 tmp;
-			bodyPart.positionHistory.TryDequeue(out tmp);
+			if(!bodyPart.positionHistory.TryDequeue(out tmp))
+			{
+				break;
+			}
 		}
 		// now calculate the average
 		Vector3 sum = new Vector3();
@@ -506,15 +520,18 @@ public class CustomOSC : MonoBehaviour
 			//depthSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 			//depthSphere.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 			//depthSphere.GetComponent<Renderer>().material = debugSphereMaterial;
-				
-			Vector3 p = transform.position;
-			p.y = playerRig.playerDepth;
-		        
 
 			//depthSphere.transform.position = new Vector3(0,0,playerRig.playerDepth * -1);
 		        
 			// use lerp to smooth out the movement - NOTE is this making the movements inaccurate?
-			bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, speed);  
+			if(lerpOn)
+			{
+				bodyPartGameObject.transform.position = Vector3.Lerp(bodyPartGameObject.transform.position, target, lerpSpeed);  
+			} else
+			{
+				bodyPartGameObject.transform.position = target;
+			}
+			
 			//bodyPart.transform.position = target;
 		}
 		
@@ -546,13 +563,12 @@ public class CustomOSC : MonoBehaviour
 		while(headFollowerMessages.TryDequeue(out headFollowerMessage))
 		{
 			// extract useful data from the message
-			string address = headFollowerMessage.address;
 			int playerId = headFollowerMessage.playerId;
 			float depth = headFollowerMessage.depth;
 			
 			PlayerRig currPlayer = GetOrMakePlayer(playerId, currentTime);
 			
-			UpdatePlayerDepth(currPlayer, address, depth);
+			UpdatePlayerDepth(currPlayer, depth);
 		}
 		
 		// handle Skeleton position messages
@@ -625,7 +641,13 @@ public class CustomOSC : MonoBehaviour
 			Vector3 leftHipCoord = player.leftHip.transform.position;
 			Vector3 rightHipCoord = player.rightHip.transform.position;
 			Vector3 pelvisCoord = GetCenterBetweenTwoBodyParts(leftHipCoord, rightHipCoord);
-			player.pelvis.transform.position = Vector3.Lerp(player.pelvis.transform.position, pelvisCoord, speed);
+			if(lerpOn)
+			{
+				player.pelvis.transform.position = Vector3.Lerp(player.pelvis.transform.position, pelvisCoord, lerpSpeed);
+			} else
+			{
+				player.pelvis.transform.position = pelvisCoord;
+			}
 		}
 	}
     
@@ -696,8 +718,8 @@ public class CustomOSC : MonoBehaviour
 		vrik.solver.spine.pelvisTarget = playerTransform.pelvis.transform;
 		//vrik.solver.spine.chestGoal = playerTransform.chest.transform;
 		
-		vrik.solver.leftLeg.target = playerTransform.leftAnkle.transform;
-		vrik.solver.rightLeg.target = playerTransform.rightAnkle.transform;
+		//vrik.solver.leftLeg.target = playerTransform.leftAnkle.transform;
+		//vrik.solver.rightLeg.target = playerTransform.rightAnkle.transform;
 		
 				
 		//vrik.solver.leftLeg.target = playerTransform.leftToe.transform;
@@ -714,7 +736,7 @@ public class CustomOSC : MonoBehaviour
 	
 		playerRig.active = true; // player rig is set to active because it was just set up
 		playerRig.lastOSCTimeStamp = oscTime; //oscTime; // the OSC time is set to the ticks time we passed in when receiving the message
-		playerRig.playerNumber = playernum; // add player number
+		playerRig.playerNumber = playernum; // add player number		
 		return playerRig;
 		
 	} 

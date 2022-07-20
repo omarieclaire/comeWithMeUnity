@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DelightBallController : MonoBehaviour
 {
-	public Vector3 velocity = new Vector3(0, 0, 10);
 	public Vector3 rotateVelocity = new Vector3(100, 100, 0);
-	public float speedLimit = 50.0f;
+	public Vector3 acceleration = new Vector3(0, 0, 0.5f);
+	public float speedLimit = 2f;
 	private new Rigidbody rigidbody;
 	
 	
@@ -19,7 +19,7 @@ public class DelightBallController : MonoBehaviour
     // Update is called once per frame
 	void FixedUpdate()
 	{
-		rigidbody.velocity += this.velocity;
+		rigidbody.velocity -= acceleration;
 		if(rigidbody.velocity.z >= speedLimit){
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, speedLimit);
 		}
@@ -29,11 +29,11 @@ public class DelightBallController : MonoBehaviour
     }
     
 	void Update(){
-		if (transform.position.z > 27)
-		{
-		Debug.Log("destroyed");
-		Destroy(gameObject);
-		}
+		//if (transform.position.z < -7)
+		//{
+		//Debug.Log("destroyed");
+		//Destroy(gameObject);
+		//}
 	}
  
 }

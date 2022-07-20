@@ -2557,7 +2557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8814651343553468598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: -2.1, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2823,7 +2823,7 @@ MonoBehaviour:
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
       target: {fileID: 0}
-      positionWeight: 0.75
+      positionWeight: 0
       rotationWeight: 0
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
@@ -2868,7 +2868,7 @@ MonoBehaviour:
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
       target: {fileID: 0}
-      positionWeight: 0.75
+      positionWeight: 0
       rotationWeight: 0
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
