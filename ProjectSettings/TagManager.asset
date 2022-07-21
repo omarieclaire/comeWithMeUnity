@@ -20,6 +20,7 @@ TagManager:
   - Player12
   - Player13
   - Player14
+  - hand
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Water
   - UI
   - BodyParts
-  - 
-  - 
+  - DelightBall
+  - SadSquare
   - 
   - 
   - 

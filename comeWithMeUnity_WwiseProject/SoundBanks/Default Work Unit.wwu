@@ -8,6 +8,7 @@
 						<ObjectRef Name="PlayerSixOff" ID="{53A6DAB4-03D5-4030-831B-1C1D46DB94D7}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerEightOff" ID="{02256E18-AB0E-40D4-B85C-7DE7C1E86700}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="newtest2" ID="{02FAF33B-3AF8-4100-9C51-94BE0018E8D6}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+<<<<<<< HEAD
 						<ObjectRef Name="PlayerSevenOff" ID="{EB3212C7-A698-420B-9A3D-35CB52EE4F3E}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Off" ID="{DC0F5A8B-02B5-4291-9152-193BB515AA5B}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerTwo" ID="{2068519D-BB92-4295-8FFC-2A5B6B179144}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
@@ -29,6 +30,10 @@
 						<ObjectRef Name="PlayerThree" ID="{DF3DC001-BA1D-49D8-AFB5-1D348A853FE1}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerFiveOff" ID="{7E708236-BAC0-4B45-B7BF-82DA5C92505D}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+=======
+						<ObjectRef Name="delightHit" ID="{104C590C-A23B-487C-B3D6-ED93090CDCF3}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="connectionMade" ID="{8312F9BE-746C-4A47-93A1-3A7FF2BF6212}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
+>>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 						<ObjectRef Name="sadHit" ID="{F2645DC8-4103-4D29-A8AD-D5125A62618A}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="newtest" ID="{AAE8D48D-F6DD-4D5B-8E73-5025D71E2BB8}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerSix" ID="{7E2D5BE4-B1D1-4DF7-BFF0-13160F216848}" WorkUnitID="{D061CD36-2851-45D6-95A3-A1A8FB00FABB}" Origin="Manual" Filter="7"/>

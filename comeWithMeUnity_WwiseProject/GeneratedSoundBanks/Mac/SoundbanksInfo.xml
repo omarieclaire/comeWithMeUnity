@@ -11,11 +11,16 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
+<<<<<<< HEAD
 		<SoundBank Id="854170543" Language="SFX" Hash="927251446">
+=======
+		<SoundBank Id="854170543" Language="SFX" Hash="2584235054">
+>>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBanktest</ObjectPath>
 			<ShortName>New_SoundBanktest</ShortName>
 			<Path>New_SoundBanktest.bnk</Path>
 			<IncludedEvents>
+<<<<<<< HEAD
 				<Event Id="626769978" Name="backgroundMusic" ObjectPath="\Events\Default Work Unit\backgroundMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="372910417" Language="SFX">
@@ -129,6 +134,28 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3050945240" Name="New_Event" ObjectPath="\Events\Default Work Unit\New_Event" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+=======
+				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="588449863" Language="SFX">
+							<ShortName>shock1.wav</ShortName>
+							<Path>SFX/shock1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="847782685" Language="SFX">
+							<ShortName>ClampMid R-001.wav</ShortName>
+							<Path>SFX/ClampMid R-001_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1861205831" Name="delightHit" ObjectPath="\Events\Default Work Unit\delightHit" DurationType="OneShot" DurationMin="0.353104" DurationMax="0.353104">
+					<IncludedMemoryFiles>
+						<File Id="150322898" Language="SFX">
+							<ShortName>808Mid L-002.wav</ShortName>
+							<Path>SFX/808Mid L-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+>>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 				<Event Id="3398593705" Name="newtest" ObjectPath="\Events\Default Work Unit\newtest" DurationType="OneShot" DurationMin="64." DurationMax="64.">
 					<IncludedMemoryFiles>
 						<File Id="1003383027" Language="SFX">
@@ -138,6 +165,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2374045241" Name="newtest2" ObjectPath="\Events\Default Work Unit\newtest2" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+<<<<<<< HEAD
 				<Event Id="586671467" Name="PlayerEight" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerEight" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="26329041" Language="SFX">
@@ -253,12 +281,26 @@
 						<File Id="682301584" Language="SFX">
 							<ShortName>sadHitNew\sadHitSoundsNew-005.wav</ShortName>
 							<Path>SFX/sadHitNew/sadHitSoundsNew-005_10C4C929.wem</Path>
+=======
+				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.189938" DurationMax="0.189938">
+					<IncludedMemoryFiles>
+						<File Id="586812907" Language="SFX">
+							<ShortName>808Mid R-002.wav</ShortName>
+							<Path>SFX/808Mid R-002_10C4C929.wem</Path>
+>>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="1567385492" Name="rtpctest" ObjectPath="\Game Parameters\Default Work Unit\rtpctest"/>
+			</GameParameters>
 		</SoundBank>
+<<<<<<< HEAD
 		<SoundBank Id="1355168291" Language="SFX" Hash="3322846804">
+=======
+		<SoundBank Id="1355168291" Language="SFX" Hash="3055037273">
+>>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
