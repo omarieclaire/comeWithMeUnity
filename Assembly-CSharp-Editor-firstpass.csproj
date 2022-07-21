@@ -1039,6 +1039,12 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Autodesk.Fbx.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Autodesk.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
@@ -1072,6 +1078,9 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Autodesk.Fbx">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Autodesk.Fbx.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -1084,11 +1093,11 @@
     <Reference Include="Unity.EditorCoroutines.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="OscJack.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/OscJack.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TerrainTools">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
@@ -1107,6 +1116,9 @@
     </Reference>
     <Reference Include="Unity.TerrainTools.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -1141,10 +1153,6 @@
       <Project>{214d4dc3-bd86-7531-e773-1b674d26835d}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
-      <Project>{8c508bc0-e68d-f9a2-e534-5c779ea6d2f2}</Project>
-      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.csproj">
       <Project>{bdebf7d0-666a-f815-4794-71464b8d2ebf}</Project>
       <Name>AK.Wwise.Unity.API</Name>
@@ -1160,6 +1168,10 @@
     <ProjectReference Include="AK.Wwise.Unity.Timeline.Editor.csproj">
       <Project>{668b1ad8-7495-e93f-a8cc-750bdb0a2048}</Project>
       <Name>AK.Wwise.Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
+      <Project>{8c508bc0-e68d-f9a2-e534-5c779ea6d2f2}</Project>
+      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Ak.Wwise.Api.WAAPI.csproj">
       <Project>{687afd50-0a70-bcf4-b2d3-42106336df20}</Project>

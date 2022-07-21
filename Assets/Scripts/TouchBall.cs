@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public class TouchBall : MonoBehaviour
 {
@@ -16,5 +17,15 @@ public class TouchBall : MonoBehaviour
 
 		//other.gameObject.transform.localScale = new Vector3(2f, 2f, 2f); 
 		//Destroy(other.gameObject);
+	}
+	
+	private void Update() {
+		var hands = GameObject.FindGameObjectsWithTag("hand");
+		var otherHands = hands.Where(h => h != this.gameObject).ToList();
+		foreach (GameObject hand in otherHands) {
+			float distance = Vector3.Distance(transform.position, hand.transform.position);
+			Animator partentAnimator = hand.GetComponentInParent<Animator>();
+			Debug.Log($"Hand {hand.name} of {partentAnimator.gameObject.name} is {distance}m away");
+		}
 	}
 }

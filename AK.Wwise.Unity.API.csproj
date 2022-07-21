@@ -63,8 +63,8 @@
      <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkBankContent.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkQueryRTPCValue.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkResourceMonitorDataSummary.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkMIDIEventCallbackInfo.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Handwritten/Common/Arrays/AkSourceSettingsArray.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkMIDIEventCallbackInfo.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkTriangle.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Handwritten/Common/AkWwiseFileWatcher.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/Generated/Common/AkDurationCallbackInfo.cs" />

@@ -110,7 +110,7 @@ public class CustomOSC : MonoBehaviour
 	public int avgFilterSize = 10;
 	
 	[SerializeField]
-	static public bool usingMMPose = true;
+	static public bool usingMMPose = false;
 	
 	[SerializeField]
 	public GameObject depthSphere;
