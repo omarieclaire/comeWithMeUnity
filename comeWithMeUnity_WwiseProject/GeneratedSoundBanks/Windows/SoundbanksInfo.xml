@@ -1,38 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>/Users/kristian/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/GitHub/comeWithMeUnity/comeWithMeUnity_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/kristian/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/GitHub/comeWithMeUnity/comeWithMeUnity_WwiseProject/.cache/Windows/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/kristian/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/GitHub/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ProjectRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/kristian/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/GitHub/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>/Users/marie/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/Documents/games/ComeWithMe/comeWithMeUnity/comeWithMeUnity_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="854170543" Language="SFX" Hash="2584235054">
+		<SoundBank Id="854170543" Language="SFX" Hash="2043344168">
 			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBanktest</ObjectPath>
 			<ShortName>New_SoundBanktest</ShortName>
 			<Path>New_SoundBanktest.bnk</Path>
 			<IncludedEvents>
-				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
+				<Event Id="626769978" Name="backgroundMusic" ObjectPath="\Events\Default Work Unit\backgroundMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="588449863" Language="SFX">
-							<ShortName>shock1.wav</ShortName>
-							<Path>SFX/shock1_D79FB2B7.wem</Path>
+						<File Id="372910417" Language="SFX">
+							<ShortName>CWM_69BPM_ backing3.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ backing3_D79FB2B7.wem</Path>
 						</File>
-						<File Id="847782685" Language="SFX">
-							<ShortName>ClampMid R-001.wav</ShortName>
-							<Path>SFX/ClampMid R-001_10C4C929.wem</Path>
+						<File Id="414213096" Language="SFX">
+							<ShortName>CWM_69BPM_ backing2.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ backing2_D79FB2B7.wem</Path>
+						</File>
+						<File Id="553253144" Language="SFX">
+							<ShortName>CWM_69BPM_ backing.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ backing_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1861205831" Name="delightHit" ObjectPath="\Events\Default Work Unit\delightHit" DurationType="OneShot" DurationMin="0.353104" DurationMax="0.353104">
+				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="150322898" Language="SFX">
-							<ShortName>808Mid L-002.wav</ShortName>
-							<Path>SFX/808Mid L-002_10C4C929.wem</Path>
+						<File Id="723459570" Language="SFX">
+							<ShortName>connectionMade.wav</ShortName>
+							<Path>SFX/connectionMade_10C4C929.wem</Path>
+						</File>
+						<File Id="768976350" Language="SFX">
+							<ShortName>connectionSoundCWM_69BPM_ loopbowlneedsreverb.wav</ShortName>
+							<Path>SFX/connectionSoundCWM_69BPM_ loopbowlneedsreverb_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1861205831" Name="delightHit" ObjectPath="\Events\Default Work Unit\delightHit" DurationType="OneShot" DurationMin="0.589396" DurationMax="1.005417">
+					<IncludedMemoryFiles>
+						<File Id="114553429" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-002.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-002_10C4C929.wem</Path>
+						</File>
+						<File Id="157486970" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-008.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-008_10C4C929.wem</Path>
+						</File>
+						<File Id="199392582" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-004.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-004_10C4C929.wem</Path>
+						</File>
+						<File Id="210651248" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-013.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-013_10C4C929.wem</Path>
+						</File>
+						<File Id="214113608" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-007.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-007_10C4C929.wem</Path>
+						</File>
+						<File Id="214778998" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-015.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-015_10C4C929.wem</Path>
+						</File>
+						<File Id="286220010" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-014.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-014_10C4C929.wem</Path>
+						</File>
+						<File Id="289841071" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-001.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-001_10C4C929.wem</Path>
+						</File>
+						<File Id="396678348" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-018.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-018_10C4C929.wem</Path>
+						</File>
+						<File Id="495760915" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-011.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-011_10C4C929.wem</Path>
+						</File>
+						<File Id="538686096" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-012.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-012_10C4C929.wem</Path>
+						</File>
+						<File Id="631243543" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-017.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-017_10C4C929.wem</Path>
+						</File>
+						<File Id="738307865" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-010.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-010_10C4C929.wem</Path>
+						</File>
+						<File Id="740925532" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-006.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-006_10C4C929.wem</Path>
+						</File>
+						<File Id="797808865" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-016.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-016_10C4C929.wem</Path>
+						</File>
+						<File Id="874067017" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-005.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-005_10C4C929.wem</Path>
+						</File>
+						<File Id="1013380947" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-003.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-003_10C4C929.wem</Path>
+						</File>
+						<File Id="1059464814" Language="SFX">
+							<ShortName>delightHitSoundsNew\delightHitSoundsNew-009.wav</ShortName>
+							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-009_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -45,20 +129,63 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2374045241" Name="newtest2" ObjectPath="\Events\Default Work Unit\newtest2" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.189938" DurationMax="0.189938">
+				<Event Id="1801358514" Name="PlayerEightOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerEightOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2814680474" Name="PlayerFive" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerFive" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="586812907" Language="SFX">
-							<ShortName>808Mid R-002.wav</ShortName>
-							<Path>SFX/808Mid R-002_10C4C929.wem</Path>
+						<File Id="934121255" Language="SFX">
+							<ShortName>CWM_69BPM_ tail.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ tail_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2765333410" Name="PlayerFour" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerFour" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="683058089" Language="SFX">
+							<ShortName>CWM_69BPM_ chords4.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ chords4_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="206399138" Name="PlayerSix" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerSix" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="740813780" Language="SFX">
+							<ShortName>CWM_69BPM_ tail2.wav</ShortName>
+							<Path>SFX/CWM_69BPM_ tail2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3220274865" Name="PlayerSixOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerSixOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.561241" DurationMax="0.650981">
+					<IncludedMemoryFiles>
+						<File Id="497840583" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-003.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-003_10C4C929.wem</Path>
+						</File>
+						<File Id="516909236" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-006.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-006_10C4C929.wem</Path>
+						</File>
+						<File Id="554022719" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-002.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-002_10C4C929.wem</Path>
+						</File>
+						<File Id="599345724" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-001.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-001_10C4C929.wem</Path>
+						</File>
+						<File Id="674657443" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-004.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-004_10C4C929.wem</Path>
+						</File>
+						<File Id="682301584" Language="SFX">
+							<ShortName>sadHitNew\sadHitSoundsNew-005.wav</ShortName>
+							<Path>SFX/sadHitNew/sadHitSoundsNew-005_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
-			<GameParameters>
-				<GameParameter Id="1567385492" Name="rtpctest" ObjectPath="\Game Parameters\Default Work Unit\rtpctest"/>
-			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1014113831">
+		<SoundBank Id="1355168291" Language="SFX" Hash="4168095702">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

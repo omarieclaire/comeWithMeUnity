@@ -13,10 +13,16 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BACKGROUNDMUSIC = 626769978U;
         static const AkUniqueID CONNECTIONMADE = 783006334U;
         static const AkUniqueID DELIGHTHIT = 1861205831U;
         static const AkUniqueID NEWTEST = 3398593705U;
         static const AkUniqueID NEWTEST2 = 2374045241U;
+        static const AkUniqueID PLAYEREIGHTOFF = 1801358514U;
+        static const AkUniqueID PLAYERFIVE = 2814680474U;
+        static const AkUniqueID PLAYERFOUR = 2765333410U;
+        static const AkUniqueID PLAYERSIX = 206399138U;
+        static const AkUniqueID PLAYERSIXOFF = 3220274865U;
         static const AkUniqueID SADHIT = 3597628402U;
     } // namespace EVENTS
 
