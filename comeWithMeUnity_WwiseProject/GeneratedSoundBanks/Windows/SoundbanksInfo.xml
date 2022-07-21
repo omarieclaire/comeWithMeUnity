@@ -11,130 +11,11 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-<<<<<<< HEAD
-		<SoundBank Id="854170543" Language="SFX" Hash="927251446">
-=======
 		<SoundBank Id="854170543" Language="SFX" Hash="2584235054">
->>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBanktest</ObjectPath>
 			<ShortName>New_SoundBanktest</ShortName>
 			<Path>New_SoundBanktest.bnk</Path>
 			<IncludedEvents>
-<<<<<<< HEAD
-				<Event Id="626769978" Name="backgroundMusic" ObjectPath="\Events\Default Work Unit\backgroundMusic" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="372910417" Language="SFX">
-							<ShortName>CWM_69BPM_ backing3.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ backing3_D79FB2B7.wem</Path>
-						</File>
-						<File Id="414213096" Language="SFX">
-							<ShortName>CWM_69BPM_ backing2.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ backing2_D79FB2B7.wem</Path>
-						</File>
-						<File Id="553253144" Language="SFX">
-							<ShortName>CWM_69BPM_ backing.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ backing_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3293263466" Name="connectionBroken" ObjectPath="\Events\Default Work Unit\connectionBroken" DurationType="OneShot" DurationMin="6.086709" DurationMax="6.086709">
-					<IncludedMemoryFiles>
-						<File Id="128261808" Language="SFX">
-							<ShortName>connectionBroken.wav</ShortName>
-							<Path>SFX/connectionBroken_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="723459570" Language="SFX">
-							<ShortName>connectionMade.wav</ShortName>
-							<Path>SFX/connectionMade_10C4C929.wem</Path>
-						</File>
-						<File Id="768976350" Language="SFX">
-							<ShortName>connectionSoundCWM_69BPM_ loopbowlneedsreverb.wav</ShortName>
-							<Path>SFX/connectionSoundCWM_69BPM_ loopbowlneedsreverb_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1861205831" Name="delightHit" ObjectPath="\Events\Default Work Unit\delightHit" DurationType="OneShot" DurationMin="0.589396" DurationMax="1.005417">
-					<IncludedMemoryFiles>
-						<File Id="114553429" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-002.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-002_10C4C929.wem</Path>
-						</File>
-						<File Id="157486970" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-008.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-008_10C4C929.wem</Path>
-						</File>
-						<File Id="199392582" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-004.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-004_10C4C929.wem</Path>
-						</File>
-						<File Id="210651248" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-013.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-013_10C4C929.wem</Path>
-						</File>
-						<File Id="214113608" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-007.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-007_10C4C929.wem</Path>
-						</File>
-						<File Id="214778998" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-015.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-015_10C4C929.wem</Path>
-						</File>
-						<File Id="286220010" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-014.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-014_10C4C929.wem</Path>
-						</File>
-						<File Id="289841071" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-001.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-001_10C4C929.wem</Path>
-						</File>
-						<File Id="396678348" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-018.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-018_10C4C929.wem</Path>
-						</File>
-						<File Id="495760915" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-011.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-011_10C4C929.wem</Path>
-						</File>
-						<File Id="538686096" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-012.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-012_10C4C929.wem</Path>
-						</File>
-						<File Id="631243543" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-017.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-017_10C4C929.wem</Path>
-						</File>
-						<File Id="738307865" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-010.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-010_10C4C929.wem</Path>
-						</File>
-						<File Id="740925532" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-006.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-006_10C4C929.wem</Path>
-						</File>
-						<File Id="797808865" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-016.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-016_10C4C929.wem</Path>
-						</File>
-						<File Id="874067017" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-005.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-005_10C4C929.wem</Path>
-						</File>
-						<File Id="1013380947" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-003.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-003_10C4C929.wem</Path>
-						</File>
-						<File Id="1059464814" Language="SFX">
-							<ShortName>delightHitSoundsNew\delightHitSoundsNew-009.wav</ShortName>
-							<Path>SFX/delightHitSoundsNew/delightHitSoundsNew-009_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3050945240" Name="New_Event" ObjectPath="\Events\Default Work Unit\New_Event" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-=======
 				<Event Id="783006334" Name="connectionMade" ObjectPath="\Events\Default Work Unit\connectionMade" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="588449863" Language="SFX">
@@ -155,7 +36,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
->>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 				<Event Id="3398593705" Name="newtest" ObjectPath="\Events\Default Work Unit\newtest" DurationType="OneShot" DurationMin="64." DurationMax="64.">
 					<IncludedMemoryFiles>
 						<File Id="1003383027" Language="SFX">
@@ -165,129 +45,11 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2374045241" Name="newtest2" ObjectPath="\Events\Default Work Unit\newtest2" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-<<<<<<< HEAD
-				<Event Id="586671467" Name="PlayerEight" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerEight" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="26329041" Language="SFX">
-							<ShortName>CWM_69BPM_ bass3.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ bass3_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1801358514" Name="PlayerEightOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerEightOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2814680474" Name="PlayerFive" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerFive" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="934121255" Language="SFX">
-							<ShortName>CWM_69BPM_ tail.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ tail_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3088799177" Name="PlayerFiveOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerFiveOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2765333410" Name="PlayerFour" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerFour" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="683058089" Language="SFX">
-							<ShortName>CWM_69BPM_ chords4.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ chords4_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="434920881" Name="PlayerFourOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerFourOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1498737706" Name="PlayerNine" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerNine" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="500040173" Language="SFX">
-							<ShortName>CWM_69BPM_ bass2.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ bass2_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3683363385" Name="PlayerNineOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerNineOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3881182866" Name="PlayerOne" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerOne" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="814494138" Language="SFX">
-							<ShortName>CWM_69BPM_ chords.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ chords_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3659119105" Name="PlayerOneOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerOneOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="92462609" Name="PlayerSeven" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerSeven" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="90087999" Language="SFX">
-							<ShortName>CWM_69BPM_ tail3.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ tail3_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="866762080" Name="PlayerSevenOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerSevenOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="206399138" Name="PlayerSix" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerSix" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="740813780" Language="SFX">
-							<ShortName>CWM_69BPM_ tail2.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ tail2_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3220274865" Name="PlayerSixOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerSixOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="272965135" Name="PlayerTen" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerTen" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="918806633" Language="SFX">
-							<ShortName>CWM_69BPM_ bass.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ bass_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="4103098326" Name="PlayerTenOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerTenOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1059364234" Name="PlayerThree" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerThree" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="245979366" Language="SFX">
-							<ShortName>CWM_69BPM_ chords3.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ chords3_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1141724441" Name="PlayerThreeOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerThreeOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="4265935460" Name="PlayerTwo" ObjectPath="\Events\Default Work Unit\PlayerLoops\On\PlayerTwo" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="1061610956" Language="SFX">
-							<ShortName>CWM_69BPM_ chords2.wav</ShortName>
-							<Path>SFX/CWM_69BPM_ chords2_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2880939627" Name="PlayerTwoOff" ObjectPath="\Events\Default Work Unit\PlayerLoops\Off\PlayerTwoOff" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.561241" DurationMax="0.650981">
-					<IncludedMemoryFiles>
-						<File Id="497840583" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-003.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-003_10C4C929.wem</Path>
-						</File>
-						<File Id="516909236" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-006.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-006_10C4C929.wem</Path>
-						</File>
-						<File Id="554022719" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-002.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-002_10C4C929.wem</Path>
-						</File>
-						<File Id="599345724" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-001.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-001_10C4C929.wem</Path>
-						</File>
-						<File Id="674657443" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-004.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-004_10C4C929.wem</Path>
-						</File>
-						<File Id="682301584" Language="SFX">
-							<ShortName>sadHitNew\sadHitSoundsNew-005.wav</ShortName>
-							<Path>SFX/sadHitNew/sadHitSoundsNew-005_10C4C929.wem</Path>
-=======
 				<Event Id="3597628402" Name="sadHit" ObjectPath="\Events\Default Work Unit\sadHit" DurationType="OneShot" DurationMin="0.189938" DurationMax="0.189938">
 					<IncludedMemoryFiles>
 						<File Id="586812907" Language="SFX">
 							<ShortName>808Mid R-002.wav</ShortName>
 							<Path>SFX/808Mid R-002_10C4C929.wem</Path>
->>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -296,11 +58,7 @@
 				<GameParameter Id="1567385492" Name="rtpctest" ObjectPath="\Game Parameters\Default Work Unit\rtpctest"/>
 			</GameParameters>
 		</SoundBank>
-<<<<<<< HEAD
-		<SoundBank Id="1355168291" Language="SFX" Hash="4168095702">
-=======
 		<SoundBank Id="1355168291" Language="SFX" Hash="1014113831">
->>>>>>> 41744e55ce4371454b659b574f9446b59488a43c
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
