@@ -666,8 +666,8 @@ public class CustomOSC : MonoBehaviour
 		//dummy.tag = dummyTag;
 		//AddTagRecursively(dummy.transform, dummyTag);
 
-		//VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
-		myIK = dummy.GetComponent<FullBodyBipedIK>(); //grab the IK component
+		VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
+		//myIK = dummy.GetComponent<FullBodyBipedIK>(); //grab the IK component
 
 		GameObject player = Instantiate(playerPrefab); //instantiate a player transform
 		player.name = $"Player {playernum}"; //set the player prefab's name to the player num
@@ -708,9 +708,9 @@ public class CustomOSC : MonoBehaviour
 		// assign the "playerTransform" key to the "player" value (ghost/puppeteer)
 		playerRig.playerTransform = player;
 
-		//vrik.solver.spine.headTarget = playerTransform.head.transform;
-		//vrik.solver.leftArm.target = playerTransform.leftWrist.transform;
-		//vrik.solver.rightArm.target = playerTransform.rightWrist.transform;
+		vrik.solver.spine.headTarget = playerTransform.head.transform;
+		vrik.solver.leftArm.target = playerTransform.leftWrist.transform;
+		vrik.solver.rightArm.target = playerTransform.rightWrist.transform;
 		
 		//vrik.solver.spine.pelvisTarget = playerTransform.pelvis.transform;
 		//vrik.solver.spine.chestGoal = playerTransform.chest.transform;
@@ -723,10 +723,10 @@ public class CustomOSC : MonoBehaviour
 
 		//myIK.solver.bodyEffector.target = playerTransform.pelvis.transform;
 		//myIK.solver.bodyEffector.target = playerTransform.head.transform;
-		myIK.solver.rightFootEffector.target = playerTransform.rightAnkle.transform;
-		myIK.solver.leftFootEffector.target = playerTransform.leftAnkle.transform;
-		myIK.solver.rightHandEffector.target = playerTransform.rightWrist.transform;
-		myIK.solver.leftHandEffector.target = playerTransform.leftWrist.transform;
+		//myIK.solver.rightFootEffector.target = playerTransform.rightAnkle.transform;
+		//myIK.solver.leftFootEffector.target = playerTransform.leftAnkle.transform;
+		//myIK.solver.rightHandEffector.target = playerTransform.rightWrist.transform;
+		//myIK.solver.leftHandEffector.target = playerTransform.leftWrist.transform;
 		
 	
 		playerRig.active = true; // player rig is set to active because it was just set up
