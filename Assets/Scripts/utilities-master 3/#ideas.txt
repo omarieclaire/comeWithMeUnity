@@ -1,0 +1,6 @@
+create a generic list var and list reference, inherit from that
+
+some sort of UI generator class that takes a generic input, contains a prefab version of itself
+
+the cubicle object class for example in mount could be an instance of a new "commodity" class, which costs value and has effects/integer modifiers etc?
+	- could also be a basis for objectui?
