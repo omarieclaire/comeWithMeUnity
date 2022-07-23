@@ -1,15 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
+	92462609	PlayerSeven			\Default Work Unit\PlayerLoops\On\PlayerSeven	
 	206399138	PlayerSix			\Default Work Unit\PlayerLoops\On\PlayerSix	
+	272965135	PlayerTen			\Default Work Unit\PlayerLoops\On\PlayerTen	
+	434920881	PlayerFourOff			\Default Work Unit\PlayerLoops\Off\PlayerFourOff	
+	586671467	PlayerEight			\Default Work Unit\PlayerLoops\On\PlayerEight	
 	626769978	backgroundMusic			\Default Work Unit\backgroundMusic	
 	783006334	connectionMade			\Default Work Unit\connectionMade	
+	866762080	PlayerSevenOff			\Default Work Unit\PlayerLoops\Off\PlayerSevenOff	
+	1059364234	PlayerThree			\Default Work Unit\PlayerLoops\On\PlayerThree	
+	1141724441	PlayerThreeOff			\Default Work Unit\PlayerLoops\Off\PlayerThreeOff	
+	1498737706	PlayerNine			\Default Work Unit\PlayerLoops\On\PlayerNine	
 	1801358514	PlayerEightOff			\Default Work Unit\PlayerLoops\Off\PlayerEightOff	
 	1861205831	delightHit			\Default Work Unit\delightHit	
 	2374045241	newtest2			\Default Work Unit\newtest2	
 	2765333410	PlayerFour			\Default Work Unit\PlayerLoops\On\PlayerFour	
 	2814680474	PlayerFive			\Default Work Unit\PlayerLoops\On\PlayerFive	
+	2880939627	PlayerTwoOff			\Default Work Unit\PlayerLoops\Off\PlayerTwoOff	
+	3050945240	New_Event			\Default Work Unit\New_Event	
+	3088799177	PlayerFiveOff			\Default Work Unit\PlayerLoops\Off\PlayerFiveOff	
 	3220274865	PlayerSixOff			\Default Work Unit\PlayerLoops\Off\PlayerSixOff	
+	3293263466	connectionBroken			\Default Work Unit\connectionBroken	
 	3398593705	newtest			\Default Work Unit\newtest	
 	3597628402	sadHit			\Default Work Unit\sadHit	
+	3659119105	PlayerOneOff			\Default Work Unit\PlayerLoops\Off\PlayerOneOff	
+	3683363385	PlayerNineOff			\Default Work Unit\PlayerLoops\Off\PlayerNineOff	
+	3881182866	PlayerOne			\Default Work Unit\PlayerLoops\On\PlayerOne	
+	4103098326	PlayerTenOff			\Default Work Unit\PlayerLoops\Off\PlayerTenOff	
+	4265935460	PlayerTwo			\Default Work Unit\PlayerLoops\On\PlayerTwo	
 
 Effect plug-ins	ID	Name	Type				Notes
 	287224143	New_Wwise_Time_Stretch	Wwise Time Stretch			
@@ -17,12 +34,16 @@ Effect plug-ins	ID	Name	Type				Notes
 	3546444380	Big_Garage1	Wwise Matrix Reverb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	26329041	PlayerEight	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ bass3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerEight		2671368
+	90087999	PlayerSeven	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ tail3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerSeven		2671368
 	114553429	delightHitSoundsNew-002	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-002		69570
+	128261808	connectionBroken	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\connectionBroken_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\connectionBroken		584388
 	157486970	delightHitSoundsNew-008	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-008_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-008		69568
 	199392582	delightHitSoundsNew-004	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-004		96584
 	210651248	delightHitSoundsNew-013	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-013_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-013		96584
 	214113608	delightHitSoundsNew-007	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-007		96584
 	214778998	delightHitSoundsNew-015	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-015_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-015		79368
+	245979366	PlayerThree	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ chords3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerThree		2671368
 	286220010	delightHitSoundsNew-014	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-014_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-014		96584
 	289841071	delightHitSoundsNew-001	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-001		96584
 	372910417	CWM_69BPM_ backing3	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ backing3_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\backgroundMusic\backgroundMusic\CWM_69BPM_ backing3		2671368
@@ -30,6 +51,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	414213096	CWM_69BPM_ backing2	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ backing2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\backgroundMusic\backgroundMusic\CWM_69BPM_ backing2		2671368
 	495760915	delightHitSoundsNew-011	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-011_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-011		96584
 	497840583	sadHitSoundsNew-003	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\sadHitNew\sadHitSoundsNew-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sadHitSound\sadHitNew\sadHitSoundsNew-003		60716
+	500040173	PlayerNine	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ bass2_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerNine		2671368
 	516909236	sadHitSoundsNew-006	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\sadHitNew\sadHitSoundsNew-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sadHitSound\sadHitNew\sadHitSoundsNew-006		55554
 	538686096	delightHitSoundsNew-012	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-012_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-012		96584
 	553253144	CWM_69BPM_ backing	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ backing_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\backgroundMusic\backgroundMusic\CWM_69BPM_ backing		2671368
@@ -45,9 +67,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	740925532	delightHitSoundsNew-006	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-006		56646
 	768976350	connectionSound	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\connectionSoundCWM_69BPM_ loopbowlneedsreverb_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\connectionSound		333978
 	797808865	delightHitSoundsNew-016	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-016_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-016		70716
+	814494138	PlayerOne	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ chords_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerOne		2671368
 	874067017	delightHitSoundsNew-005	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-005		96584
+	918806633	PlayerTen	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ bass_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerTen		2671368
 	934121255	PlayerFive	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ tail_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerFive		2671368
 	1003383027	CK_Gentilhomme_PolyPads	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CK_Gentilhomme_PolyPads_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\New Music Playlist Container\CK_Gentilhomme_PolyPads\CK_Gentilhomme_PolyPads		12288064
 	1013380947	delightHitSoundsNew-003	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-003		96584
 	1059464814	delightHitSoundsNew-009	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\delightHitSoundsNew\delightHitSoundsNew-009_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\delightHitSound\delightHitSoundsNew\delightHitSoundsNew-009		96584
+	1061610956	PlayerTwo	Y:\Documents\games\ComeWithMe\comeWithMeUnity\comeWithMeUnity_WwiseProject\.cache\Windows\SFX\CWM_69BPM_ chords2_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerSound\PlayerTwo		2671368
 

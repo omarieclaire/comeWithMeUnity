@@ -93,7 +93,7 @@
      <Compile Include="Assets/Scripts/utilities-master 3/AverageFloatList.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/TagSelector/TagSelectorAttribute.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/FBasic Assets/Behaviours/Cameras/FBasic_FreeCameraBehaviour.cs" />
-     <Compile Include="Assets/Scripts/TouchBall.cs" />
+     <Compile Include="Assets/OldStuff/BallTouch.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/WhiteBalance.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/TriggeringEvents.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/Variables/TransformVar.cs" />
@@ -170,7 +170,7 @@
      <Compile Include="Assets/Scripts/utilities-master 3/SpawnObjects.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/RoundVectorPoints.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/IterateChildrenIntoList.cs" />
-     <Compile Include="Assets/Scripts/DelightBallController.cs" />
+     <Compile Include="Assets/Scripts/BallController.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/AddToString.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/GameEventListeners/IntGameEvent.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Code/TailAnimator.Logic.Limits.cs" />
@@ -245,7 +245,7 @@
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Code/TailAnimator.Extensions.Expert.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Utilities/TailCollisionHelper.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/LookupFilter.cs" />
-     <Compile Include="Assets/Scripts/ProximityDrawer.cs" />
+     <Compile Include="Assets/OldStuff/ProximityDrawer.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Code/TailAnimator.Extensions.Waving.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Demo - Tail Animator V2/Scripts/TailDemo_2DMover.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/ToggleEvent.cs" />
@@ -255,7 +255,7 @@
      <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor Tools/Property Attributes/FPD_LayersAttribute.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/Variables/StringVar.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Animating/Tail Animator/Code/TailAnimator.User.cs" />
-     <Compile Include="Assets/Scripts/lineDrawer.cs" />
+     <Compile Include="Assets/OldStuff/lineDrawer.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/SaveLoadScriptableObjects.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/Math Helpers/Helpers/FColorMethods.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/Led.cs" />
@@ -275,6 +275,7 @@
      <Compile Include="Assets/Scripts/utilities-master 3/Variables/Vector3Reference.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/FBasic Assets/Behaviours/Character Controllers V2/FBasics_Rigidbody2DMoverBase.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/SCurveContrast.cs" />
+     <Compile Include="Assets/Scripts/SoundPlayer.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/Levels.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/SeparateString.cs" />
      <Compile Include="Assets/FImpossible Creations/Shared Tools/GUI Helpers/FGUI_Inspector.cs" />
@@ -331,7 +332,7 @@
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/FBasic Assets/Behaviours/Utilities/FBasic_DuplicateObjects.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/Physics/FImp_ColliderData_Box.cs" />
      <Compile Include="Assets/FImpossible Creations/Plugins - Shared/Math Helpers/Math/FEasing.cs" />
-     <Compile Include="Assets/Scripts/moveTowardsSimilarlyNamed.cs" />
+     <Compile Include="Assets/OldStuff/moveTowardsSimilarlyNamed.cs" />
      <Compile Include="Assets/Colorful FX/Scripts/Effects/SmartSaturation.cs" />
      <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor Tools/Property Attributes/FPD_MiscAttributes.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/StringDictionary.cs" />

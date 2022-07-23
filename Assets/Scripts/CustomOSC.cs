@@ -263,7 +263,7 @@ public class CustomOSC : MonoBehaviour
 
 	void Start() {
         server = OscMaster.GetSharedServer(12000);
-        server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
+		server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
     }
     
 	
@@ -315,10 +315,13 @@ public class CustomOSC : MonoBehaviour
 	{
 		// make a new player
 		PlayerRig playerRig = AddPlayer(playerNumber, oscTime);
+		
 		// add the player to my list
 		players.Add(playerNumber, playerRig);
 		// return my rig
 		return playerRig;
+	
+
 	}
 	
 	
@@ -499,7 +502,7 @@ public class CustomOSC : MonoBehaviour
 
     void Update()
 	{
-		
+		//AkSoundEngine.PostEvent( "PlayerTwoOff" , gameObject);
 		// Get the "current time"! This is used for determining whether
 		// we should draw a player or amend the .y position of a body part.
 		double currentTime = Time.unscaledTimeAsDouble;
@@ -596,6 +599,53 @@ public class CustomOSC : MonoBehaviour
 			}
 		}
 	}
+	
+	void PlayerSoundPlayer(int playernum, GameObject dummy){
+		//Debug.Log(playernum);
+		switch (playernum)
+		{
+		case 0:
+			AkSoundEngine.PostEvent( "PlayerOne" , dummy);
+			Debug.Log("Playerone");
+			break;
+		case 1:
+			AkSoundEngine.PostEvent( "PlayerTwo" , dummy);
+			Debug.Log("PlayerTwo");
+
+			break;
+		case 2:
+			AkSoundEngine.PostEvent( "PlayerThree" , dummy);
+			Debug.Log("Three");
+
+			break;
+		case 3:
+			AkSoundEngine.PostEvent( "PlayerFour" , dummy);
+			break;
+		case 4:
+			AkSoundEngine.PostEvent( "PlayerFive" , dummy);
+			break;
+		case 5:
+			AkSoundEngine.PostEvent( "PlayerSix" , dummy);
+			break;
+		case 6:
+			AkSoundEngine.PostEvent( "PlayerSeven" , dummy);
+
+			break;
+		case 7:
+			AkSoundEngine.PostEvent( "PlayerEight" , dummy);
+			break;
+		case 8:
+			AkSoundEngine.PostEvent( "PlayerNine" , dummy);
+			break;
+		case 9:
+			AkSoundEngine.PostEvent( "PlayerTen" , dummy);
+			break;
+		default:
+			AkSoundEngine.PostEvent( "PlayerOne" , dummy);
+			break;
+		}
+		return;
+	}
     
     
 	//////////////////////////////////////////////////////
@@ -603,6 +653,13 @@ public class CustomOSC : MonoBehaviour
 	/////////////////////////////////////////////////////
 	
 	public PlayerRig AddPlayer(int playernum, double oscTime) {
+		Debug.Log(playernum);
+		
+		//AkSoundEngine.PostEvent( "PlayerOne" , gameObject);
+
+		
+		//if I had more time, I'd add these sounds to the player class	
+
 		PlayerRig playerRig = new PlayerRig(); // make a new playerRig using my playerRig class
 		playerRig.addressBodyPartMap = new Dictionary<string, BodyPart>(); //make a new addressBodyPartMap - no v3s, just the links
 		GameObject dummy = Instantiate(dummyPrefab); //Instantiate a dummy
@@ -682,7 +739,15 @@ public class CustomOSC : MonoBehaviour
 	
 		playerRig.active = true; // player rig is set to active because it was just set up
 		playerRig.lastOSCTimeStamp = oscTime; //oscTime; // the OSC time is set to the ticks time we passed in when receiving the message
-		playerRig.playerNumber = playernum; // add player number		
+		playerRig.playerNumber = playernum; // add player number	
+		
+		//Debug.Log(playernum);
+		//Debug.Log(player.gameObject.name, player);
+
+		
+		PlayerSoundPlayer(playernum, player);
+
+				
 		return playerRig;
 		
 	} 
@@ -732,7 +797,7 @@ public class CustomOSC : MonoBehaviour
 			} else {
 				// if I can't find a relevant body part, just make a sphere
 				thisObject = Instantiate(debugSphere);
-				thisObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+				thisObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
 				thisObject.GetComponent<Renderer>().material = debugSphereMaterial;
 
 				// I can't remember why I do this parenting step

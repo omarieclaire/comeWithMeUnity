@@ -128,8 +128,8 @@ MonoBehaviour:
         guid: 45f400d851247b43a2ffc5bfc5b9bf91
       Path: Events/Default Work Unit/connectionBroken
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 6.086709
+      minDuration: 6.086709
     - name: connectionMade
       guid: bef912836c74474a93a13a7ff2bf6212
       id: 783006334
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: 8484b4861c4b2545915863d9f6a182d3
       Path: Events/Default Work Unit/New_Event
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: newtest
       guid: 8dd4e8aaddf65b4d8e735025d71e2bb8
       id: 3398593705
@@ -345,8 +345,8 @@ MonoBehaviour:
         guid: 3682707ec0ba454bb7bf82da5c92505d
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerFiveOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerFour
       guid: 5a2fc7ed3674bb4fa63c0b740dfdef41
       id: 2765333410
@@ -391,8 +391,8 @@ MonoBehaviour:
         guid: 28a48355a73aee4388501238ff44730e
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerFourOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerLoops
       guid: 0173c2d6a6a31545b6ffe6184f4b9474
       id: 2253526967
@@ -454,8 +454,8 @@ MonoBehaviour:
         guid: 8db3615e8cc4a342aedddd864537dfe4
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerNineOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerOne
       guid: 7a40d048ff6aaa498341a5c1c32de885
       id: 3881182866
@@ -500,8 +500,8 @@ MonoBehaviour:
         guid: 38cf56d495229f428a46d0477634a458
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerOneOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerSeven
       guid: 944193d01919db44bf6deab5276c7b19
       id: 92462609
@@ -546,8 +546,8 @@ MonoBehaviour:
         guid: c71232eb98a60b429a3d35cb52ee4f3e
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerSevenOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerSix
       guid: e45b2d7ed1b1f74dbff013160f216848
       id: 206399138
@@ -638,8 +638,8 @@ MonoBehaviour:
         guid: 52a52065c5693044b5d24efd8ceb6d91
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerTenOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerThree
       guid: 01c03ddf1dbad849afb51d348a853fe1
       id: 1059364234
@@ -684,8 +684,8 @@ MonoBehaviour:
         guid: e0478f6ac4ab7d479f7c1c1088544bb1
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerThreeOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerTwo
       guid: 9d51682092bb95428ffc2a5b6b179144
       id: 4265935460
@@ -730,8 +730,8 @@ MonoBehaviour:
         guid: 4e346d8472823c44887271eff0b23f4f
       Path: Events/Default Work Unit/PlayerLoops/Off/PlayerTwoOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: sadHit
       guid: c85d64f20341294da8add5125a62618a
       id: 3597628402
@@ -820,7 +820,7 @@ MonoBehaviour:
     m_lastTime: -8585447208480998433
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 030000000500000006000000070000000b0000000d0000000e0000000f0000001200000014000000160000001e0000001f000000
+  ExpandedWaapiItemIds: 0100000002000000030000000500000006000000070000000b0000000d0000000e0000000f000000100000001300000014000000150000001600000017000000190000001e0000001f000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
