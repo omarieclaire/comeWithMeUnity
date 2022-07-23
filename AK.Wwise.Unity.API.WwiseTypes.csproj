@@ -37,29 +37,29 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseAcousticTexture.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseTriggerReference.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseSwitch.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseBank.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseTypeMigration.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseRtpcReference.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseBankReference.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseAuxBusReference.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseStateReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseBaseGroupType.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseObjectType.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseTrigger.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseAcousticTextureReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseBaseType.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseEvent.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseCallbackFlags.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseObjectReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseState.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseRtpc.cs" />
-     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseAuxBus.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseSwitchGroupReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseStateGroupReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseSwitchReference.cs" />
      <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseEventReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseTriggerReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseSwitch.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseBank.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseTypeMigration.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseBankReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseAuxBusReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseStateReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseTrigger.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseEvent.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseObjects/WwiseObjectReference.cs" />
+     <Compile Include="Assets/Wwise/API/Runtime/WwiseTypes/WwiseTypes/AkWwiseAuxBus.cs" />
      <None Include="Assets/Wwise/API/Runtime/WwiseTypes/AK.Wwise.Unity.API.WwiseTypes.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.1f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

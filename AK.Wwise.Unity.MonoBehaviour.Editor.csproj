@@ -37,30 +37,30 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkGameObjListenerListDrawer.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEnvironmentPortalInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkRoomPortalInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkGameObjectInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkRoomInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEnvironmentInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkBuildPreprocessor.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkUnityEventHandlerInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkBankInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkBaseInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/EditorPlatformHelpers/Mac/AkMacPluginActivator.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkAudioListenerInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkSwitchInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEventInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkAmbientInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkStateInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwisePostImportCallbackSetup.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkRoomAwareObjectInspector.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkSpatialAudioListenerInspector.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkPortalManager.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWSAUtils.cs" />
-     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkXboxOneUtils.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/EditorPlatformHelpers/Windows/AkWindowsPluginActivator.cs" />
      <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkUnitySettingsParser.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEnvironmentPortalInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkRoomInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEnvironmentInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkBuildPreprocessor.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkUnityEventHandlerInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkEventInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkStateInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/AkSpatialAudioListenerInspector.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWSAUtils.cs" />
+     <Compile Include="Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkXboxOneUtils.cs" />
      <None Include="Assets/Wwise/MonoBehaviour/Editor/AK.Wwise.Unity.MonoBehaviour.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.1f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -5,8 +5,8 @@ using UnityEngine;
 public class DelightBallController : MonoBehaviour
 {
 	public Vector3 rotateVelocity = new Vector3(100, 100, 0);
-	public Vector3 acceleration = new Vector3(0, 0, 0.5f);
-	public float speedLimit = 2f;
+	public Vector3 acceleration = new Vector3(0, 0, 0.01f);
+	public float speedLimit = .002f;
 	private new Rigidbody rigidbody;
 	
 	
@@ -19,7 +19,7 @@ public class DelightBallController : MonoBehaviour
     // Update is called once per frame
 	void FixedUpdate()
 	{
-		rigidbody.velocity -= acceleration;
+		rigidbody.velocity += acceleration;
 		if(rigidbody.velocity.z >= speedLimit){
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, speedLimit);
 		}

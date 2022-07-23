@@ -36,13 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/Wwise/Timeline/Runtime/AkEventPlayableBehavior.cs" />
+     <Compile Include="Assets/Wwise/Timeline/Runtime/AkEventTrack.cs" />
+     <Compile Include="Assets/Wwise/Timeline/Runtime/AkTimelineEventPlayable.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkRTPCPlayable.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkTimelineRtpcPlayable.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkEventPlayable.cs" />
-     <Compile Include="Assets/Wwise/Timeline/Runtime/AkEventPlayableBehavior.cs" />
-     <Compile Include="Assets/Wwise/Timeline/Runtime/AkEventTrack.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkTimelineEventTrack.cs" />
-     <Compile Include="Assets/Wwise/Timeline/Runtime/AkTimelineEventPlayable.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkRTPCTrack.cs" />
      <Compile Include="Assets/Wwise/Timeline/Runtime/AkTimelineRtpcTrack.cs" />
      <None Include="Assets/Wwise/Timeline/Runtime/AK.Wwise.Unity.Timeline.asmdef" />

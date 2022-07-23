@@ -1,3 +1,4 @@
 comeWithMeUnity_WwiseProject/.cache/Mac/SFX/261244-Lands_End_Ocean_Waves_Close_Perspective_D79FB2B7.wem filter=lfs diff=lfs merge=lfs -text
 comeWithMeUnity_WwiseProject/Originals/SFX/261244-Lands_End_Ocean_Waves_Close_Perspective.wav filter=lfs diff=lfs merge=lfs -text
 *.wav filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text

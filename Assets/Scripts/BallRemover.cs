@@ -9,8 +9,9 @@ public class BallRemover : MonoBehaviour
 		if (other.gameObject.CompareTag("sphere"))
 		{
 			
-			Destroy(other.gameObject);
-			
+			other.gameObject.GetComponent<Animator>().SetTrigger("vanish");
+			//Destroy(other.gameObject);
+				
 		}
 	} 
 

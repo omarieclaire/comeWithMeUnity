@@ -21,52 +21,8 @@ using RootMotion.FinalIK;
 	// TODO!!!! //
 	//////////////
 	
-	// dummy is the wrong size.
-	// player is the right size
-	// dummy should be bigger when they are closer to the camera
-	// but when I make them bigger it messes with their placement on the screen
 	
-	
-	// - player is jumping forward in space. 
-	// Am I not getting depth data quickly enough, and the player is reverting to zero? 
-	// Or am I getting 0s?
-	// I could track the depth only for a bit on the log?
-	// why does the z suddenly shoot forward from a -4 to a 2 and a -4 to a 6?
-	// can I log the depth only?
-	// How much is the jump
-	// I could smooth the depth?
-	
-	
-	// why do the feet suddently shoot over the head?
-	// why does the foot y suddently shoot from a 0.something to a 2 when I get too close to the camera?
-	// the  livepose vizualizer foot DOES not jump
-	// the dummy foot does jump
-	// the player foot does jump
-	
-	
-	
-	// how to solve the depth problem?
-	// how to solve the "player twisting" problem"?
-	// how to solve the jump scare problem?
-	
-	
- 
-	// - make connections between players when they reach.
 	//		- make connections pretty
-	
-	// - create characters in blender.
-	//		- rig
-	//		- animate
-	
-	// make the world look like a world
-	
-	// consider adjusting the map function based on the player depth
-	// - the x and y map should shrink based on the z.
-	
-	
-	
-	// continue tweaking the FinalIK - https://www.youtube.com/watch?v=tgRMsTphjJo
-
 	
 	// - make generated flying objects
 	//		- flying objects collide with player and do something to player
@@ -75,20 +31,10 @@ using RootMotion.FinalIK;
 	//		- If they are far they dissolve
 	//		- if they are near they explode.
 	//		- if they are still they become transparent
-	
 	// - each player has a unique sound
 	//		- connected players have shared sounds
-	
-	// - words on screen? deeplll?
-	//		- ?
-	
-	// - camera follows player?
-	//		- ?
-	
-		
-	// - make world pretty
-	//		- ?
-		
+	// - words on screen? deeplll?	
+	// - camera follows player?	
 	// - I'm curious to move some of the stuff out of the update function and into their own functions, but I have to do it from the metalab
 
 		
@@ -660,6 +606,10 @@ public class CustomOSC : MonoBehaviour
 		PlayerRig playerRig = new PlayerRig(); // make a new playerRig using my playerRig class
 		playerRig.addressBodyPartMap = new Dictionary<string, BodyPart>(); //make a new addressBodyPartMap - no v3s, just the links
 		GameObject dummy = Instantiate(dummyPrefab); //Instantiate a dummy
+				
+		//GameObject dummyWrapper = Instantiate(dummyPrefab); //Instantiate a dummy prefab stack
+		//GameObject dummy = dummyWrapper.gameObject.transform.GetChild(0).gameObject;
+
 		dummy.name = $"Dummy {playernum}"; //set the dummy prefab's name name to the player num
 		
 		string dummyTag = $"Player{playernum}";
@@ -667,6 +617,7 @@ public class CustomOSC : MonoBehaviour
 		//AddTagRecursively(dummy.transform, dummyTag);
 
 		VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
+		//VRIK vrik = dummy.GetComponent<VRIK>(); //grab the VRIK component
 		//myIK = dummy.GetComponent<FullBodyBipedIK>(); //grab the IK component
 
 		GameObject player = Instantiate(playerPrefab); //instantiate a player transform
