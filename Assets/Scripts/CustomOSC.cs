@@ -220,6 +220,7 @@ public class CustomOSC : MonoBehaviour
 		public GameObject dummy;
 		public GameObject playerTransform; 
 		public bool active;
+		public uint musicId;
 		public GameObject nose;
 		public GameObject leftHip; 
 		public GameObject rightHip; 
@@ -240,7 +241,7 @@ public class CustomOSC : MonoBehaviour
 		public int playerNumber;
 		public float lastPlayerDepth = 999; //an impossible number
 		// this is offset by 4 because of the mapping?
-		public float playerDepth = 4f;			
+		public float playerDepth = 3f;			
 	}
 	
 	public ConcurrentQueue<SkeletonPositionMessage> skeletonPositionMessages = new ConcurrentQueue<SkeletonPositionMessage>();
@@ -303,6 +304,7 @@ public class CustomOSC : MonoBehaviour
 								
 				if (elapsed > timeToWaitForMissingPlayers)
 				{
+					AkSoundEngine.StopPlayingID(rig.musicId);
 					rig.active = false;
 					rig.dummy.SetActive(false);
 					rig.playerTransform.SetActive(false);
@@ -600,51 +602,50 @@ public class CustomOSC : MonoBehaviour
 		}
 	}
 	
-	void PlayerSoundPlayer(int playernum, GameObject dummy){
+	public uint PlayerSoundPlayer(int playernum, GameObject dummy){
 		//Debug.Log(playernum);
+		uint musicId;
 		switch (playernum)
 		{
 		case 0:
-			AkSoundEngine.PostEvent( "PlayerOne" , dummy);
-			Debug.Log("Playerone");
+			musicId = AkSoundEngine.PostEvent( "PlayerOne" , dummy);
+			//AkSoundEngine.StopPlayingID(playingId);
+			//Debug.Log(musicId);
 			break;
 		case 1:
-			AkSoundEngine.PostEvent( "PlayerTwo" , dummy);
-			Debug.Log("PlayerTwo");
-
+			musicId = AkSoundEngine.PostEvent( "PlayerTwo" , dummy);
+			//Debug.Log("PlayerTwo");
 			break;
 		case 2:
-			AkSoundEngine.PostEvent( "PlayerThree" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerThree" , dummy);
 			Debug.Log("Three");
-
 			break;
 		case 3:
-			AkSoundEngine.PostEvent( "PlayerFour" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerFour" , dummy);
 			break;
 		case 4:
-			AkSoundEngine.PostEvent( "PlayerFive" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerFive" , dummy);
 			break;
 		case 5:
-			AkSoundEngine.PostEvent( "PlayerSix" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerSix" , dummy);
 			break;
 		case 6:
-			AkSoundEngine.PostEvent( "PlayerSeven" , dummy);
-
+			musicId = AkSoundEngine.PostEvent( "PlayerSeven" , dummy);
 			break;
 		case 7:
-			AkSoundEngine.PostEvent( "PlayerEight" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerEight" , dummy);
 			break;
 		case 8:
-			AkSoundEngine.PostEvent( "PlayerNine" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerNine" , dummy);
 			break;
 		case 9:
-			AkSoundEngine.PostEvent( "PlayerTen" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerTen" , dummy);
 			break;
 		default:
-			AkSoundEngine.PostEvent( "PlayerOne" , dummy);
+			musicId = AkSoundEngine.PostEvent( "PlayerOne" , dummy);
 			break;
 		}
-		return;
+		return musicId;
 	}
     
     
@@ -745,9 +746,9 @@ public class CustomOSC : MonoBehaviour
 		//Debug.Log(player.gameObject.name, player);
 
 		
-		PlayerSoundPlayer(playernum, player);
-
-				
+		uint mySound = PlayerSoundPlayer(playernum, player);
+		playerRig.musicId = mySound;
+						
 		return playerRig;
 		
 	} 

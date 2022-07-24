@@ -93,14 +93,12 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/ASinOpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/ComputeScreenPosHlpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/TransposeOpNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Editor Tools/Files and Components Support/FEditor_ScriptMenuAddOptions.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Utils/TipsWindow.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/SmoothstepOpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/StaticSwitch.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/GradientSampleNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateModulesData.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/BleachBypassEditor.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Editor Tools/Files and Components Support/FEditor_ScriptMenuAddOptions.Components.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/VertexTangentNode.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/PhotoFilterEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Utils/SamplerStateAutoGenerator.cs" />
@@ -135,21 +133,17 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/UVCoordsParentNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Wires/OutputPort.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/CrossProductOpNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Helpers.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Wires/WirePort.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/WorldSpaceLightDirHlpNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Tabs.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/ViewDirInputsCoordNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Textures/TextureTransformNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/Tessellation/EdgeLengthCullTessNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/CameraAndScreen/ScreenParams.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Wires/WireBezierReference.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Editor Tools/FPropDrawers_DrawScriptable.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/RGBSplitEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Misc/RotateAboutAxisNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/UndoParentNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Transform/InverseTranspMVMatrixNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Property Drawers/FPD_LayersDrawer.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/ParallaxOcclusionMappingNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/PreMadeShaders.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Transform/InverseViewMatrixNode.cs" />
@@ -158,7 +152,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/RefractOpVec.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/StrokesEditor.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/WaveDistortionEditor.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.SceneGUI.cs" />
      <Compile Include="Assets/Scripts/utilities-master 3/Editor/PrefabPlacementEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateMultiPass.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/WorldReflectionVector.cs" />
@@ -174,7 +167,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/ComponentMaskNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateSubShader.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SRP/MaterialQualityNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Property Drawers/FPD_FixedCurveWindowDrawer.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/DecodeFloatRGHlpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/ShaderEditorModeWindow.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/PosVertexDataNode.cs" />
@@ -270,7 +262,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/DecodeDepthNormalNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Misc/VectorFromMatrixNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/NegateNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Lang.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/LogicalOperators/TFHCCompareWithRange.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/ClampOpNode.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/HistogramEditor.cs" />
@@ -285,7 +276,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/VertexToFragmentNode.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/VintageFastEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateCodeSnippetBase.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Variables.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Native/FallbackVariable.cs" />
      <Compile Include="Assets/Colorful FX/Editor/PropertyDrawer/MinDrawer.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/LookupFilter3DEditor.cs" />
@@ -307,7 +297,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/ImageEffects/RGBToHSVNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/FogAndAmbient/FogAndAmbientColorsNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Native/IFallbackVars.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Editor Tools/Files and Components Support/FEditor_ScriptMenuAddOptions.Prefabs.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/GrabScreenPosition.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/ShadowsMidtonesHighlightsEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Lighting/IndirectDiffuseLighting.cs" />
@@ -380,7 +369,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/LogicalOperators/TFHCCompareGreaterEqual.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/NormalVertexDataNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/SurfaceShaderINParentNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Property Drawers/FPD_MiscDrawers.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Time/TimeNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/AmplifyShaderFunctionEditor.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/RadialBlurEditor.cs" />
@@ -438,7 +426,7 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Utils/NodeExporterUtils.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/SurfaceDepthNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Misc/GetLocalVarNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Property Drawers/FPD_HeaderDrawer.cs" />
+     <Compile Include="Assets/abDyne/LineWaves/Editor/LineWaveEditor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Master/CustomTagsHelper.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/HelperFuncs/TriplanarNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Misc/Transformation/ParentTransfNode.cs" />
@@ -515,7 +503,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/VertexDataNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Textures/RotatorNode.cs" />
      <Compile Include="Assets/Colorful FX/Editor/Effects/PixelateEditor.cs" />
-     <Compile Include="Assets/FImpossible Creations/Shared Tools/Editor/Property Drawers/FPD_SuffixDrawer.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/DebugConsoleWindow.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/LengthOpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/GradientNode.cs" />
@@ -552,7 +539,6 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Transform/Texture3MatrixNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/Tools/ToolsMenuButtonParent.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateDepthModule.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Foldouts.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/CameraAndScreen/CameraProjectionNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/ConsoleLogWindow.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Master/FallbackPickerHelper.cs" />
@@ -563,9 +549,7 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/Exp2OpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/NodeParametersWindow.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Wires/GLDraw.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/CustomStylesContainer.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Editor Tools/Files and Components Support/FEditor_ScriptMenuAddOptions.Files.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/OneMinusNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Menu/Tools/ToolsMenuButtonSep.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Master/AdditionalSurfaceOptionsHelper.cs" />
@@ -573,13 +557,11 @@
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateMasterNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Operators/TanhOpNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/SurfaceShaderInputs/LocalVertexPosNode.cs" />
-     <Compile Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/TailAnimator.Editor.Elements.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateHelperFunctions.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Constants/ShaderVariables/Various/ColorSpaceDouble.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Nodes/Vertex/VertexColorNode.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Utils/ASEPackageManagerHelper.cs" />
      <Compile Include="Assets/AmplifyShaderEditor/Plugins/Editor/Templates/TemplateRenderPlatformHelper.cs" />
-     <None Include="Assets/FImpossible Creations/Editor/Plugins - Editor - Animating/Tail Animator/Resources/Tail Animator/TailAnimator_Langs.xml" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.1f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -1498,14 +1480,11 @@
     <Reference Include="netstandard">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.1f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.TestRunner">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.TestRunner">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="OscJack.Runtime">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/OscJack.Runtime.dll</HintPath>
@@ -1516,35 +1495,17 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Autodesk.Fbx.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Autodesk.Fbx.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Formats.Fbx.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
@@ -1552,14 +1513,8 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -1570,26 +1525,62 @@
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Fbx.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Autodesk.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+    <Reference Include="Unity.Animation.Rigging">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
     </Reference>
     <Reference Include="OscJack.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/OscJack.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TerrainTools">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Animation.Rigging">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
@@ -1603,20 +1594,11 @@
     <Reference Include="Unity.TerrainTools.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Formats.Fbx.Runtime">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Animation.Rigging.Editor">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
@@ -1639,6 +1621,26 @@
       <Project>{0ba4b60e-2fd4-8038-5bb0-de52133bf6fd}</Project>
       <Name>AK.Wwise.Unity.Timeline</Name>
     </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
+      <Project>{8c508bc0-e68d-f9a2-e534-5c779ea6d2f2}</Project>
+      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.API.csproj">
+      <Project>{bdebf7d0-666a-f815-4794-71464b8d2ebf}</Project>
+      <Name>AK.Wwise.Unity.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="AD_FimpSharedTools.Editor.csproj">
+      <Project>{ea2bba9b-0feb-93a1-3e27-098017b4ebf5}</Project>
+      <Name>AD_FimpSharedTools.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AK.Wwise.Unity.Timeline.Editor.csproj">
+      <Project>{668b1ad8-7495-e93f-a8cc-750bdb0a2048}</Project>
+      <Name>AK.Wwise.Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AD_FimpShared.csproj">
+      <Project>{cbc285c8-0b13-7fcd-c3ff-a5c7f3109e20}</Project>
+      <Name>AD_FimpShared</Name>
+    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.Editor.csproj">
       <Project>{a1dd6696-338c-a8a2-3bcb-2abadc3460c9}</Project>
       <Name>AK.Wwise.Unity.API.Editor</Name>
@@ -1647,25 +1649,29 @@
       <Project>{214d4dc3-bd86-7531-e773-1b674d26835d}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.API.csproj">
-      <Project>{bdebf7d0-666a-f815-4794-71464b8d2ebf}</Project>
-      <Name>AK.Wwise.Unity.API</Name>
-    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.WwiseTypes.csproj">
       <Project>{2a18e751-49f3-af8a-ad45-9020e940138b}</Project>
       <Name>AK.Wwise.Unity.API.WwiseTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="AD_FimpAnimating.Editor.csproj">
+      <Project>{24517c16-0c7b-1878-c396-e7eb0a39035a}</Project>
+      <Name>AD_FimpAnimating.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="ScriptInspector.csproj">
       <Project>{9d996765-7f48-9421-5c52-e1fa4f707e59}</Project>
       <Name>ScriptInspector</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.Timeline.Editor.csproj">
-      <Project>{668b1ad8-7495-e93f-a8cc-750bdb0a2048}</Project>
-      <Name>AK.Wwise.Unity.Timeline.Editor</Name>
+    <ProjectReference Include="AD_Fimpos.Editor.csproj">
+      <Project>{e1b40d89-5e4a-9e05-5e35-541c0768130d}</Project>
+      <Name>AD_Fimpos.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
-      <Project>{8c508bc0-e68d-f9a2-e534-5c779ea6d2f2}</Project>
-      <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
+    <ProjectReference Include="AD_FimpAnimating.csproj">
+      <Project>{254e53df-bc6d-e734-75c5-9ded396fa132}</Project>
+      <Name>AD_FimpAnimating</Name>
+    </ProjectReference>
+    <ProjectReference Include="AD_FimpSharedTools.csproj">
+      <Project>{b41f4bfe-8076-1dc4-865f-cab01dd61e52}</Project>
+      <Name>AD_FimpSharedTools</Name>
     </ProjectReference>
     <ProjectReference Include="Ak.Wwise.Api.WAAPI.csproj">
       <Project>{687afd50-0a70-bcf4-b2d3-42106336df20}</Project>

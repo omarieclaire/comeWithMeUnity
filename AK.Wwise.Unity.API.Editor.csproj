@@ -987,11 +987,11 @@
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.TestRunner">
         <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+        <HintPath>/Users/marie/Documents/games/ComeWithMe/comeWithMeUnity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
