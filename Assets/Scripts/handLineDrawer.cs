@@ -5,7 +5,11 @@
 // What I have now
 // Lines are drawn from every hand to every hand
 // the lines are a bit jittery
+
+
+// it's always drawing a line unless the closest distance is negative - look at where I compare the two
  
+// is minimum distance nothing?
  
 using UnityEngine;
 using System.Linq;
@@ -17,7 +21,7 @@ public class handLineDrawer : MonoBehaviour
 	public Transform me;
 	public List<GameObject> allOtherHands;
 	public GameObject myOpposingHand;
-	public float closestDistance = 100; 
+	public float closestDistance = 100; // distances that are smaller than this draw the line
 	public Transform target;
 	public Vector3 lineTargetV3;
 	public Vector3 lineOriginV3;
@@ -25,7 +29,7 @@ public class handLineDrawer : MonoBehaviour
 	public float TargetFollowSpeed = 1;
 	private Vector3 lastLineOriginPosition;
 	private Vector3 lastLineTargetPosition;
-	public float minimumDistance = 0.1f;
+	public float minimumDistance = 0.1f; // I don't know what this does
 	public UnityEvent distanceEvent;
  
 	float ampT;
@@ -184,8 +188,8 @@ public class handLineDrawer : MonoBehaviour
 		} else {
 			myLine.enabled = false;
 		}
-        
-		closestDistance += Time.deltaTime;
+		// I don't know why I am doing this
+		//closestDistance += Time.deltaTime;
 	}
     
 	public void PopulateHands(){
@@ -215,19 +219,21 @@ public class handLineDrawer : MonoBehaviour
 						myOpposingHand = cuteHand;
 					}
 				}
-
 				// if cuteHand is NOT my opposing hand AND cutehand is NOT me AND cutehand IS active
 				if(cuteHand != myOpposingHand && cuteHand != transform.parent.gameObject && cuteHand.gameObject.activeInHierarchy){
 					// and if distance is more than the closest distance
+					Debug.Log($"Distance between {cuteHand.name} and {transform.parent.gameObject.name} is {distance}m away");
 					if(distance <= closestDistance){
-						// set the closest distance to distance (why?)
-						closestDistance = distance;
+						// closestDistance = distance;
 						// if cutehand has a parent animator (why?)
 						if(cuteHandParentAnimator != null){
 							//set the target to cutehand
 							target = cuteHand.transform;
 							//Debug.Log($"Drawing line between {myParentAnimator.gameObject.name} and {cuteHandParentAnimator.gameObject.name}");
 						}   
+					} else {
+						// if I leave the closest distance, I need to set it to null
+						target = null;
 					}
 				}
                 
@@ -235,14 +241,14 @@ public class handLineDrawer : MonoBehaviour
 				//Debug.Log($"Hand {hand.name} of {cuteHandParentAnimator.gameObject.name} is {distance}m away");
 			}
 
-			// if target is not null and target is not active (what is &&!? )
+			// if I have a target and it is not active
 			if(target != null && !target.gameObject.activeInHierarchy){
 				//Debug.Log("reset target");
 
 				// set the target to null
 				target = null;
 				// change the clostest distance to something impossible
-				closestDistance = 100;
+				//closestDistance = 100;
 			}
             
 		}

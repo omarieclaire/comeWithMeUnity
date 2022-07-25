@@ -1676,6 +1676,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: closestDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: minimumDistance
       value: 0.01
       objectReference: {fileID: 0}
@@ -1805,8 +1809,12 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: closestDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: minimumDistance
-      value: 100
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223230, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_Name
