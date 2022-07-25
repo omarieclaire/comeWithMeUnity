@@ -10,7 +10,6 @@ public class BallController : MonoBehaviour
 	private new Rigidbody rigidbody;
 	
 	
-    // Start is called before the first frame update
     void Start()
     {
 	    rigidbody = GetComponent<Rigidbody>();
@@ -18,16 +17,13 @@ public class BallController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
 	void FixedUpdate()
 	{
+		//rigidbody.rotation = rotateVelocity;
 		rigidbody.velocity += acceleration;
 		if(rigidbody.velocity.z >= speedLimit){
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, speedLimit);
 		}
-	    //transform.Translate(Vector3.forward * 10 * Time.deltaTime);
-	    //transform.position += velocity * Time.deltaTime;
-	    //transform.Rotate(rotateVelocity * Time.deltaTime);
     }
     
 	void Update(){

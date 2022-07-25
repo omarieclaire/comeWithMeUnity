@@ -265,6 +265,8 @@ public class CustomOSC : MonoBehaviour
 	void Start() {
         server = OscMaster.GetSharedServer(12000);
 		server.MessageDispatcher.AddCallback(string.Empty, OscReceiver1); 
+		//AkSoundEngine.PostEvent( "PlayerTwo" , gameObject);
+
     }
     
 	
@@ -418,6 +420,9 @@ public class CustomOSC : MonoBehaviour
 			playerRig.active = true;
 			playerRig.dummy.SetActive(true);
 			playerRig.playerTransform.SetActive(true);	
+			
+			uint mySound = PlayerSoundPlayer(playerRig.playerNumber, playerRig.dummy);
+			playerRig.musicId = mySound;
 		}
 	}
 	
@@ -504,7 +509,6 @@ public class CustomOSC : MonoBehaviour
 
     void Update()
 	{
-		//AkSoundEngine.PostEvent( "PlayerTwoOff" , gameObject);
 		// Get the "current time"! This is used for determining whether
 		// we should draw a player or amend the .y position of a body part.
 		double currentTime = Time.unscaledTimeAsDouble;
@@ -618,7 +622,7 @@ public class CustomOSC : MonoBehaviour
 			break;
 		case 2:
 			musicId = AkSoundEngine.PostEvent( "PlayerThree" , dummy);
-			Debug.Log("Three");
+			//Debug.Log("Three");
 			break;
 		case 3:
 			musicId = AkSoundEngine.PostEvent( "PlayerFour" , dummy);
@@ -654,7 +658,7 @@ public class CustomOSC : MonoBehaviour
 	/////////////////////////////////////////////////////
 	
 	public PlayerRig AddPlayer(int playernum, double oscTime) {
-		Debug.Log(playernum);
+		//Debug.Log(playernum);
 		
 		//AkSoundEngine.PostEvent( "PlayerOne" , gameObject);
 
@@ -746,7 +750,7 @@ public class CustomOSC : MonoBehaviour
 		//Debug.Log(player.gameObject.name, player);
 
 		
-		uint mySound = PlayerSoundPlayer(playernum, player);
+		uint mySound = PlayerSoundPlayer(playernum, dummy);
 		playerRig.musicId = mySound;
 						
 		return playerRig;

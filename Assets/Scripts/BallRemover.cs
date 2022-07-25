@@ -8,11 +8,15 @@ public class BallRemover : MonoBehaviour
 	}
 	
 	private void OnTriggerEnter(Collider other) {
+		//Debug.Log("collider");
 		if (other.gameObject.CompareTag("sphere"))
 		{	
+			//Debug.Log("spehere tag");
 			if (this.gameObject.CompareTag("hand"))
 			{
 				float pointlesswhy = 0;
+				//Debug.Log("hand tag");
+
 				AkSoundEngine.PostEvent( "delightHit" , gameObject);
 
 			}

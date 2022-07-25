@@ -48,12 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accfe479b273c4d0fb86623dab05adde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherHands: []
+  me: {fileID: 0}
+  allOtherHands: []
   myOtherHand: {fileID: 0}
   closestDistance: 100
   target: {fileID: 0}
-  FollowSpeed: 1
-  TargetFollowSpeed: 1
+  lineTargetV3: {x: 0, y: 0, z: 0}
+  lineOriginV3: {x: 0, y: 0, z: 0}
+  FollowSpeed: 10
+  TargetFollowSpeed: 5
   minimumDistance: 0.1
   distanceEvent:
     m_PersistentCalls:
@@ -61,7 +64,7 @@ MonoBehaviour:
   traceMaterial: {fileID: 2100000, guid: a0631de1075036b4580b0c788a584166, type: 2}
   traceWidth: 0.1
   altRotation: 0
-  origin: 1
+  origin: 0
   size: 100
   lengh: 8
   freq: -8

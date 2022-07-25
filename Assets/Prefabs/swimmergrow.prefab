@@ -1249,10 +1249,10 @@ GameObject:
   - component: {fileID: 7957073709183629134}
   - component: {fileID: 7957073709183629135}
   - component: {fileID: 8148133768980010703}
-  - component: {fileID: 5108240617547648621}
+  - component: {fileID: 1133044316610195490}
   m_Layer: 0
   m_Name: mixamorig:RightHand
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7957073709183629132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b4adedab17fc4e25a82170574253986, type: 3}
   m_Name: 
@@ -1336,20 +1336,20 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &5108240617547648621
+--- !u!114 &1133044316610195490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7957073709183629132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c7fd145bbdd043f8b229b30af759561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: d1bbb3b5f7e1664c
-  useOtherObject: 1
+  triggerList: 
+  useOtherObject: 0
   actionOnEventType: 0
   curveInterpolation: 4
   enableActionOnEvent: 0
@@ -1383,10 +1383,10 @@ GameObject:
   - component: {fileID: 1296739786813984656}
   - component: {fileID: 1296739786813984657}
   - component: {fileID: 1846003155795447676}
-  - component: {fileID: 2255001611325014996}
+  - component: {fileID: 7636746368961114515}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476852111801439105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b4adedab17fc4e25a82170574253986, type: 3}
   m_Name: 
@@ -1470,20 +1470,20 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &2255001611325014996
+--- !u!114 &7636746368961114515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476852111801439105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c7fd145bbdd043f8b229b30af759561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: d1bbb3b5f7e1664c
-  useOtherObject: 1
+  triggerList: 
+  useOtherObject: 0
   actionOnEventType: 0
   curveInterpolation: 4
   enableActionOnEvent: 0
@@ -1651,6 +1651,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: amp
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: freq
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: size
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: spiral
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: walkAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: traceWidth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: minimumDistance
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223230, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_Name
       value: handLineDrawer
@@ -1661,7 +1689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223230, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_TagString
-      value: hand
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4708402383885901910, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_IsActive
@@ -1670,6 +1698,10 @@ PrefabInstance:
     - target: {fileID: 5703147936102095919, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309875649531946372, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8705456403885679777, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1748,6 +1780,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: amp
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: freq
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: size
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: spiral
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: walkAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: traceWidth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682413461915223229, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: minimumDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223230, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_Name
       value: handLineDrawer
@@ -1758,7 +1818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682413461915223230, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_TagString
-      value: hand
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4708402383885901910, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_IsActive
@@ -1767,6 +1827,10 @@ PrefabInstance:
     - target: {fileID: 5703147936102095919, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309875649531946372, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8370b19dae021478abe16ede83e7ce80, type: 3}
