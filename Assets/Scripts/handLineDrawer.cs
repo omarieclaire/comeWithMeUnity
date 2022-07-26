@@ -71,10 +71,11 @@ public class handLineDrawer : MonoBehaviour
 		if(allOtherHands == null) { // if I haven't seen any other hands
 			PopulateHands(); // get the hands
 		}
-		ChooseTarget(); // then chose a target
 	}
     
 	void FixedUpdate(){ // once or several times a frame depending on the framerate
+		ChooseTarget(); // then chose a target
+
 		DrawLines(); // draw lines
 	}
     

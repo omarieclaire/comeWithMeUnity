@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: {fileID: 0}
   allOtherHands: []
-  myOtherHand: {fileID: 0}
+  myOpposingHand: {fileID: 0}
   closestDistance: 100
   target: {fileID: 0}
   lineTargetV3: {x: 0, y: 0, z: 0}
@@ -64,15 +64,15 @@ MonoBehaviour:
   traceMaterial: {fileID: 2100000, guid: a0631de1075036b4580b0c788a584166, type: 2}
   traceWidth: 0.1
   altRotation: 0
-  origin: 0
-  size: 100
+  origin: 1
+  size: 10
   lengh: 8
-  freq: -8
+  freq: 4
   amp: 0.5
   ampByFreq: 0
   centered: 0
   centCrest: 0
-  warp: 1
+  warp: 0
   warpInvert: 0
   warpRandom: 0
   walkManual: 0
